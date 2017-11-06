@@ -1,0 +1,20 @@
+App listening on port 80!
+::1 - - [06/Nov/2017:12:18:43 +0000] "GET / HTTP/1.1" 200 598 11.431 ms
+::1 - - [06/Nov/2017:12:18:43 +0000] "GET /static/css/main.7cd35268.css HTTP/1.1" 200 2300 6.917 ms
+::1 - - [06/Nov/2017:12:18:43 +0000] "GET /css/bootstrap.min.css HTTP/1.1" 200 124962 6.939 ms
+::1 - - [06/Nov/2017:12:18:43 +0000] "GET /static/js/main.18bba95e.js HTTP/1.1" 200 266062 7.990 ms
+::1 - - [06/Nov/2017:12:18:43 +0000] "GET /static/media/PC_header_doraemon.1adbae82.gif HTTP/1.1" 200 18445 1.142 ms
+::1 - - [06/Nov/2017:12:18:44 +0000] "GET /service-worker.js HTTP/1.1" 200 3788 4.193 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /favicon.ico HTTP/1.1" 200 598 18.714 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /service-worker.js HTTP/1.1" 200 3788 2.616 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /index.html?_sw-precache=e8341b902a8cf879ed6abe4dee871c94 HTTP/1.1" 200 598 3.066 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /static/media/200w_d%20(1).4d734722.gif HTTP/1.1" 200 30786 2.816 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /static/media/LinksComputer.65aa9575.png HTTP/1.1" 200 11746 2.925 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /static/css/main.7cd35268.css HTTP/1.1" 304 - 4.073 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /static/js/main.18bba95e.js HTTP/1.1" 304 - 4.540 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /static/media/SpecialTop.0f3919a7.png HTTP/1.1" 200 55389 2.805 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /static/media/VideosComputer.69793b28.png HTTP/1.1" 200 16297 2.124 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /static/media/PC_header_doraemon.1adbae82.gif HTTP/1.1" 304 - 3.399 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /static/media/websitTB.b9d2e488.png HTTP/1.1" 200 10880 3.116 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /static/media/tv%20asahi%20Doraemon.c4cc5e2e.jpg HTTP/1.1" 200 31194 3.201 ms
+::1 - - [06/Nov/2017:12:18:45 +0000] "GET /static/media/EigaDM2017.04ec5899.jpg HTTP/1.1" 200 836581 3.025 ms
