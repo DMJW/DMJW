@@ -1,0 +1,157 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  position: absolute;
+  height: 140px;
+}
+
+PC_header_doraemon.gif {
+  height: 100
+}
+
+.App-header {
+  background: linear-gradient(303deg, #ff00ff, #ffff00, #00a8f4, #00f44a);
+  background-size: 800% 800%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  -o-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+.NavBar {
+  background: linear-gradient(303deg, #ff00ff, #ffff00, #00a8f4, #00f44a);
+  background-size: 800% 800%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  -o-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+.navbar-button {
+  background: linear-gradient(303deg, #ff00ff, #ffff00, #00a8f4, #00f44a);
+  background-size: 800% 800%;
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  -o-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+
+.button {
+  border-radius: 4px;
+  background: linear-gradient(137deg, #ff00df, #f9ff00);
+  background-size: 700% 700%;
+  -webkit-animation: AnimationName 11s ease infinite;
+  -moz-animation: AnimationName 11s ease infinite;
+  -o-animation: AnimationName 11s ease infinite;
+  animation: AnimationName 11s ease infinite;
+  border: none;
+  color: black;
+  text-align: center;
+  font-size: 23px;
+  padding: 20px;
+  width: 300px;
+  height: 70px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:11% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:11% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:11% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:11% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:11% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:11% 0%}
+}
+@keyframes AnimationName { 
+    0%{background-position:11% 0%}
+    50%{background-position:90% 100%}
+    100%{background-position:11% 0%}
+}
+
+.App-intro {
+  font-size: large;
+}
+
+h2 {
+  color: magenta;
+}
+
+
+.grad_cover {
+align-items: center;
+background: linear-gradient(137deg, #ff00df, #f9ff00);
+background-size: 700% 700%;
+
+-webkit-animation: AnimationName 11s ease infinite;
+-moz-animation: AnimationName 11s ease infinite;
+-o-animation: AnimationName 11s ease infinite;
+animation: AnimationName 11s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:7% 0%}
+    50%{background-position:94% 100%}
+    100%{background-position:7% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:7% 0%}
+    50%{background-position:94% 100%}
+    100%{background-position:7% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:7% 0%}
+    50%{background-position:94% 100%}
+    100%{background-position:7% 0%}
+}
+@keyframes AnimationName { 
+    0%{background-position:7% 0%}
+    50%{background-position:94% 100%}
+    100%{background-position:7% 0%}
+}
+
+Grad_cover copy{
+align-items: center;
+background: linear-gradient(137deg, #ff00df, #f9ff00);
+background-size: 700% 700%;
+
+-webkit-animation: AnimationName 11s ease infinite;
+-moz-animation: AnimationName 11s ease infinite;
+-o-animation: AnimationName 11s ease infinite;
+animation: AnimationName 11s ease infinite;
+}
