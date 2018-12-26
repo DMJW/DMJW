@@ -19,6 +19,8 @@ import JPRF from "./img/jp round flag.png";
 import UURCF from "./img/usukflag.png";
 import Tools from "./pages/tools";
 import LearnM from "./Learn/main";
+import FunM from "./Fun/main";
+import FunTop from "./Fun/img/FunT.png";
 import websiteTB from "./img/websitTB.png";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
@@ -105,7 +107,7 @@ class App extends Component {
           </ul>
         </div> */}
         <Switch>
-          <Route exact path="/" component={this.Home} />
+          <Route exact path="/" component={this.Main} />
           <Route path="/jp" component={this.JPH} />
           <Route path="/kr" component={this.KRH} />
           <Route path="/doraemon/dmjws" component={() => <Doraemon />} />
@@ -118,7 +120,7 @@ class App extends Component {
           <Route path="/languages" component={this.Lang} />
           <Route path="/special" component={() => <Special />} />
           <Route path="/dmjws/tools" component={() => <Tools />} />
-          <Route path="/Fun/main" component={() => <LearnM />} />
+          <Route path="/Fun/main" component={() => <FunM />} />
           <Route path="/dmjw/learn/LearnM" component={() => <LearnM />} />
           <Route component={() => <ErrorNF />} />
         </Switch>
@@ -126,7 +128,7 @@ class App extends Component {
     );
   }
 
-  Home() {
+  Main() {
     return (
       <div>
         <div className="App-header">
@@ -145,23 +147,37 @@ class App extends Component {
         </div>
         <h3>
           This Website is still in making but you can still go to the
-          <a href="http://www.dmjwweb.com">DMJWWEB</a>
+          <a href="http://www.dmjwweb.com"> DMJWWEB</a>
         </h3>
-        <a href="http://www.dmjwweb.com/videos/main">
-          <img src={YTI} />
-        </a>
+        <p>
+          이웹사이트는 아직 만들는 중이지만{" "}
+          <a href="http://www.dmjwweb.com">DMJWWEB</a>은 지금 이용할 수
+          있습니다.
+        </p>
+        <br />
+        <div>
+          <Link to="/Fun/main">
+            <img src={FunTop} style={{ width: "50%", height: 300 }} />
+            <p>DMJW's FUN online</p>
+          </Link>
+        </div>
         <Link to="/languages">
+          <p style={{ color: "#ff4b66", fontSize: 17 }}>
+            Select your country or region to view content for your country or to
+            use DMJW'sFun and change the language.
+            <br />
+            현재 계신 국가에 맞는 콘텐츠를 확인하거나 DMJW'sFun을 이용, 언어를
+            바꾸려면 해당 국가 또는 지역을 선택하세요.
+          </p>
           <button>
             <span>Language&Country</span>
           </button>
+          <p>Now : English - UK, US</p>
         </Link>
-        <div>
-          <Link to="/Fun/main">
-            {/* <button class="button">
-              <span>DMJW's FUN online</span>
-            </button> */}
-          </Link>
-        </div>
+        <br />
+        <a href="http://www.dmjwweb.com/videos/main">
+          <img src={YTI} />
+        </a>
       </div>
     );
   }
@@ -228,6 +244,9 @@ class App extends Component {
           <img src={JPRF} />
           日本•Japan
         </button>
+        <p style={{ color: "#FF0027", fontSize: 15, marginLeft: 615 }}>
+          ※日本語の翻訳が正確ではないことができます。
+        </p>
         <h4>
           현재 계신 국가에 맞는 콘텐츠를 확인하거나 DMJW'sFun을 이용하려면 해당
           국가 또는 지역을 선택하세요.

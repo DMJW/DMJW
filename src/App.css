@@ -8,7 +8,7 @@
 }
 
 PC_header_doraemon.gif {
-  height: 100
+  height: 100;
 }
 
 .App-header {
@@ -66,7 +66,7 @@ PC_header_doraemon.gif {
 }
 
 .button span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -84,24 +84,48 @@ PC_header_doraemon.gif {
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:11% 0%}
-    50%{background-position:90% 100%}
-    100%{background-position:11% 0%}
+  0% {
+    background-position: 11% 0%;
+  }
+  50% {
+    background-position: 90% 100%;
+  }
+  100% {
+    background-position: 11% 0%;
+  }
 }
 @-moz-keyframes AnimationName {
-    0%{background-position:11% 0%}
-    50%{background-position:90% 100%}
-    100%{background-position:11% 0%}
+  0% {
+    background-position: 11% 0%;
+  }
+  50% {
+    background-position: 90% 100%;
+  }
+  100% {
+    background-position: 11% 0%;
+  }
 }
 @-o-keyframes AnimationName {
-    0%{background-position:11% 0%}
-    50%{background-position:90% 100%}
-    100%{background-position:11% 0%}
+  0% {
+    background-position: 11% 0%;
+  }
+  50% {
+    background-position: 90% 100%;
+  }
+  100% {
+    background-position: 11% 0%;
+  }
 }
-@keyframes AnimationName { 
-    0%{background-position:11% 0%}
-    50%{background-position:90% 100%}
-    100%{background-position:11% 0%}
+@keyframes AnimationName {
+  0% {
+    background-position: 11% 0%;
+  }
+  50% {
+    background-position: 90% 100%;
+  }
+  100% {
+    background-position: 11% 0%;
+  }
 }
 
 .App-intro {
@@ -112,46 +136,80 @@ h2 {
   color: magenta;
 }
 
+/* .funTop {
+  background-image: FunT.png;
+} */
+
+.FunVM a {
+  color: palegreen;
+}
+.FunVM a:hover {
+  color: palevioletred;
+}
 
 .grad_cover {
-align-items: center;
-background: linear-gradient(137deg, #ff00df, #f9ff00);
-background-size: 700% 700%;
+  align-items: center;
+  background: linear-gradient(137deg, #ff00df, #f9ff00);
+  background-size: 700% 700%;
 
--webkit-animation: AnimationName 11s ease infinite;
--moz-animation: AnimationName 11s ease infinite;
--o-animation: AnimationName 11s ease infinite;
-animation: AnimationName 11s ease infinite;
+  -webkit-animation: AnimationName 11s ease infinite;
+  -moz-animation: AnimationName 11s ease infinite;
+  -o-animation: AnimationName 11s ease infinite;
+  animation: AnimationName 11s ease infinite;
 }
 
 @-webkit-keyframes AnimationName {
-    0%{background-position:7% 0%}
-    50%{background-position:94% 100%}
-    100%{background-position:7% 0%}
+  0% {
+    background-position: 7% 0%;
+  }
+  50% {
+    background-position: 94% 100%;
+  }
+  100% {
+    background-position: 7% 0%;
+  }
 }
 @-moz-keyframes AnimationName {
-    0%{background-position:7% 0%}
-    50%{background-position:94% 100%}
-    100%{background-position:7% 0%}
+  0% {
+    background-position: 7% 0%;
+  }
+  50% {
+    background-position: 94% 100%;
+  }
+  100% {
+    background-position: 7% 0%;
+  }
 }
 @-o-keyframes AnimationName {
-    0%{background-position:7% 0%}
-    50%{background-position:94% 100%}
-    100%{background-position:7% 0%}
+  0% {
+    background-position: 7% 0%;
+  }
+  50% {
+    background-position: 94% 100%;
+  }
+  100% {
+    background-position: 7% 0%;
+  }
 }
-@keyframes AnimationName { 
-    0%{background-position:7% 0%}
-    50%{background-position:94% 100%}
-    100%{background-position:7% 0%}
+@keyframes AnimationName {
+  0% {
+    background-position: 7% 0%;
+  }
+  50% {
+    background-position: 94% 100%;
+  }
+  100% {
+    background-position: 7% 0%;
+  }
 }
 
-Grad_cover copy{
-align-items: center;
-background: linear-gradient(137deg, #ff00df, #f9ff00);
-background-size: 700% 700%;
+Grad_cover copy {
+  align-items: center;
+  background: linear-gradient(137deg, #ff00df, #f9ff00);
+  background-size: 700% 700%;
 
--webkit-animation: AnimationName 11s ease infinite;
--moz-animation: AnimationName 11s ease infinite;
--o-animation: AnimationName 11s ease infinite;
-animation: AnimationName 11s ease infinite;
+  -webkit-animation: AnimationName 11s ease infinite;
+  -moz-animation: AnimationName 11s ease infinite;
+  -o-animation: AnimationName 11s ease infinite;
+  animation: AnimationName 11s ease infinite;
 }
