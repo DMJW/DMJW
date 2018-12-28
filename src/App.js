@@ -27,6 +27,7 @@ import websiteTB from "./img/websitTB.png";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import YTI from "./pages/ForPages/175x175bb.jpg";
+import { css } from "emotion";
 
 class App extends Component {
   render() {
@@ -134,7 +135,14 @@ class App extends Component {
 
   Main() {
     return (
-      <div>
+      <div
+        className={css`
+          width: 100%;
+          @media (max-width: 960px) {
+            width: 50%;
+          }
+        `}
+      >
         <div className="App-header">
           <h1>WELCOME</h1>
           <h2>to the DMJW's FUNonline, Learn and Developer Tools website!</h2>

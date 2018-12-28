@@ -1,11 +1,10 @@
 import React from "react";
 import FunTop from "./img/FunT.png";
 import ArtMD from "./img/artMD.png";
-import { css } from "emotion";
 
 export default function FunMain() {
   return (
-    <div className={css``}>
+    <div>
       <div class="funTop" id="funTop">
         <h1>DMJW's FUN</h1>
         <img src={FunTop} style={{ width: "50%", height: 300 }} />
