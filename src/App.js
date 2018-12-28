@@ -19,7 +19,9 @@ import JPRF from "./img/jp round flag.png";
 import UURCF from "./img/usukflag.png";
 import Tools from "./pages/tools";
 import LearnM from "./Learn/main";
+import Math1 from "./Learn/math1";
 import FunM from "./Fun/main";
+import ArtMe from "./Fun/artsByME";
 import FunTop from "./Fun/img/FunT.png";
 import websiteTB from "./img/websitTB.png";
 import "./App.css";
@@ -121,7 +123,9 @@ class App extends Component {
           <Route path="/special" component={() => <Special />} />
           <Route path="/dmjws/tools" component={() => <Tools />} />
           <Route path="/Fun/main" component={() => <FunM />} />
-          <Route path="/dmjw/learn/LearnM" component={() => <LearnM />} />
+          <Route path="/Fun/arts/Me" component={() => <ArtMe />} />
+          <Route path="/Learn/LearnM" component={() => <LearnM />} />
+          <Route path="/Learn/math/level1" component={() => <Math1 />} />
           <Route component={() => <ErrorNF />} />
         </Switch>
       </div>
@@ -204,25 +208,69 @@ class App extends Component {
   }
   KRH() {
     return (
+      // <div>
+      //   <div className="App-header">
+      //     <img src={logo} className="App-logo" alt="logo" />
+      //     <img src={PC_header_gif} />
+      //     <Link to="/kr/account">
+      //       <button className="button">
+      //         <span>🗝로그인 / 회원가입 ✅ </span>
+      //       </button>
+      //     </Link>
+      //   </div>
+      //   <Grad_cover
+      //     text="DMJW's 웹사이트에 오신것을 환영합니다!"
+      //     textColor="#00FF92"
+      //   />
+      //   <Link to="/languages">
+      //     <button className="button">
+      //       <span>언어</span>
+      //     </button>
+      //   </Link>
+      // </div>
       <div>
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={PC_header_gif} />
-          <Link to="/kr/account">
+          <h1>WELCOME</h1>
+          <h2>
+            DMJW's Fun온라인, 배움 그리고 개발자 도구 사이트에 오신것을
+            환영합니다!
+          </h2>
+          <h3>to the DMJW's FUNonline, Learn and Developer Tools website!</h3>
+          <Link to="/account">
             <button className="button">
-              <span>🗝로그인 / 회원가입 ✅ </span>
+              <span>🗝로그인/회원가입 ✅ </span>
             </button>
           </Link>
         </div>
-        <Grad_cover
-          text="DMJW's 웹사이트에 오신것을 환영합니다!"
-          textColor="#00FF92"
-        />
+        <h5>
+          이웹사이트는 아직 만들는 중이지만{" "}
+          <a href="http://www.dmjwweb.com">DMJWWEB</a>은 지금 이용할 수
+          있습니다.
+        </h5>
+        <br />
+        <div>
+          <Link to="/Fun/main">
+            <img src={FunTop} style={{ width: "50%", height: 300 }} />
+            <p>DMJW's FUN 온 라인</p>
+          </Link>
+        </div>
         <Link to="/languages">
-          <button className="button">
-            <span>언어</span>
+          <p style={{ color: "#ff4b66", fontSize: 17 }}>
+            Select your country or region to view content for your country or to
+            use DMJW'sFun and change the language.
+            <br />
+            현재 계신 국가에 맞는 콘텐츠를 확인하거나 DMJW'sFun을 이용, 언어를
+            바꾸려면 해당 국가 또는 지역을 선택하세요.
+          </p>
+          <button>
+            <span>Language&Country</span>
           </button>
+          <p>현재 : 한국어 - 한국</p>
         </Link>
+        <br />
+        <a href="http://www.dmjwweb.com/videos/main">
+          <img src={YTI} />
+        </a>
       </div>
     );
   }

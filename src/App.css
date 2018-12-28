@@ -140,12 +140,37 @@ h2 {
   background-image: FunT.png;
 } */
 
-.FunVM a {
+.FunSM {
+  background-color: #000000;
+  position: fixed;
+  height: 100%;
+  padding-bottom: 100px;
+  top: 0;
+  left: 0;
+}
+
+.FunSM a {
   color: palegreen;
 }
-.FunVM a:hover {
+.FunSM a:hover {
   color: palevioletred;
 }
+
+/* .funTop {
+  margin-left: 15%;
+}
+.FunMm {
+  margin-left: 15%;
+} */
+/* .FunMm p {
+  margin-left: 15%;
+}
+.FunMm a {
+  margin-left: 15%;
+}
+.FunMm h2 {
+  margin-left: 15%;
+} */
 
 .grad_cover {
   align-items: center;
