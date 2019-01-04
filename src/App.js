@@ -22,6 +22,7 @@ import LearnM from "./Learn/main";
 import Math1 from "./Learn/math1";
 import FunM from "./Fun/main";
 import ArtMe from "./Fun/artsByME";
+import UpDwnGameM from "./Fun/Game/UpDown";
 import FunTop from "./Fun/img/FunT.png";
 import websiteTB from "./img/websitTB.png";
 import "./App.css";
@@ -125,6 +126,10 @@ class App extends Component {
           <Route path="/dmjws/tools" component={() => <Tools />} />
           <Route path="/Fun/main" component={() => <FunM />} />
           <Route path="/Fun/arts/Me" component={() => <ArtMe />} />
+          <Route
+            path="/Fun/games/guess/updown/main"
+            component={() => <UpDwnGameM />}
+          />
           <Route path="/Learn/LearnM" component={() => <LearnM />} />
           <Route path="/Learn/math/level1" component={() => <Math1 />} />
           <Route component={() => <ErrorNF />} />
@@ -135,14 +140,7 @@ class App extends Component {
 
   Main() {
     return (
-      <div
-        className={css`
-          width: 100%;
-          @media (max-width: 960px) {
-            width: 50%;
-          }
-        `}
-      >
+      <div>
         <div className="App-header">
           <h1>WELCOME</h1>
           <h2>to the DMJW's FUNonline, Learn and Developer Tools website!</h2>
@@ -157,16 +155,6 @@ class App extends Component {
             </button>
           </Link>
         </div>
-        <h3>
-          This Website is still in making but you can still go to the
-          <a href="http://www.dmjwweb.com"> DMJWWEB</a>
-        </h3>
-        <p>
-          이웹사이트는 아직 만들는 중이지만{" "}
-          <a href="http://www.dmjwweb.com">DMJWWEB</a>은 지금 이용할 수
-          있습니다.
-        </p>
-        <br />
         <div>
           <Link to="/Fun/main">
             <img src={FunTop} style={{ width: "50%", height: 300 }} />
@@ -246,16 +234,10 @@ class App extends Component {
           <h3>to the DMJW's FUNonline, Learn and Developer Tools website!</h3>
           <Link to="/account">
             <button className="button">
-              <span>🗝로그인/회원가입 ✅ </span>
+              <span>🗝 로그인/회원가입 ✅ </span>
             </button>
           </Link>
         </div>
-        <h5>
-          이웹사이트는 아직 만들는 중이지만{" "}
-          <a href="http://www.dmjwweb.com">DMJWWEB</a>은 지금 이용할 수
-          있습니다.
-        </h5>
-        <br />
         <div>
           <Link to="/Fun/main">
             <img src={FunTop} style={{ width: "50%", height: 300 }} />
@@ -273,10 +255,10 @@ class App extends Component {
           <button>
             <span>Language&Country</span>
           </button>
-          <p>현재 : 한국어 - 한국</p>
+          <p>현재 : 한국 - 한국어</p>
         </Link>
         <br />
-        <a href="http://www.dmjwweb.com/videos/main">
+        <a href="http://www.dmjwweb.com/kr/videos/main">
           <img src={YTI} />
         </a>
       </div>

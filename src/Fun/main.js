@@ -1,6 +1,7 @@
 import React from "react";
 import FunTop from "./img/FunT.png";
 import ArtMD from "./img/artMD.png";
+import { css } from "emotion";
 
 export default function FunMain() {
   return (
@@ -11,10 +12,16 @@ export default function FunMain() {
         <p>
           📱⤵️When Using in mobile or tablet it is better to use it rotated than
           standing.📱⤵️
+          <br />
+          Actually, it is much better to use it in (any) computer.(for now)
         </p>
       </div>
       <div
-        class="FunSM"
+        className={`FunSM ${css`
+          @media (max-width: 950px) {
+            display: none;
+          }
+        `}`}
         style={{
           width: "15%",
           color: "#ffffff"
@@ -43,7 +50,7 @@ export default function FunMain() {
           style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
         />
         <h3>Things from inside this page</h3>
-        <a href="/Fun/arts/ME">Arts by D.J.</a>
+        <a href="#FunMartsme">Arts by D.J.</a>
         <br />
         <a href="#FunMG">Games & Playing</a>
         <br />
@@ -53,19 +60,21 @@ export default function FunMain() {
         ⇩⇣⇩
       </a>
       <div id="FunMm">
-        <h2>ARTs by D.J.</h2>
-        <p>
-          Most drawings have names and descriptions. There are many types of
-          drawings like Funny, Simple or Complicated types of drawings
-        </p>
-        <p>
-          To see ARTs by D.J,
-          <br />
-          ⥥Click⥥
-        </p>
-        <a href="/Fun/arts/ME">
-          <img src={ArtMD} width="30%" />
-        </a>
+        <div id="FunMartsme">
+          <h2>ARTs by D.J.</h2>
+          <p>
+            Most drawings have names and descriptions. There are many types of
+            drawings like Funny, Simple or Complicated types of drawings
+          </p>
+          <p>
+            To see ARTs by D.J,
+            <br />
+            ⥥Click⥥
+          </p>
+          <a href="/Fun/arts/ME">
+            <img src={ArtMD} width="30%" />
+          </a>
+        </div>
         <div id="FunMG">
           <h2>Games & Playing</h2>
           <p>
@@ -73,6 +82,7 @@ export default function FunMain() {
             <a href="http://www.dmjwweb.com/sp/main">DMJWWEB</a> can also be
             here.
           </p>
+          <a href="/Fun/games/guess/updown/main">Up&Down Guess Game</a>
         </div>
       </div>
     </div>
