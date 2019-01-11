@@ -46,11 +46,6 @@ export default function DevMain() {
         <br />
         <a href="#devMtop">Go to ⤒TOP⤒</a>
       </div>
-      <h3>Enter a color code or find a color code</h3>
-      <input id="dtcolorin" />
-      <div style={{ backgroundColor: "pink", width: "500px" }}>
-        <p style={{ color: "black" }}>COLOR</p>
-      </div>
     </div>
   );
 }

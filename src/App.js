@@ -25,7 +25,7 @@ import UpDwnGameM from "./Fun/Game/UpDown";
 import FunTop from "./Fun/img/FunT.png";
 import websiteTB from "./img/websitTB.png";
 import DevMain from "./Dev/main";
-import dtColor from "./Dev/TColor";
+import DtColor from "./Dev/TColor";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import YTI from "./pages/ForPages/175x175bb.jpg";
@@ -132,7 +132,7 @@ class App extends Component {
             component={() => <UpDwnGameM />}
           />
           <Route path="/developers/main" component={() => <DevMain />} />
-          <Route path="/dev/tools/colorfind" component={() => <dtColor />} />
+          <Route path="/dev/tools/color" component={() => <DtColor />} />
           <Route path="/Learn/LearnM" component={() => <LearnM />} />
 
           <Route component={() => <ErrorNF />} />
