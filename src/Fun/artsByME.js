@@ -12,7 +12,6 @@ export default function artsbyMe() {
         <p style={{ fontSize: 20 }}>Find a drawing here.</p>
         <input
           style={{ backgroundColor: "#15ff00", textAlign: "center" }}
-          id="SearchIn"
           onkeyup="Search()"
         />
         <button
@@ -25,14 +24,4 @@ export default function artsbyMe() {
       </div>
     </div>
   );
-  var drwnt = ["WaterSimple", "WebDrawing"];
-  var input = document.getElementById("SearchIn");
-
-  function Search() {
-    for (var i = 0; i < 3; i++) {
-      if (input == drwnt[i]) {
-        window.alert("FOUND WATER SIMPLE");
-      }
-    }
-  }
 }

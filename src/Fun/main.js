@@ -13,7 +13,7 @@ export default function FunMain() {
           📱⤵️When Using in mobile or tablet it is better to use it rotated than
           standing.📱⤵️
           <br />
-          Actually, it is much better to use it in (any) computer.(for now)
+          Actually, it is much better to use it in (any) computer.
         </p>
       </div>
       <div
@@ -39,7 +39,7 @@ export default function FunMain() {
             선택하세요.
           </p>
         </a>
-        <a href="/Dev/tools">Developer Tools</a>
+        <a href="/developers/main">Developer Tools</a>
         <br />
         <a href="/Learn/LearnM">Learn</a>
         <br />
@@ -82,7 +82,9 @@ export default function FunMain() {
             <a href="http://www.dmjwweb.com/sp/main">DMJWWEB</a> can also be
             here.
           </p>
-          <a href="/Fun/games/guess/updown/main">Up&Down Guess Game</a>
+          <a href="http://www.DMJWWEB.com/sp/games/UpDown">
+            Up&Down Guess Game↗︎
+          </a>
         </div>
       </div>
     </div>

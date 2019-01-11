@@ -19,12 +19,13 @@ import JPRF from "./img/jp round flag.png";
 import UURCF from "./img/usukflag.png";
 import Tools from "./pages/tools";
 import LearnM from "./Learn/main";
-import Math1 from "./Learn/math1";
 import FunM from "./Fun/main";
 import ArtMe from "./Fun/artsByME";
 import UpDwnGameM from "./Fun/Game/UpDown";
 import FunTop from "./Fun/img/FunT.png";
 import websiteTB from "./img/websitTB.png";
+import DevMain from "./Dev/main";
+import dtColor from "./Dev/TColor";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import YTI from "./pages/ForPages/175x175bb.jpg";
@@ -130,8 +131,10 @@ class App extends Component {
             path="/Fun/games/guess/updown/main"
             component={() => <UpDwnGameM />}
           />
+          <Route path="/developers/main" component={() => <DevMain />} />
+          <Route path="/dev/tools/colorfind" component={() => <dtColor />} />
           <Route path="/Learn/LearnM" component={() => <LearnM />} />
-          <Route path="/Learn/math/level1" component={() => <Math1 />} />
+
           <Route component={() => <ErrorNF />} />
         </Switch>
       </div>
@@ -143,12 +146,9 @@ class App extends Component {
       <div>
         <div className="App-header">
           <h1>WELCOME</h1>
-          <h2>to the DMJW's FUNonline, Learn and Developer Tools website!</h2>
-          <h3>
-            DMJW's Fun온라인, 배움 그리고 개발자 도구 사이트에 오신것을
-            환영합니다!
-          </h3>
-          <h3>DMJW's Fun オンライン,学びと開発者サイトへようこそ!</h3>
+          <h2>to the DMJW's FUNonline and Developer Tools website!</h2>
+          <h3>DMJW's Fun온라인, 개발자 도구 사이트에 오신것을 환영합니다!</h3>
+          <h3>DMJW's Fun オンライン, 開発者サイトへようこそ!</h3>
           <Link to="/account">
             <button className="button">
               <span>🗝Sign in/Sign up ✅ </span>
@@ -271,7 +271,7 @@ class App extends Component {
         <Link to="/">
           <button className="button">
             <img src={UURCF} />
-            English-UK,US
+            <span>English-UK,US</span>
           </button>
         </Link>
         <button className="button">

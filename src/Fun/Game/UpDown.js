@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class UpDownGame extends Component {
   state = {
-    difficulty: ""
+    difficulty: "Nothing! Please choose mode"
   };
   render() {
     const difficulty = this.state.difficulty;
@@ -49,7 +49,7 @@ export default class UpDownGame extends Component {
             Easy(9chances): 1~30, Normal(10chances): 1~50, Hard(11chances):
             1~100, Extreme(15chances): 1~250.
           </p>
-          <p>{difficulty}</p>
+          <p>You chose: {difficulty}</p>
           <button onClick={this.UDGEasy}>Easy</button>
           <button onClick={this.UDGNorm}>Normal</button>
           <button onClick={this.UDGHard}>Hard</button>
@@ -60,25 +60,25 @@ export default class UpDownGame extends Component {
       </div>
     );
   }
-
   UDGEasy = () => {
-    window.alert("Easy!");
-    this.setState({ difficulty: "Easy!!" });
+    //comnum = Math.floor(Math.random * 30 + 1);
+    window.alert("Easy Mode Starting...");
+    this.setState({ difficulty: "Easy" });
   };
   UDGNorm = () => {
-    window.alert("Normal!");
-    this.setState({ difficulty: "Normal!!!" });
+    window.alert("Normal Mode Starting...");
+    this.setState({ difficulty: "Normal!" });
   };
   UDGHard = () => {
-    window.alert("Hard!");
-    this.setState({ difficulty: "Hard!!!!" });
+    window.alert("Hard Mode Starting...");
+    this.setState({ difficulty: "Hard!" });
   };
   UDGExtr = () => {
-    window.alert("Extreme!");
-    this.setState({ difficulty: "Extreme!!!!!" });
+    window.alert("Extreme Mode starting...");
+    this.setState({ difficulty: "Extreme!" });
   };
   UDGOpp = () => {
-    window.alert("Opposite!");
-    this.setState({ difficulty: "Opposite...." });
+    window.alert("Opposite Mode Starting...");
+    this.setState({ difficulty: "Opposite!" });
   };
 }
