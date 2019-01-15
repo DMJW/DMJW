@@ -1,13 +1,14 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const router = require('./router')
-const cors = require('cors')
-const app = express()
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const app = express();
 
-app.use(cors())
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json({limit: '5mb'}))
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({ limit: '5mb' }));
 
-router(app)
+// routers
+app.use('/users', require('./controllers/users'));
+app.use('/posts', require('./controllers/posts'));
 
-module.exports = app
+module.exports = app;
