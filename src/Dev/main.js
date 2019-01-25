@@ -10,7 +10,7 @@ export default function DevMain() {
       <h2>Tools</h2>
       <a href="/dev/tools/color">Color Codes</a>
       <div
-        className={`FunSM ${css`
+        className={`SMB ${css`
           @media (max-width: 950px) {
             display: none;
           }

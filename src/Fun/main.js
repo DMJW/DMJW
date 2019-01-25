@@ -6,7 +6,7 @@ import { css } from "emotion";
 export default function FunMain() {
   return (
     <div>
-      <div class="funTop" id="funTop">
+      <div class="SatTop" id="SatTop">
         <h1>DMJW's FUN</h1>
         <img src={FunTop} style={{ width: "50%", height: 300 }} />
         <p>
@@ -17,7 +17,7 @@ export default function FunMain() {
         </p>
       </div>
       <div
-        className={`FunSM ${css`
+        className={`SMB ${css`
           @media (max-width: 950px) {
             display: none;
           }
@@ -41,7 +41,7 @@ export default function FunMain() {
         </a>
         <a href="/developers/main">Developer Tools</a>
         <br />
-        <a href="/Learn/LearnM">Learn</a>
+        <a href="/Sat/main">🆕Talk</a>
         <br />
         <a href="http://www.DMJWWEB.com/about">
           About DMJW's ↗︎(Moving to another web)
@@ -53,6 +53,10 @@ export default function FunMain() {
         <a href="#FunMartsme">Arts by D.J.</a>
         <br />
         <a href="#FunMG">Games & Playing</a>
+        <br />
+        <a>↳Number Guess</a>
+        <br />
+        <a>↳Minecraft</a>
         <br />
         <a href="#funTop">Go to ⤒TOP⤒</a>
       </div>
@@ -85,6 +89,8 @@ export default function FunMain() {
           <a href="http://www.DMJWWEB.com/sp/games/UpDown">
             Up&Down Guess Game↗︎
           </a>
+          <br />
+          <a href="/mc/servers/dmjws/main">Minecraft Server</a>
         </div>
       </div>
     </div>

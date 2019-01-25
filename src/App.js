@@ -26,6 +26,9 @@ import FunTop from "./Fun/img/FunT.png";
 import websiteTB from "./img/websitTB.png";
 import DevMain from "./Dev/main";
 import DtColor from "./Dev/TColor";
+import ServerM from "./Servermc/main";
+import SatM from "./SAT/SatM";
+import SatBoard from "./SAT/SatBoard";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import YTI from "./pages/ForPages/175x175bb.jpg";
@@ -133,7 +136,10 @@ class App extends Component {
           />
           <Route path="/developers/main" component={() => <DevMain />} />
           <Route path="/dev/tools/color" component={() => <DtColor />} />
+          <Route path="/Sat/main" component={() => <SatM />} />
+          <Route path="/Sat/WorldBoard" component={() => <SatBoard />} />
           <Route path="/Learn/LearnM" component={() => <LearnM />} />
+          <Route path="/mc/servers/dmjws/main" component={() => <ServerM />} />
 
           <Route component={() => <ErrorNF />} />
         </Switch>
@@ -160,6 +166,10 @@ class App extends Component {
             <img src={FunTop} style={{ width: "50%", height: 300 }} />
             <p>DMJW's FUN online</p>
           </Link>
+        </div>
+        <div>
+          <h2>🆕DMJW's Talk💬</h2>
+          <p>Send Messages and Share!</p>
         </div>
         <Link to="/languages">
           <p style={{ color: "#ff4b66", fontSize: 17 }}>
@@ -239,7 +249,7 @@ class App extends Component {
           </Link>
         </div>
         <div>
-          <Link to="/Fun/main">
+          <Link to="/kr/Fun/main">
             <img src={FunTop} style={{ width: "50%", height: 300 }} />
             <p>DMJW's FUN 온 라인</p>
           </Link>
@@ -248,14 +258,11 @@ class App extends Component {
           <p style={{ color: "#ff4b66", fontSize: 17 }}>
             Select your country or region to view content for your country or to
             use DMJW'sFun and change the language.
-            <br />
-            현재 계신 국가에 맞는 콘텐츠를 확인하거나 DMJW'sFun을 이용, 언어를
-            바꾸려면 해당 국가 또는 지역을 선택하세요.
           </p>
           <button>
             <span>Language&Country</span>
           </button>
-          <p>현재 : 한국 - 한국어</p>
+          <p>현재 : 한국어 - 한국</p>
         </Link>
         <br />
         <a href="http://www.dmjwweb.com/kr/videos/main">

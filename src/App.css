@@ -140,7 +140,7 @@ h2 {
   background-image: FunT.png;
 } */
 
-.FunSM {
+.SMB {
   background-color: #000000;
   position: fixed;
   height: 100%;
@@ -149,10 +149,10 @@ h2 {
   left: 0;
 }
 
-.FunSM a {
+.SMB a {
   color: palegreen;
 }
-.FunSM a:hover {
+.SMB a:hover {
   color: palevioletred;
 }
 
