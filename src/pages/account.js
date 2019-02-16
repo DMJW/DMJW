@@ -1,5 +1,5 @@
-import React from "react";
-import GradCover from "./ForPages/gradient";
+import React from 'react';
+import GradCover from '../img/gradient';
 
 export default function Account() {
   return (
@@ -9,9 +9,9 @@ export default function Account() {
       <input
         className="form-control"
         style={{
-          width: "20%",
-          marginLeft: "40%",
-          textAlign: "center"
+          width: '20%',
+          marginLeft: '40%',
+          textAlign: 'center'
         }}
         placeholder="Username"
       />
@@ -19,15 +19,15 @@ export default function Account() {
         className="form-control"
         type="password"
         style={{
-          width: "20%",
-          marginLeft: "40%",
-          textAlign: "center"
+          width: '20%',
+          marginLeft: '40%',
+          textAlign: 'center'
         }}
         placeholder="Password"
       />
       <button className="button">Sign In</button>
       <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
-      <p>Don't have a account?</p>
+      <p>{`Don't have a account?`}</p>
       <a href="/new/dmjw/id">Sign Up</a>
     </div>
   );

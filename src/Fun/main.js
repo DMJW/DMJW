@@ -1,14 +1,14 @@
-import React from "react";
-import FunTop from "./img/FunT.png";
-import ArtMD from "./img/artMD.png";
-import { css } from "emotion";
+import React from 'react';
+import FunTop from '../img/FunT.png';
+import ArtMD from '../img/artMD.png';
+import { css } from 'emotion';
 
 export default function FunMain() {
   return (
     <div>
-      <div class="SatTop" id="SatTop">
-        <h1>DMJW's FUN</h1>
-        <img src={FunTop} style={{ width: "50%", height: 300 }} />
+      <div className="SatTop" id="SatTop">
+        <h1>{`DMJW's FUN`}</h1>
+        <img src={FunTop} style={{ width: '50%', height: 300 }} />
         <p>
           📱⤵️When Using in mobile or tablet it is better to use it rotated than
           standing.📱⤵️
@@ -23,20 +23,20 @@ export default function FunMain() {
           }
         `}`}
         style={{
-          width: "15%",
-          color: "#ffffff"
+          width: '15%',
+          color: '#ffffff'
         }}
       >
         <a href="/">Back To MAIN</a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <a href="/languages">
           <p style={{ fontSize: 17 }}>
-            Select your country or region to use use DMJW'sFun.
+            {`Select your country or region to use use DMJW'sFun.`}
             <br />
-            DMJW'sFun을 이용, 언어를 변경하려면 해당 국가 또는 지역을
-            선택하세요.
+            {`DMJW'sFun을 이용, 언어를 변경하려면 해당 국가 또는 지역을
+            선택하세요.`}
           </p>
         </a>
         <a href="/developers/main">Developer Tools</a>
@@ -44,10 +44,10 @@ export default function FunMain() {
         <a href="/Sat/main">🆕Talk</a>
         <br />
         <a href="http://www.DMJWWEB.com/about">
-          About DMJW's ↗︎(Moving to another web)
+          {`About DMJW's ↗︎(Moving to another web)`}
         </a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <h3>Things from inside this page</h3>
         <a href="#FunMartsme">Arts by D.J.</a>
@@ -82,7 +82,7 @@ export default function FunMain() {
         <div id="FunMG">
           <h2>Games & Playing</h2>
           <p>
-            Play Games and Play fun things. The Games on{" "}
+            Play Games and Play fun things. The Games on{' '}
             <a href="http://www.dmjwweb.com/sp/main">DMJWWEB</a> can also be
             here.
           </p>

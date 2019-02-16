@@ -4,7 +4,7 @@ const { poolQuery } = require('../helpers');
 const passwordHash = require('password-hash');
 const { requireAuth, requireSignin, tokenForUser } = require('../auth');
 
-router.get('/', requireSignin, async (req, res) => {
+router.get('/', requireSignin, async(req, res) => {
   const { user } = req;
   res.send({
     token: tokenForUser(user.id),
@@ -13,7 +13,7 @@ router.get('/', requireSignin, async (req, res) => {
   });
 });
 
-router.post('/', async (req, res) => {
+router.post('/', async(req, res) => {
   const { username, password } = req.body;
   try {
     const [user = null] = await poolQuery(
@@ -34,9 +34,9 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/session', requireAuth, async (req, res) => {
+router.get('/session', requireAuth, async(req, res) => {
   const { user } = req;
-  res.send({ userId: user.id, username: user.username, dytins: user.dytins });
+  res.send({ userId: user.id, username: user.username });
 });
 
 module.exports = router;

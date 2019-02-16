@@ -1,10 +1,6 @@
 import React from 'react';
-import GradCover from './ForPages/gradient';
+import GradCover from '../img/gradient';
 
 export default function JPaccount() {
-    return (
-        <GradCover 
-        text="あなたの勘定"
-        />
-    )
+  return <GradCover text="あなたの勘定" />;
 }

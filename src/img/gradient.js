@@ -1,6 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function GradCover({text, textColor}) {
+GradCover.propTypes = {
+  text: PropTypes.string,
+  textColor: PropTypes.string
+};
+export default function GradCover({ text, textColor }) {
   return (
     <div
       className="grad_cover"
@@ -28,5 +33,5 @@ export default function GradCover({text, textColor}) {
         </h1>
       </div>
     </div>
-  )
+  );
 }
