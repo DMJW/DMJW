@@ -1,14 +1,15 @@
-const mysql = require('mysql')
+const mysql = require('mysql');
+const config = require('./config');
 const pool = mysql.createPool({
   connectionLimit: 10,
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'website',
+  host: config.mysqlHost,
+  user: config.mysqlUser,
+  password: config.mysqlPassword,
+  database: config.mysqlDatabase,
   supportBigNumbers: true,
   bigNumberStrings: true,
   charset: 'utf8mb4',
   debug: false
-})
+});
 
-module.exports = pool
+module.exports = pool;

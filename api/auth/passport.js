@@ -13,7 +13,7 @@ const query = `
 
 const localLogin = new LocalStrategy(
   localOptions,
-  async (username, password, done) => {
+  async(username, password, done) => {
     const usernameLowered = username.toLowerCase();
     try {
       const [result = null] = await poolQuery(
@@ -41,7 +41,7 @@ const jwtOptions = {
   secretOrKey: config.jwtSecret
 };
 
-const jwtLogin = new JwtStrategy(jwtOptions, async (payload, done) => {
+const jwtLogin = new JwtStrategy(jwtOptions, async(payload, done) => {
   try {
     const [result = null] = await poolQuery(query + 'id = ?', payload.sub);
     if (!result) return done(null, false);
@@ -54,3 +54,6 @@ const jwtLogin = new JwtStrategy(jwtOptions, async (payload, done) => {
     return done(error, false);
   }
 });
+
+passport.use(jwtLogin);
+passport.use(localLogin);

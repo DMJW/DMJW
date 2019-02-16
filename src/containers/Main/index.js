@@ -1,9 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import YTI from '../../img/175x175bb.jpg';
 import FunTop from '../../img/FunT.png';
 
-export default function Main() {
+Main.propTypes = {
+  logout: PropTypes.func,
+  userId: PropTypes.number,
+  username: PropTypes.string
+};
+export default function Main({ userId, username, logout }) {
   return (
     <div>
       <div className="App-header">
@@ -11,11 +17,24 @@ export default function Main() {
         <h2>{`to the DMJW's FUNonline and Developer Tools website!`}</h2>
         <h3>{`DMJW's Fun온라인, 개발자 도구 사이트에 오신것을 환영합니다!`}</h3>
         <h3>{`DMJW's Fun オンライン, 開発者サイトへようこそ!`}</h3>
-        <Link to="/account">
-          <button className="button">
-            <span>🗝Sign in/Sign up ✅ </span>
-          </button>
-        </Link>
+        {!userId && (
+          <Link to="/account">
+            <button className="button">
+              <span>🗝Sign in/Sign up ✅ </span>
+            </button>
+          </Link>
+        )}
+        {userId && (
+          <div>
+            <div>Welcome {username}</div>
+            <button
+              style={{ padding: '1rem', fontSize: '1.5rem' }}
+              onClick={logout}
+            >
+              Log Out
+            </button>
+          </div>
+        )}
       </div>
       <div>
         <Link to="/Fun/main">

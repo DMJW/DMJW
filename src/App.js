@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Doraemon from './pages/Doraemon';
 import ErrorNF from './pages/ErrorNF';
 import Links from './pages/Links';
 import Videos from './pages/Videos';
 import Special from './pages/Special';
-import Account from './pages/account';
-import SignUp from './pages/SignUp';
+import Account from './containers/Account';
 import JPaccount from './pages/JPaccount';
 import KRaccount from './pages/KRaccount';
 import Tools from './pages/tools';
@@ -24,19 +24,44 @@ import Lang from './containers/Lang';
 import Main from './containers/Main';
 import JPH from './containers/JPH';
 import KRH from './containers/KRH';
+import request from 'axios';
+import URL from './constants/URL';
 
-export default function App() {
+App.propTypes = {
+  history: PropTypes.object.isRequired
+};
+export default function App({ history }) {
+  const [username, setUsername] = useState('');
+  const [userId, setUserId] = useState(null);
+  useEffect(() => {
+    async function getSession() {
+      const token = localStorage.getItem('token');
+      const { data } = await request.get(`${URL}/users/session`, {
+        headers: {
+          authorization: token
+        }
+      });
+      setUsername(data.username);
+      setUserId(data.userId);
+    }
+    getSession();
+  }, []);
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={Main} />
+        <Route
+          exact
+          path="/"
+          component={() => (
+            <Main logout={logout} username={username} userId={userId} />
+          )}
+        />
         <Route path="/jp" component={JPH} />
         <Route path="/kr" component={KRH} />
         <Route path="/doraemon/dmjws" component={() => <Doraemon />} />
         <Route path="/links" component={() => <Links />} />
         <Route path="/videos/youtube" component={() => <Videos />} />
-        <Route path="/account" component={() => <Account />} />
-        <Route path="/account/new/dmjw" component={() => <SignUp />} />
+        <Route path="/account" component={() => <Account login={login} />} />
         <Route path="/jp/account" component={() => <JPaccount />} />
         <Route path="/kr/account" component={() => <KRaccount />} />
         <Route path="/languages" component={Lang} />
@@ -59,4 +84,17 @@ export default function App() {
       </Switch>
     </div>
   );
+
+  function login({ token, userId, username }) {
+    localStorage.setItem('token', token);
+    setUserId(userId);
+    setUsername(username);
+    history.push('/');
+  }
+
+  function logout() {
+    localStorage.removeItem('token');
+    setUserId(null);
+    setUsername('');
+  }
 }
