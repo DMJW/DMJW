@@ -55,9 +55,6 @@ export default function SUPIA() {
           서비스 이용과정에서 별도로 안내하고 동의 받습니다.
         </p>
       </div>
-      <a href="/id/dmjw/new">
-        <button>닫기</button>
-      </a>
     </div>
   );
 }
