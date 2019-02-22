@@ -51,9 +51,28 @@ export default function Account({ login }) {
           </a>
         </>
       )}
+
       {!signInPage && (
-        <>
+        <div>
           <h2>Sign Up</h2>
+          <input
+            className="form-control"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            placeholder="First Name"
+          />
+          <input
+            className="form-control"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            placeholder="Last Name"
+          />
           <input
             className="form-control"
             style={{
@@ -77,7 +96,6 @@ export default function Account({ login }) {
             onChange={event => setPassword(event.target.value)}
             placeholder="Password"
           />
-          <p>Confirm password</p>
           <input
             className="form-control"
             type="password"
@@ -88,18 +106,48 @@ export default function Account({ login }) {
             }}
             value={confirmPassword}
             onChange={event => setConfirmPassword(event.target.value)}
-            placeholder="Password"
+            placeholder="Confirm Password"
           />
+          {/* <select>
+            <option>Select</option>
+            <option>Email</option>
+            <option>Phone + Email</option>
+          </select> */}
+          <input
+            className="form-control"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            placeholder="Email"
+          />
+          {/* <input
+            className="form-control"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            placeholder="Phone Number"
+            value="Please Select"
+          /> */}
+          <p>Please enter your Birthday(optional)</p>
+          <input placeholder="Date" />
+          <select><option>---Select Month---</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select>
+          <input placeholder="Year" />
+          <br />
           <button className="button" onClick={signUp}>
             Sign Up
           </button>
-          <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
-          <p>{`Already a user?`}</p>
+          <a href="http://www.dmjwweb.com/new-a-dmjw"><br></br>Sign Up to DMJWWEB Account(seperate accounts)</a>
+          <p>{`Already have this website's account?`}</p>
           <a style={{ cursor: 'pointer' }} onClick={() => setSignInPage(true)}>
-            Sign In
+            Click me to go to Sign In page!
           </a>
-        </>
+        </div>
       )}
+      <br /><a href="/">Back To Main</a>
     </div>
   );
 

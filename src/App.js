@@ -1,41 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
-import Doraemon from './pages/Doraemon';
-import ErrorNF from './pages/ErrorNF';
-import Links from './pages/Links';
-import Videos from './pages/Videos';
-import Special from './pages/Special';
-import Account from './containers/Account';
-import JPaccount from './pages/JPaccount';
-import KRaccount from './pages/KRaccount';
-import Tools from './pages/tools';
-import LearnM from './Learn/main';
-import FunM from './Fun/main';
-import ArtMe from './Fun/artsByME';
-import UpDwnGameM from './Fun/Game/UpDown';
-import DevMain from './Dev/main';
-import DtColor from './Dev/TColor';
-import ServerM from './Servermc/main';
-import SatM from './SAT/SatM';
-import SatBoard from './SAT/SatBoard';
-import './App.css';
-import { Route, Switch } from 'react-router-dom';
-import Lang from './containers/Lang';
-import Main from './containers/Main';
-import JPH from './containers/JPH';
-import KRH from './containers/KRH';
-import request from 'axios';
-import URL from './constants/URL';
+import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import Doraemon from "./pages/Doraemon";
+import ErrorNF from "./pages/ErrorNF";
+import Links from "./pages/Links";
+import Videos from "./pages/Videos";
+import Special from "./pages/Special";
+import Account from "./containers/Account";
+import JPaccount from "./pages/JPaccount";
+import KRaccount from "./pages/KRaccount";
+import Tools from "./pages/tools";
+import LearnM from "./Learn/main";
+import FunM from "./Fun/main";
+import ArtMe from "./Fun/artsByME";
+import UpDwnGameM from "./Fun/Game/UpDown";
+import DevMain from "./Dev/main";
+import DtColor from "./Dev/TColor";
+import ServerM from "./Servermc/main";
+import SatM from "./SAT/SatM";
+import SatBoard from "./SAT/SatBoard";
+import "./App.css";
+import { Route, Switch } from "react-router-dom";
+import Lang from "./containers/Lang";
+import Main from "./containers/Main";
+import JPH from "./containers/JPH";
+import KRH from "./containers/KRH";
+import request from "axios";
+import URL from "./constants/URL";
+import SUPIA from "./pages/SUPI";
 
 App.propTypes = {
   history: PropTypes.object.isRequired
 };
 export default function App({ history }) {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
   const [userId, setUserId] = useState(null);
   useEffect(() => {
     async function getSession() {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       const { data } = await request.get(`${URL}/users/session`, {
         headers: {
           authorization: token
@@ -62,6 +63,7 @@ export default function App({ history }) {
         <Route path="/links" component={() => <Links />} />
         <Route path="/videos/youtube" component={() => <Videos />} />
         <Route path="/account" component={() => <Account login={login} />} />
+        <Route path="/SUPIA" component={() => <SUPIA />} />
         <Route path="/jp/account" component={() => <JPaccount />} />
         <Route path="/kr/account" component={() => <KRaccount />} />
         <Route path="/languages" component={Lang} />
@@ -86,15 +88,15 @@ export default function App({ history }) {
   );
 
   function login({ token, userId, username }) {
-    localStorage.setItem('token', token);
+    localStorage.setItem("token", token);
     setUserId(userId);
     setUsername(username);
-    history.push('/');
+    history.push("/");
   }
 
   function logout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem("token");
     setUserId(null);
-    setUsername('');
+    setUsername("");
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import MyDrwnTop from '../img/DrawingsByMT.png';
+import NewMailGif from './img/NewMail.gif';
 
 export default function artsbyMe() {
   return (
@@ -20,7 +21,8 @@ export default function artsbyMe() {
         >
           FIND(Still making😅!)
         </button>
-        <p>Search Reasult</p>
+        <h2>Animated Drawings!</h2>
+        <img src={NewMailGif} width="300"></img>
       </div>
     </div>
   );
