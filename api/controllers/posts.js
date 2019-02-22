@@ -5,7 +5,7 @@ const { poolQuery } = require("../helpers");
 router.get("/", async(req, res) => {
   try {
     const messages = await poolQuery(
-      `SELECT a.id, a.userId, a.message, b.username FROM posts a JOIN users b ON a.userId = b.id`
+      `SELECT a.id, a.userId, a.message b.username FROM posts a JOIN users b ON a.userId = b.id`
     );
     res.send(messages);
   } catch (error) {
