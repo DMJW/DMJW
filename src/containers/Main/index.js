@@ -5,11 +5,13 @@ import YTI from "../../img/175x175bb.jpg";
 import FunTop from "../../img/FunT.png";
 
 Main.propTypes = {
+  history: PropTypes.object,
   logout: PropTypes.func,
   userId: PropTypes.number,
   username: PropTypes.string
 };
-export default function Main({ userId, username, logout }) {
+
+export default function Main({ history, userId, username, logout }) {
   return (
     <div>
       <div className="App-header">
@@ -47,6 +49,7 @@ export default function Main({ userId, username, logout }) {
       <div>
         <h2>{`🆕DMJW's Talk💬`}</h2>
         <p>Send Messages and Share!</p>
+        <button onClick={() => history.push("/Sat/main")}>Go to Chat</button>
       </div>
       <Link to="/languages">
         <p style={{ color: "#ff4b66", fontSize: 17 }}>

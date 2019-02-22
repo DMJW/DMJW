@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import request from "axios";
+import URL from "../../constants/URL";
 import { css } from "emotion";
 
 export default function SatM() {
+  const [messages, setMessages] = useState([]);
+  const mounted = useRef(true);
+  useEffect(() => {
+    mounted.current = true;
+    loadMessages();
+    async function loadMessages() {
+      const { data } = await request.get(`${URL}/posts`);
+      if (mounted.current) {
+        setMessages(data);
+      }
+    }
+    return function cleanUp() {
+      mounted.current = false;
+    };
+  }, []);
+
   return (
     <div>
-      <div class="SatTop" id="SatTop">
+      <div className="SatTop" id="SatTop">
         <h1>S A T</h1>
         <h2>Share And Talk</h2>
         <p>🆕</p>
@@ -33,10 +51,10 @@ export default function SatM() {
         </a>
         <a href="/developers/main">Developer Tools</a>
         <br />
-        <a href="/Fun/Main">DMJW's Fun</a>
+        <a href="/Fun/Main">{`DMJW's Fun`}</a>
         <br />
         <a href="http://www.DMJWWEB.com/about">
-          About DMJW's ↗︎(Moving to another web)
+          {`About DMJW's ↗︎(Moving to another web)`}
         </a>
         <div
           style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
@@ -58,20 +76,25 @@ export default function SatM() {
         <p>Message ... | 12:00 Today</p>
         <p>Message ... | 11:57 Today</p>
         <a href="/Sat/WorldBoard">
-          <button class="button">
+          <button className="button">
             <span>Show SAT Board</span>
           </button>
           <br />
           Click to show...
         </a>
+        {messages.map(message => (
+          <div key={message.id}>
+            {message.username}: {message.message}
+          </div>
+        ))}
       </div>
       <div>
         <h2>💬TalkTalk✋</h2>
         <p>
-          TalkTalk is a function of DMJW's where you can talk(and send) messages
-          to a person or a group of people.
+          {`TalkTalk is a function of DMJW's where you can talk(and send) messages
+          to a person or a group of people.`}
         </p>
-        <h4>📱It's still making!🔨</h4>
+        <h4>{`📱It's still making!🔨`}</h4>
       </div>
     </div>
   );

@@ -16,8 +16,8 @@ import UpDwnGameM from "./Fun/Game/UpDown";
 import DevMain from "./Dev/main";
 import DtColor from "./Dev/TColor";
 import ServerM from "./Servermc/main";
-import SatM from "./SAT/SatM";
-import SatBoard from "./SAT/SatBoard";
+import SatM from "./containers/SAT/SatM";
+import SatBoard from "./containers/SAT/SatBoard";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Lang from "./containers/Lang";
@@ -54,7 +54,12 @@ export default function App({ history }) {
           exact
           path="/"
           component={() => (
-            <Main logout={logout} username={username} userId={userId} />
+            <Main
+              history={history}
+              logout={logout}
+              username={username}
+              userId={userId}
+            />
           )}
         />
         <Route path="/jp" component={JPH} />
