@@ -18,6 +18,7 @@ import DtColor from "./Dev/TColor";
 import ServerM from "./Servermc/main";
 import SatM from "./containers/SAT/SatM";
 import SatBoard from "./containers/SAT/SatBoard";
+import TechDMJWsSat from "./containers/SAT/TechDMJW";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Lang from "./containers/Lang";
@@ -76,14 +77,12 @@ export default function App({ history }) {
         <Route path="/dmjws/tools" component={() => <Tools />} />
         <Route path="/Fun/main" component={() => <FunM />} />
         <Route path="/Fun/arts/Me" component={() => <ArtMe />} />
-        <Route
-          path="/Fun/games/guess/updown/main"
-          component={() => <UpDwnGameM />}
-        />
+        <Route path="/Fun/games/guess/updown/main" component={() => <UpDwnGameM />} />
         <Route path="/developers/main" component={() => <DevMain />} />
         <Route path="/dev/tools/color" component={() => <DtColor />} />
         <Route path="/Sat/main" component={() => <SatM />} />
         <Route path="/Sat/WorldBoard" component={() => <SatBoard />} />
+        <Route path="/Sat/DMJWs/Tech" component={() => <TechDMJWsSat />} />
         <Route path="/Learn/LearnM" component={() => <LearnM />} />
         <Route path="/mc/servers/dmjws/main" component={() => <ServerM />} />
 

@@ -1,16 +1,17 @@
 import React from "react";
 import { css } from "emotion";
+import QRiphonetip from "./imgforSAT/QRcodetip.gif"
 
 export default function TechDMJWsSAT() {
   return (
     <div>
-      <div class="SatTop" id="SatTop">
-        <h1>DMJW's Sat</h1>
+      <div className="SatTop" id="SatTop">
+        <h1>{`DMJW's Sat`}</h1>
         <a href="/Sat/verify/info">✅This SAT(er) is verified</a>
-        <h2>DMJW's Technologies</h2>
+        <h2>{`DMJW's Technologies`}</h2>
         <h4>Description</h4>
-        <p>Hello! This is DMJW's! Welcome to the DMJW's Technologies SAT!</p>
-        <p>In this page, you can read and go to many "Talk" and "Share"d links uploaded by DMJW's.<br />These "Talks" and "Shares" are about technology, computer, phones and more.<br /><font style={{ color: "purple", fontSize: 20 }}> If you are interested start reading the talks and shares!</font></p>
+        <p>{`Hello! This is DMJW's! Welcome to the DMJW's Technologies SAT!`}</p>
+        <p>{`In this page, you can read and go to many "Talk" and "Share"d links uploaded by DMJW's.`}<br />{`These "Talks" and "Shares" are about technology, computer, phones and more.`}<br /><font style={{ color: "purple", fontSize: 20 }}>{`If you are interested start reading the talks and shares!`}</font></p>
       </div>
       <div
         className={`SMB ${css`
@@ -36,10 +37,10 @@ export default function TechDMJWsSAT() {
         </a>
         <a href="/developers/main">Developer Tools</a>
         <br />
-        <a href="/Fun/Main">DMJW's Fun</a>
+        <a href="/Fun/Main">{`DMJW's Fun`}</a>
         <br />
         <a href="http://www.DMJWWEB.com/about">
-          About DMJW's ↗︎(Moving to another web)
+          {`About DMJW's ↗︎(Moving to another web)`}
         </a>
         <div
           style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
@@ -56,10 +57,17 @@ export default function TechDMJWsSAT() {
       <div>
         <h2>Talks</h2>
         <div style={{ backgroundColor: "skyblue" }}>
-          <h4>iPhone Tips!</h4>
+          <h4>Need a printer?</h4>
           <p>If you need one here is a recommendation for printers.</p>
           <p><a href="https://www.samsung.com/sec/printers/package-sl-c486fwa4s/">Color Lazer Printer + Scanner</a>
           </p>
+        </div>
+        <div style={{ backgroundColor: "#ff6050" }}>
+          <h4>iPhone Tip!</h4>
+          <p>Scan QR code without QR Code Scanner apps! What you need: your iOS Device.</p>
+          <h5>How?</h5>
+          <p>{`Turn on your iOS device. Then, Open camera(click the camera icon or talk to siri "Open Camera").`}<br />{`After that show the QR Code to your phone camera in Photo or Square mode.`}<br />{`There will be a notification.`}</p>
+          <img src={QRiphonetip} width="350"></img>
         </div>
       </div>
     </div>
