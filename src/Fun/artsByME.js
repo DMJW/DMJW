@@ -1,6 +1,9 @@
 import React from 'react';
 import MyDrwnTop from '../img/DrawingsByMT.png';
 import NewMailGif from './img/NewMail.gif';
+import MailRead from './img/MailRead.GIF';
+import printer from './img/printerprinting.GIF';
+import wonderfulmb from './img/wonderfulmusicbox.GIF';
 
 export default function artsbyMe() {
   return (
@@ -23,6 +26,12 @@ export default function artsbyMe() {
         </button>
         <h2>Animated Drawings!</h2>
         <img src={NewMailGif} width="300"></img>
+        <img src={MailRead} width="300"></img>
+        <p>18 February 2019</p>
+        <p>------------------------</p>
+        <img src={printer} width="300"></img>
+        <img src={wonderfulmb} width="300"></img>
+        <p>Date Unknown(Before 22Feb2019)</p>
       </div>
     </div>
   );
