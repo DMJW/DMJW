@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import GradCover from '../../img/gradient';
-import request from 'axios';
-import URL from '../../constants/URL';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import GradCover from "../../img/gradient";
+import request from "axios";
+import URL from "../../constants/URL";
 
 Account.propTypes = {
   login: PropTypes.func.isRequired
 };
 export default function Account({ login }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [signInPage, setSignInPage] = useState(true);
   return (
     <div className="account">
@@ -21,9 +21,9 @@ export default function Account({ login }) {
           <input
             className="form-control"
             style={{
-              width: '20%',
-              marginLeft: '40%',
-              textAlign: 'center'
+              width: "20%",
+              marginLeft: "40%",
+              textAlign: "center"
             }}
             value={username}
             onChange={event => setUsername(event.target.value)}
@@ -33,9 +33,9 @@ export default function Account({ login }) {
             className="form-control"
             type="password"
             style={{
-              width: '20%',
-              marginLeft: '40%',
-              textAlign: 'center'
+              width: "20%",
+              marginLeft: "40%",
+              textAlign: "center"
             }}
             value={password}
             onChange={event => setPassword(event.target.value)}
@@ -46,7 +46,7 @@ export default function Account({ login }) {
           </button>
           <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
           <p>{`Don't have a account?`}</p>
-          <a style={{ cursor: 'pointer' }} onClick={() => setSignInPage(false)}>
+          <a style={{ cursor: "pointer" }} onClick={() => setSignInPage(false)}>
             Sign Up
           </a>
         </>
@@ -58,27 +58,27 @@ export default function Account({ login }) {
           <input
             className="form-control"
             style={{
-              width: '20%',
-              marginLeft: '40%',
-              textAlign: 'center'
+              width: "20%",
+              marginLeft: "40%",
+              textAlign: "center"
             }}
             placeholder="First Name"
           />
           <input
             className="form-control"
             style={{
-              width: '20%',
-              marginLeft: '40%',
-              textAlign: 'center'
+              width: "20%",
+              marginLeft: "40%",
+              textAlign: "center"
             }}
             placeholder="Last Name"
           />
           <input
             className="form-control"
             style={{
-              width: '20%',
-              marginLeft: '40%',
-              textAlign: 'center'
+              width: "20%",
+              marginLeft: "40%",
+              textAlign: "center"
             }}
             value={username}
             onChange={event => setUsername(event.target.value)}
@@ -88,9 +88,9 @@ export default function Account({ login }) {
             className="form-control"
             type="password"
             style={{
-              width: '20%',
-              marginLeft: '40%',
-              textAlign: 'center'
+              width: "20%",
+              marginLeft: "40%",
+              textAlign: "center"
             }}
             value={password}
             onChange={event => setPassword(event.target.value)}
@@ -100,9 +100,9 @@ export default function Account({ login }) {
             className="form-control"
             type="password"
             style={{
-              width: '20%',
-              marginLeft: '40%',
-              textAlign: 'center'
+              width: "20%",
+              marginLeft: "40%",
+              textAlign: "center"
             }}
             value={confirmPassword}
             onChange={event => setConfirmPassword(event.target.value)}
@@ -116,9 +116,9 @@ export default function Account({ login }) {
           <input
             className="form-control"
             style={{
-              width: '20%',
-              marginLeft: '40%',
-              textAlign: 'center'
+              width: "20%",
+              marginLeft: "40%",
+              textAlign: "center"
             }}
             placeholder="Email"
           />
@@ -134,21 +134,45 @@ export default function Account({ login }) {
           /> */}
           <p>Please enter your Birthday(optional)</p>
           <input placeholder="Date" />
-          <select><option>---Select Month---</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select>
+          <select>
+            <option>---Select Month---</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+          </select>
           <input placeholder="Year" />
           <br />
-          <p>By clicking sign up the you have read and agreed to <a href="/SUPIA" target="_blank">{`"Collection and use of personal information"`}</a></p>
+          <p>
+            By clicking sign up the you have read and agreed to{" "}
+            <a
+              href="/SUPIA"
+              target="_blank"
+            >{`"Collection and use of personal information"`}</a>
+          </p>
           <button className="button" onClick={signUp}>
             Sign Up
           </button>
-          <a href="http://www.dmjwweb.com/new-a-dmjw"><br></br>Sign Up to DMJWWEB Account(seperate accounts)</a>
+          <a href="http://www.dmjwweb.com/new-a-dmjw">
+            <br />
+            Sign Up to DMJWWEB Account(seperate accounts)
+          </a>
           <p>{`Already have this website's account?`}</p>
-          <a style={{ cursor: 'pointer' }} onClick={() => setSignInPage(true)}>
+          <a style={{ cursor: "pointer" }} onClick={() => setSignInPage(true)}>
             Click me to go to Sign In page!
           </a>
         </div>
       )}
-      <br /><a href="/">Back To Main</a>
+      <br />
+      <a href="/">Back To Main</a>
     </div>
   );
 
@@ -159,7 +183,11 @@ export default function Account({ login }) {
       } = await request.get(
         `${URL}/users?username=${username}&password=${password}`
       );
-      login({ token, userId, username });
+      login({
+        token,
+        userId,
+        username
+      });
     } catch (error) {
       console.error(error);
     }
@@ -170,6 +198,6 @@ export default function Account({ login }) {
       username,
       password
     });
-    localStorage.setItem('token', data.token);
+    localStorage.setItem("token", data.token);
   }
 }
