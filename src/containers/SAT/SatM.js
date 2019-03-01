@@ -9,10 +9,15 @@ export default function SatM() {
   useEffect(() => {
     mounted.current = true;
     loadMessages();
+
     async function loadMessages() {
-      const { data } = await request.get(`${URL}/posts`);
-      if (mounted.current) {
-        setMessages(data);
+      try {
+        const { data } = await request.get(`${URL}/posts`);
+        if (mounted.current) {
+          setMessages(data);
+        }
+      } catch (error) {
+        console.error(error);
       }
     }
     return function cleanUp() {
