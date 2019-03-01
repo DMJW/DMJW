@@ -82,7 +82,6 @@ export default function SatM() {
           <br />
           Click to show...
         </a>
-        {/* do you know what .map does? If you don't know, then google it. And study what .map does. Play around with it and figure out. Try to use console.log as often as possible to see what happens when you change something. */}
         {messages.map(message => (
           <div key={message.id}>
             <span style={{ color: "blue" }}>{message.username}</span>:{" "}
