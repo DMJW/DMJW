@@ -18,11 +18,12 @@ router.post("/", async(req, res) => {
   try {
     const result = await poolQuery(`INSERT INTO posts SET ?`, {
       userId: req.body.userId,
-      message: req.body.text
+      message: req.body.message
     });
     res.send({
       success: true,
-      messageId: result.insertId
+      messageId: result.insertId,
+      message: req.body.message
     });
   } catch (error) {
     res.status(500).send(error);

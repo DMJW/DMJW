@@ -30,9 +30,9 @@ export default function Main({ history, userId, username, logout }) {
         )}
         {userId && (
           <div>
-            <h1>WELCOME</h1>
-            <h2>{username`to the DMJW's FUNonline and Developer Tools website!`}</h2>
-            <h3>{username`DMJW's Fun온라인, 개발자 도구 사이트에 오신것을 환영합니다!`}</h3>
+            <h1>WELCOME, {username},</h1>
+            <h2>{`to the DMJW's FUNonline and Developer Tools website!`}</h2>
+            <h3>{`DMJW's Fun온라인, 개발자 도구 사이트에 오신것을 환영합니다!`}</h3>
             <h3>{`DMJW's Fun オンライン, 開発者サイトへようこそ!`}</h3>
             <Link to="/account">
               <button className="button">
@@ -72,7 +72,7 @@ export default function Main({ history, userId, username, logout }) {
           onClick={logout}
         >
           Log Out
-            </button>
+        </button>
       )}
 
       <br />

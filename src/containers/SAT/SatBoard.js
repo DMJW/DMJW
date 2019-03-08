@@ -1,7 +1,39 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
+import request from "axios";
+import URL from "../../constants/URL";
 import { css } from "emotion";
 
-export default function SatM() {
+SatM.propTypes = {
+  userId: PropTypes.number,
+  username: PropTypes.string
+};
+
+export default function SatM({ userId, username }) {
+  const [messages, setMessages] = useState([]);
+  const [userOnlyInputText, setUserOnlyInputText] = useState(
+    userId ? "" : "Users Only"
+  );
+  const mounted = useRef(true);
+  useEffect(() => {
+    mounted.current = true;
+    loadMessages();
+
+    async function loadMessages() {
+      try {
+        const { data } = await request.get(`${URL}/posts`);
+        if (mounted.current) {
+          setMessages(data);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    return function cleanUp() {
+      mounted.current = false;
+    };
+  }, []);
+
   return (
     <div>
       <div className="SatTop" id="SatTop">
@@ -53,15 +85,28 @@ export default function SatM() {
         <h2>SAT Say Board</h2>
         <p>The Messages Board. The website users are sharing and Talking!</p>
         <h4>Please Login to Send Messages in SAT</h4>
-        <input value="Cannot Send Message" />
+        <form onSubmit={handleSubmit}>
+          <input
+            value={userOnlyInputText}
+            placeholder="Write a message..."
+            onChange={event =>
+              setUserOnlyInputText(
+                userId ? event.target.value : userOnlyInputText
+              )
+            }
+          />
+        </form>
         <h2>{`Everyone's WWS`}</h2>
         <p>
           The World Wide Say Messages Board. Everyone All over the world is
           sharing and talking!
         </p>
-        <p>Hi World! | 2019 | from Hello</p>
-        <p>2019!! | 2019 | from Hello</p>
-        <p>Hi! | 2019 | from Hello</p>
+        {messages.map(message => (
+          <div key={message.id}>
+            <span style={{ color: "blue" }}>{message.username}</span>:{" "}
+            {message.message} {message.timePosted} ago
+          </div>
+        ))}
         <p>
           Did you visit <a href="http://www.dmjwweb.com">www.dmjwweb.com</a>? |
           2019 | from Hello
@@ -70,4 +115,28 @@ export default function SatM() {
       </div>
     </div>
   );
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setUserOnlyInputText("");
+    try {
+      const { data } = await request.post(`${URL}/posts`, {
+        userId,
+        message: userOnlyInputText
+      });
+      setMessages(
+        messages.concat([
+          {
+            id: data.messageId,
+            username: username,
+            message: data.message,
+            timePosted: 0
+          }
+        ])
+      );
+    } catch (error) {
+      console.error(error);
+    }
+    console.log(userOnlyInputText);
+  }
 }
