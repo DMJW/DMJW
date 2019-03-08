@@ -4,7 +4,7 @@ import { css } from "emotion";
 export default function SatM() {
   return (
     <div>
-      <div class="SatTop" id="SatTop">
+      <div className="SatTop" id="SatTop">
         <h1>S A T Board</h1>
         <h3>Share And Talk with the World</h3>
       </div>
