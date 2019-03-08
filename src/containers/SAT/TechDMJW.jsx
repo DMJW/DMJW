@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "emotion";
-import QRiphonetip from "./imgforSAT/QRcodetip.gif"
+import QRiphonetip from "./imgforSAT/QRcodetip.gif";
 
 export default function TechDMJWsSAT() {
   return (
@@ -56,10 +56,18 @@ export default function TechDMJWsSAT() {
       </div>
       <div>
         <h2>Talks</h2>
+        <div style={{ backgroundColor: "lightgreen" }}>
+          <h4>Foldable Phones!</h4>
+          <p>Foldable Phones are made by Samsung and Huawei!</p>
+          <h5>Links</h5>
+          <a href="https://www.samsung.com/us/mobile/galaxy-fold/">Galaxy Fold</a>
+          <br></br>
+          <a href="https://www.samsung.com/sec/smartphones/galaxy-fold/">갤럭시 폴드(삼성 폴더블 폰)</a>
+        </div>
         <div style={{ backgroundColor: "skyblue" }}>
           <h4>Need a printer?</h4>
           <p>If you need one here is a recommendation for printers.</p>
-          <p><a href="https://www.samsung.com/sec/printers/package-sl-c486fwa4s/">Color Lazer Printer + Scanner</a>
+          <p><a href="https://www.samsung.com/sec/printers/package-sl-c486fwa4s/">Color Lazer Printer + Scanner(MultiFuncctionXpress)</a>
           </p>
         </div>
         <div style={{ backgroundColor: "#ff6050" }}>

@@ -31,12 +31,6 @@ export default function Main({ history, userId, username, logout }) {
         {userId && (
           <div>
             <h1>Welcome {username}</h1>
-            <button
-              style={{ padding: "1rem", fontSize: "1.5rem" }}
-              onClick={logout}
-            >
-              Log Out
-            </button>
           </div>
         )}
       </div>
@@ -64,6 +58,12 @@ export default function Main({ history, userId, username, logout }) {
         </button>
         <p>Now : English - UK, US</p>
       </Link>
+      <button
+        style={{ padding: "1rem", fontSize: "1.5rem" }}
+        onClick={logout}
+      >
+        Log Out
+            </button>
       <br />
       <a href="http://www.dmjwweb.com/videos/main">
         <img src={YTI} />

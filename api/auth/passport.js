@@ -1,10 +1,10 @@
-const passport = require('passport');
-const config = require('../config');
-const JwtStrategy = require('passport-jwt').Strategy;
-const ExtractJwt = require('passport-jwt').ExtractJwt;
-const LocalStrategy = require('passport-local');
-const passwordHash = require('password-hash');
-const { poolQuery } = require('../helpers');
+const passport = require("passport");
+const config = require("../config");
+const JwtStrategy = require("passport-jwt").Strategy;
+const ExtractJwt = require("passport-jwt").ExtractJwt;
+const LocalStrategy = require("passport-local");
+const passwordHash = require("password-hash");
+const { poolQuery } = require("../helpers");
 const localOptions = {};
 
 const query = `
@@ -17,7 +17,7 @@ const localLogin = new LocalStrategy(
     const usernameLowered = username.toLowerCase();
     try {
       const [result = null] = await poolQuery(
-        query + 'username = ?',
+        query + "username = ?",
         usernameLowered
       );
       if (!result) return done(null, false);
@@ -25,7 +25,7 @@ const localLogin = new LocalStrategy(
       if (passwordHash.verify(password, hashedPass)) {
         let user = {};
         for (let key in result) {
-          if (key !== 'password') user[key] = result[key];
+          if (key !== "password") user[key] = result[key];
         }
         return done(null, user);
       }
@@ -37,17 +37,17 @@ const localLogin = new LocalStrategy(
 );
 
 const jwtOptions = {
-  jwtFromRequest: ExtractJwt.fromHeader('authorization'),
+  jwtFromRequest: ExtractJwt.fromHeader("authorization"),
   secretOrKey: config.jwtSecret
 };
 
 const jwtLogin = new JwtStrategy(jwtOptions, async(payload, done) => {
   try {
-    const [result = null] = await poolQuery(query + 'id = ?', payload.sub);
+    const [result = null] = await poolQuery(query + "id = ?", payload.sub);
     if (!result) return done(null, false);
     let user = {};
     for (let key in result) {
-      if (key !== 'password') user[key] = result[key];
+      if (key !== "password") user[key] = result[key];
     }
     done(null, user);
   } catch (error) {
