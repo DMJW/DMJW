@@ -7,7 +7,7 @@ export default function TechDMJWsSAT() {
     <div>
       <div className="SatTop" id="SatTop">
         <h1>{`DMJW's Sat`}</h1>
-        <a href="/Sat/verify/info">✅This SAT(er) is verified</a>
+        <a href="/Sat/verify/info"><span role="img" aria-label="Yes">✅</span>This SAT(er) is verified</a>
         <h2>{`DMJW's Technologies`}</h2>
         <h4>Description</h4>
         <p>{`Hello! This is DMJW's! Welcome to the DMJW's Technologies SAT!`}</p>
@@ -75,7 +75,7 @@ export default function TechDMJWsSAT() {
           <p>Scan QR code without QR Code Scanner apps! What you need: your iOS Device.</p>
           <h5>How?</h5>
           <p>{`Turn on your iOS device. Then, Open camera(click the camera icon or talk to siri "Open Camera").`}<br />{`After that show the QR Code to your phone camera in Photo or Square mode.`}<br />{`There will be a notification.`}</p>
-          <img src={QRiphonetip} width="350"></img>
+          <img src={QRiphonetip} width="350" alt="help drawing for QR code scanning Tip"></img>
         </div>
       </div>
     </div>

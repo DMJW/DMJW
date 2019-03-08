@@ -32,12 +32,12 @@ export default function SatM() {
         </a>
         <a href="/developers/main">Developer Tools</a>
         <br />
-        <a href="/Fun/Main">DMJW's Fun</a>
+        <a href="/Fun/Main">{`DMJW's Fun`}</a>
         <br />
-        <a href="/Sat/main">DMJW's Talk</a>
+        <a href="/Sat/main">{`DMJW's Talk`}</a>
         <br />
         <a href="http://www.DMJWWEB.com/about">
-          About DMJW's ↗︎(Moving to another web)
+          {`About DMJW's ↗︎(Moving to another web)`}
         </a>
         <div
           style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
@@ -45,7 +45,7 @@ export default function SatM() {
         <h3>Things from inside this page</h3>
         <a href="#SatB">SAT Board</a>
         <br />
-        <a href="#WWSATB">Everyone's WWSAT</a>
+        <a href="#WWSATB">{`Everyone's WWSAT`}</a>
         <br />
       </div>
       <a style={{ fontSize: 30 }}>⇩⇣⇩</a>
@@ -54,7 +54,7 @@ export default function SatM() {
         <p>The Messages Board. The website users are sharing and Talking!</p>
         <h4>Please Login to Send Messages in SAT</h4>
         <input value="Cannot Send Message" />
-        <h2>Everyone's WWS</h2>
+        <h2>{`Everyone's WWS`}</h2>
         <p>
           The World Wide Say Messages Board. Everyone All over the world is
           sharing and talking!

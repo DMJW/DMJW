@@ -151,13 +151,12 @@ export default function Account({ login }) {
           </select>
           <input placeholder="Year" />
           <br />
-          <p>
-            By clicking sign up the you have read and agreed to{" "}
-            <a
-              href="/SUPIA"
-              target="_blank"
-            >{`"Collection and use of personal information"`}</a>
-          </p>
+          <p>I agree to<a
+            href="/SUPIA"
+            target="_blank"
+          >{`"Collection and use of personal information"`}</a></p>
+          <button role="img">✅<span></span></button><button><span role="img">❌</span></button>
+          <br></br>
           <button className="button" onClick={signUp}>
             Sign Up
           </button>
