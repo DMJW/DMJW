@@ -105,8 +105,13 @@ export default function App({ history }) {
   }
 
   function logout() {
-    localStorage.removeItem("token");
-    setUserId(null);
-    setUsername("");
+    if (window.confirm("🔐Log out from the account " + username + "?")) {
+      localStorage.removeItem("token");
+      setUserId(null);
+      setUsername("");
+      console.log("Log out succesful!✅");
+    } else {
+
+    }
   }
 }

@@ -80,6 +80,7 @@ export default function SatM() {
         <h4>Some recently sent messages</h4>
         <p>Message ... | 12:00 Today</p>
         <p>Message ... | 11:57 Today</p>
+        <p>Send Some messages! </p>
         <a href="/Sat/WorldBoard">
           <button className="button">
             <span>Show SAT Board</span>
@@ -87,12 +88,12 @@ export default function SatM() {
           <br />
           Click to show...
         </a>
-        {messages.map(message => (
+        {/* {messages.map(message => (
           <div key={message.id}>
             <span style={{ color: "blue" }}>{message.username}</span>:{" "}
             {message.message} {message.timePosted} ago
           </div>
-        ))}
+        ))} */}
       </div>
       <div>
         <h2>💬TalkTalk✋</h2>

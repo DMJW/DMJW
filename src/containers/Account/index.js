@@ -155,7 +155,7 @@ export default function Account({ login }) {
             href="/SUPIA"
             target="_blank"
           >{`"Collection and use of personal information"`}</a></p>
-          <button role="img">✅<span></span></button><button><span role="img">❌</span></button>
+          <button><span role="img" aria-label="Check">✅</span></button><button><span role="img" aria-label="No(x)">❌</span></button>
           <br></br>
           <button className="button" onClick={signUp}>
             Sign Up

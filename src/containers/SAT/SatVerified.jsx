@@ -45,6 +45,9 @@ export default function SatVerified() {
         <br />
         <a href="/Sat/main#SatTop">Go to ⤒TOP⤒</a>
       </div>
+      <div>
+        SATalk VERIFIED
+      </div>
     </div>
   );
 }

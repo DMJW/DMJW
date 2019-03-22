@@ -5,7 +5,7 @@ export default function DevMain() {
   return (
     <div>
       <div>
-        <h1>DMJW's Developers</h1>
+        <h1>{`DMJW's Developers`}</h1>
       </div>
       <h2>Tools</h2>
       <a href="/dev/tools/color">Color Codes</a>
@@ -31,12 +31,12 @@ export default function DevMain() {
             언어를 변경하려면 해당 국가 또는 지역을 선택하세요.
           </p>
         </a>
-        <a href="/Fun/main">DMJW's Fun</a>
+        <a href="/Fun/main">{`DMJW's Fun`}</a>
         <br />
         <a href="/Learn/LearnM">Learn</a>
         <br />
         <a href="http://www.DMJWWEB.com/about">
-          About DMJW's ↗︎(Moving to another web)
+          {`About DMJW's ↗︎(Moving to another web)`}
         </a>
         <div
           style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}

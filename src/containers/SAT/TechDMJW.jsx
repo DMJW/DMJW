@@ -67,7 +67,7 @@ export default function TechDMJWsSAT() {
         <div style={{ backgroundColor: "skyblue" }}>
           <h4>Need a printer?</h4>
           <p>If you need one here is a recommendation for printers.</p>
-          <p><a href="https://www.samsung.com/sec/printers/package-sl-c486fwa4s/">Color Lazer Printer + Scanner(MultiFuncctionXpress)</a>
+          <p><a href="https://www.samsung.com/sec/printers/package-sl-c486fwa4s/">Color Lazer Printer + Scanner(MultiFuncction)</a>
           </p>
         </div>
         <div style={{ backgroundColor: "#ff6050" }}>

@@ -12,7 +12,7 @@ SatM.propTypes = {
 export default function SatM({ userId, username }) {
   const [messages, setMessages] = useState([]);
   const [userOnlyInputText, setUserOnlyInputText] = useState(
-    userId ? "" : "Users Only"
+    userId ? "" : "Cannot Sent Message"
   );
   const mounted = useRef(true);
   useEffect(() => {
@@ -85,10 +85,18 @@ export default function SatM({ userId, username }) {
         <h2>SAT Say Board</h2>
         <p>The Messages Board. The website users are sharing and Talking!</p>
         <h4>Please Login to Send Messages in SAT</h4>
+
+        <p>{`ℹ️ This is the start of messages`}</p>
+
+        {messages.map(message => (
+          <div key={message.id}>
+            <span style={{ color: "blue" }}>{message.message}</span> | from <span style={{ color: "green" }}>{message.username}</span>
+          </div>
+        ))}
         <form onSubmit={handleSubmit}>
           <input
             value={userOnlyInputText}
-            placeholder="Write a message..."
+            placeholder="Talk..."
             onChange={event =>
               setUserOnlyInputText(
                 userId ? event.target.value : userOnlyInputText
@@ -101,19 +109,13 @@ export default function SatM({ userId, username }) {
           The World Wide Say Messages Board. Everyone All over the world is
           sharing and talking!
         </p>
-        {messages.map(message => (
-          <div key={message.id}>
-            <span style={{ color: "blue" }}>{message.username}</span>:{" "}
-            {message.message} {message.timePosted} ago
-          </div>
-        ))}
         <p>
           Did you visit <a href="http://www.dmjwweb.com">www.dmjwweb.com</a>? |
           2019 | from Hello
         </p>
         <input placeholder="Type to send..." />
       </div>
-    </div>
+    </div >
   );
 
   async function handleSubmit(event) {
@@ -130,7 +132,7 @@ export default function SatM({ userId, username }) {
             id: data.messageId,
             username: username,
             message: data.message,
-            timePosted: 0
+            timePosted: 2019
           }
         ])
       );
