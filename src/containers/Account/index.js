@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import GradCover from "../../img/gradient";
 import request from "axios";
+import Flip from "react-reveal/Flip";
 import URL from "../../constants/URL";
 
 Account.propTypes = {
@@ -151,15 +152,29 @@ export default function Account({ login }) {
           </select>
           <input placeholder="Year" />
           <br />
-          <p>I agree to<a
-            href="/SUPIA"
-            target="_blank"
-          >{`"Collection and use of personal information"`}</a></p>
-          <button><span role="img" aria-label="Check">✅</span></button><button><span role="img" aria-label="No(x)">❌</span></button>
-          <br></br>
-          <button className="button" onClick={signUp}>
-            Sign Up
+          <p>
+            I agree to
+            <a
+              href="/SUPIA"
+              target="_blank"
+            >{`"Collection and use of personal information"`}</a>
+          </p>
+          <button>
+            <span role="img" aria-label="Check">
+              ✅
+            </span>
           </button>
+          <button>
+            <span role="img" aria-label="No(x)">
+              ❌
+            </span>
+          </button>
+          <br />
+          <Flip>
+            <button className="button" onClick={signUp}>
+              Sign Up
+            </button>
+          </Flip>
           <a href="http://www.dmjwweb.com/new-a-dmjw">
             <br />
             Sign Up to DMJWWEB Account(seperate accounts)
