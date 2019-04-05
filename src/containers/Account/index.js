@@ -170,7 +170,7 @@ export default function Account({ login }) {
             </span>
           </button>
           <br />
-          <Flip>
+          <Flip cascade>
             <button className="button" onClick={signUp}>
               Sign Up
             </button>

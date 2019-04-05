@@ -53,6 +53,7 @@ export default function FunMain() {
         <a href="#FunMartsme">Arts by D.J.</a>
         <br />
         <a href="#FunMG">Games & Playing</a>
+
         <br />
         <a>↳Number Guess</a>
         <br />

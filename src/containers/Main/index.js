@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import YTI from "../../img/175x175bb.jpg";
 import FunTop from "../../img/FunT.png";
+import Roll from "react-reveal/Roll";
+import Jello from "react-reveal/Jello";
 
 Main.propTypes = {
   history: PropTypes.object,
@@ -42,12 +44,14 @@ export default function Main({ history, userId, username, logout }) {
           </div>
         )}
       </div>
-      <div>
-        <Link to="/Fun/main">
-          <img src={FunTop} style={{ width: "50%", height: 300 }} />
-          <p>{`DMJW's FUN online`}</p>
-        </Link>
-      </div>
+      <Jello>
+        <div>
+          <Link to="/Fun/main">
+            <img src={FunTop} style={{ width: "50%", height: 300 }} />
+            <p>{`DMJW's FUN online`}</p>
+          </Link>
+        </div>
+      </Jello>
       <div>
         <h2>{`🆕DMJW's Talk💬`}</h2>
         <p>Send Messages and Share!</p>
@@ -76,9 +80,12 @@ export default function Main({ history, userId, username, logout }) {
       )}
 
       <br />
-      <a href="http://www.dmjwweb.com/videos/main">
-        <img src={YTI} />
-      </a>
+      <Roll left>
+        <h5>Visit Youtube</h5>
+        <a href="http://www.dmjwweb.com/videos/main">
+          <img src={YTI} />
+        </a>
+      </Roll>
     </div>
   );
 }

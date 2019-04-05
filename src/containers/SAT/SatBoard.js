@@ -85,25 +85,28 @@ export default function SatM({ userId, username }) {
         <h2>SAT Say Board</h2>
         <p>The Messages Board. The website users are sharing and Talking!</p>
         <h4>Please Login to Send Messages in SAT</h4>
+        {userId && (
+          <div>
+            <p>{`ℹ️ This is the start of messages`}</p>
 
-        <p>{`ℹ️ This is the start of messages`}</p>
-
-        {messages.map(message => (
-          <div key={message.id}>
-            <span style={{ color: "blue" }}>{message.message}</span> | from <span style={{ color: "green" }}>{message.username}</span>
+            {messages.map(message => (
+              <div key={message.id}>
+                <span style={{ color: "blue" }}>{message.message}</span> | from <span style={{ color: "green" }}>{message.username}</span>
+              </div>
+            ))}
+            <form onSubmit={handleSubmit}>
+              <input
+                value={userOnlyInputText}
+                placeholder="Talk..."
+                onChange={event =>
+                  setUserOnlyInputText(
+                    userId ? event.target.value : userOnlyInputText
+                  )
+                }
+              />
+            </form>
           </div>
-        ))}
-        <form onSubmit={handleSubmit}>
-          <input
-            value={userOnlyInputText}
-            placeholder="Talk..."
-            onChange={event =>
-              setUserOnlyInputText(
-                userId ? event.target.value : userOnlyInputText
-              )
-            }
-          />
-        </form>
+        )}
         <h2>{`Everyone's WWS`}</h2>
         <p>
           The World Wide Say Messages Board. Everyone All over the world is
@@ -115,7 +118,7 @@ export default function SatM({ userId, username }) {
         </p>
         <input placeholder="Type to send..." />
       </div>
-    </div >
+    </div>
   );
 
   async function handleSubmit(event) {
