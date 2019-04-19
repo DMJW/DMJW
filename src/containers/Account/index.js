@@ -204,6 +204,7 @@ export default function Account({ login }) {
       });
     } catch (error) {
       console.error(error);
+      window.alert("An error has occured! Please Try again.");
     }
   }
 
