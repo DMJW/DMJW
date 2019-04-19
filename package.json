@@ -15,6 +15,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-standard": "^4.0.0",
+    "greenlock-express": "^2.7.6",
     "jwt-simple": "^0.5.5",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
@@ -30,7 +31,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-api": "nodemon api/index.js",
+    "start-api": "NODE_ENV=development nodemon api/index.js",
     "build": "react-scripts build",
     "server": "sudo forever -o out.log -e err.log start index.js",
     "stop-server": "sudo forever stop index.js",
