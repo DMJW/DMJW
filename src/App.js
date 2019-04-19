@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import Doraemon from "./pages/Doraemon";
-import ErrorNF from "./pages/ErrorNF";
-import Links from "./pages/Links";
-import Videos from "./pages/Videos";
-import Special from "./pages/Special";
+import Doraemon from "./Pages/Doraemon";
+import ErrorNF from "./Pages/ErrorNF";
+import Links from "./Pages/Links";
+import Videos from "./Pages/Videos";
+import Special from "./Pages/Special";
 import Account from "./containers/Account";
-import JPaccount from "./pages/JPaccount";
-import KRaccount from "./pages/KRaccount";
-import Tools from "./pages/tools";
+import JPaccount from "./Pages/JPaccount";
+import KRaccount from "./Pages/KRaccount";
+import Tools from "./Pages/tools";
 import LearnM from "./Learn/main";
 import FunM from "./Fun/main";
 import ArtMe from "./Fun/artsByME";
@@ -27,7 +27,8 @@ import JPH from "./containers/JPH";
 import KRH from "./containers/KRH";
 import request from "axios";
 import URL from "./constants/URL";
-import SUPIA from "./pages/SUPI";
+import SUPIA from "./Pages/SUPI";
+import SUTS from "./Pages/SignUpSel";
 
 App.propTypes = {
   history: PropTypes.object.isRequired
@@ -70,6 +71,7 @@ export default function App({ history }) {
         <Route path="/videos/youtube" component={() => <Videos />} />
         <Route path="/account" component={() => <Account login={login} />} />
         <Route path="/SUPIA" component={() => <SUPIA />} />
+        <Route path="/SUTS" compnent={() => <SUTS />} />
         <Route path="/jp/account" component={() => <JPaccount />} />
         <Route path="/kr/account" component={() => <KRaccount />} />
         <Route path="/languages" component={Lang} />
