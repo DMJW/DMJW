@@ -11,7 +11,7 @@ require("greenlock-express")
       if (certs) {
         opts.domains = certs.altnames;
       } else {
-        opts.email = "mikey1384@gmail.com";
+        opts.email = "dmjw10806@gmail.com";
         opts.agreeTos = true;
       }
 
