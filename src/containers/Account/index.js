@@ -204,7 +204,11 @@ export default function Account({ login }) {
       });
     } catch (error) {
       console.error(error);
-      window.alert("An error has occured! Please Try again.");
+      if (window.confirm("An error has occured! Please Try again.\nShow error message?\n\\/NO YES\\/")) {
+        let errorwin = window.open();
+        errorwin.document.write("AN ERROR HAS OCCURED WHILE LOGGING IN!\n" + error);
+        errorwin.focus();
+      }
     }
   }
 
