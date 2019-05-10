@@ -71,10 +71,7 @@ export default function Main({ history, userId, username, logout }) {
         <p>Now : English - UK, US</p>
       </Link>
       {userId && (
-        <button
-          style={{ fontSize: "17pt" }}
-          onClick={logout}
-        >
+        <button style={{ fontSize: "17pt" }} onClick={logout}>
           Log Out 🔐
         </button>
       )}
