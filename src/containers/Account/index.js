@@ -4,6 +4,7 @@ import GradCover from "../../img/gradient";
 import request from "axios";
 import Flip from "react-reveal/Flip";
 import URL from "../../constants/URL";
+import GoogleLogin from "react-google-login";
 
 Account.propTypes = {
   login: PropTypes.func.isRequired
@@ -13,6 +14,9 @@ export default function Account({ login }) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [signInPage, setSignInPage] = useState(true);
+  const responseGoogle = (response) => {
+    console.log(response);
+  };
   return (
     <div className="account">
       <GradCover text="Your Account•あなたの勘定" />
@@ -41,6 +45,12 @@ export default function Account({ login }) {
             value={password}
             onChange={event => setPassword(event.target.value)}
             placeholder="Password"
+          />
+          <GoogleLogin
+            clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
+            buttonText="Sign in with Google"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
           />
           <button className="button" onClick={signIn}>
             Sign In
