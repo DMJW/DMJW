@@ -14,9 +14,7 @@ export default function Account({ login }) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [signInPage, setSignInPage] = useState(true);
-  const responseGoogle = (response) => {
-    console.log(response);
-  };
+
   return (
     <div className="account">
       <GradCover text="Your Account•あなたの勘定" />
@@ -49,8 +47,8 @@ export default function Account({ login }) {
           <GoogleLogin
             clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
             buttonText="Sign in with Google"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
+            onSuccess={onGoogleLoginSuccess}
+            onFailure={onGoogleLoginFail}
           />
           <button className="button" onClick={signIn}>
             Sign In
@@ -200,6 +198,14 @@ export default function Account({ login }) {
     </div>
   );
 
+  function onGoogleLoginSuccess(response) {
+    console.log("success", response);
+  }
+
+  function onGoogleLoginFail(response) {
+    console.log("fail", response);
+  }
+
   async function signIn() {
     try {
       const {
@@ -214,9 +220,15 @@ export default function Account({ login }) {
       });
     } catch (error) {
       console.error(error);
-      if (window.confirm("An error has occured! Please Try again.\nShow error message?\n\\/NO YES\\/")) {
+      if (
+        window.confirm(
+          "An error has occured! Please Try again.\nShow error message?\n\\/NO YES\\/"
+        )
+      ) {
         let errorwin = window.open();
-        errorwin.document.write("AN ERROR HAS OCCURED WHILE LOGGING IN!\n" + error);
+        errorwin.document.write(
+          "AN ERROR HAS OCCURED WHILE LOGGING IN!\n" + error
+        );
         errorwin.focus();
       }
     }

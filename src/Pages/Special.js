@@ -5,7 +5,7 @@ export default function Special() {
   return (
     <div className="Special">
       <div className="SpT">
-        <img src={SPTI} />
+        <img alt="" src={SPTI} />
       </div>
       <h2>Games</h2>
     </div>
