@@ -277,3 +277,11 @@ Grad_cover copy {
   visibility: visible;
   opacity: 1;
 }
+
+.SIPgOth {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-left: 2px dotted red;
+}

@@ -18,122 +18,127 @@ export default function Account({ login }) {
     console.log(response);
   };
   return (
-    <div className="account">
-      <GradCover text="Your Account•あなたの勘定" />
-      {signInPage && (
-        <>
-          <h2>Sign In</h2>
-          <input
-            className="form-control"
-            style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
-            }}
-            value={username}
-            onChange={event => setUsername(event.target.value)}
-            placeholder="Username"
-          />
-          <input
-            className="form-control"
-            type="password"
-            style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
-            }}
-            value={password}
-            onChange={event => setPassword(event.target.value)}
-            placeholder="Password"
-          />
-          <GoogleLogin
-            clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
-            buttonText="Sign in with Google"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-          />
-          <button className="button" onClick={signIn}>
-            Sign In
+    <>
+      <div className="account">
+        <GradCover text="Your Account•あなたの勘定" />
+        {signInPage && (
+          <div>
+            <h2>Sign In</h2>
+            <input
+              className="form-control"
+              style={{
+                width: "20%",
+                marginLeft: "40%",
+                textAlign: "center"
+              }}
+              value={username}
+              onChange={event => setUsername(event.target.value)}
+              placeholder="Username"
+            />
+            <input
+              className="form-control"
+              type="password"
+              style={{
+                width: "20%",
+                marginLeft: "40%",
+                textAlign: "center"
+              }}
+              value={password}
+              onChange={event => setPassword(event.target.value)}
+              placeholder="Password"
+            />
+            <button className="button" onClick={signIn}>
+              Sign In
           </button>
-          <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
-          <p>{`Don't have a account?`}</p>
-          <a style={{ cursor: "pointer" }} onClick={() => setSignInPage(false)}>
-            Sign Up
+            <div className="SIPgOth" style={{ marginBottom: "15px", border: "3px dotted palegreen" }}>
+              <GoogleLogin
+                clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
+                buttonText="Sign in with Google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+              />
+            </div>
+            <div className="SIPgOth">
+              <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
+              <p>{`Don't have a account?`}</p>
+              <a style={{ cursor: "pointer" }} onClick={() => setSignInPage(false)}>
+                Sign Up
           </a>
-        </>
-      )}
+            </div>
+          </div>
+        )}
 
-      {!signInPage && (
-        <div>
-          <h2>Sign Up</h2>
-          <input
-            className="form-control"
-            style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
-            }}
-            placeholder="First Name"
-          />
-          <input
-            className="form-control"
-            style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
-            }}
-            placeholder="Last Name"
-          />
-          <input
-            className="form-control"
-            style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
-            }}
-            value={username}
-            onChange={event => setUsername(event.target.value)}
-            placeholder="Username"
-          />
-          <input
-            className="form-control"
-            type="password"
-            style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
-            }}
-            value={password}
-            onChange={event => setPassword(event.target.value)}
-            placeholder="Password"
-          />
-          <input
-            className="form-control"
-            type="password"
-            style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
-            }}
-            value={confirmPassword}
-            onChange={event => setConfirmPassword(event.target.value)}
-            placeholder="Confirm Password"
-          />
-          {/* <select>
+        {!signInPage && (
+          <div>
+            <h2>Sign Up</h2>
+            <input
+              className="form-control"
+              style={{
+                width: "20%",
+                marginLeft: "40%",
+                textAlign: "center"
+              }}
+              placeholder="First Name"
+            />
+            <input
+              className="form-control"
+              style={{
+                width: "20%",
+                marginLeft: "40%",
+                textAlign: "center"
+              }}
+              placeholder="Last Name"
+            />
+            <input
+              className="form-control"
+              style={{
+                width: "20%",
+                marginLeft: "40%",
+                textAlign: "center"
+              }}
+              value={username}
+              onChange={event => setUsername(event.target.value)}
+              placeholder="Username"
+            />
+            <input
+              className="form-control"
+              type="password"
+              style={{
+                width: "20%",
+                marginLeft: "40%",
+                textAlign: "center"
+              }}
+              value={password}
+              onChange={event => setPassword(event.target.value)}
+              placeholder="Password"
+            />
+            <input
+              className="form-control"
+              type="password"
+              style={{
+                width: "20%",
+                marginLeft: "40%",
+                textAlign: "center"
+              }}
+              value={confirmPassword}
+              onChange={event => setConfirmPassword(event.target.value)}
+              placeholder="Confirm Password"
+            />
+            {/* <select>
             <option>Select</option>
             <option>Email</option>
             <option>Phone + Email</option>
           </select> */}
-          <input
-            className="form-control"
-            style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
-            }}
-            placeholder="Email"
-          />
-          {/* <input
+            <input
+              className="form-control"
+              style={{
+                width: "20%",
+                marginLeft: "40%",
+                textAlign: "center"
+              }}
+              placeholder="Email"
+            />
+            {/* <input
             className="form-control"
             style={{
               width: '20%',
@@ -143,61 +148,62 @@ export default function Account({ login }) {
             placeholder="Phone Number"
             value="Please Select"
           /> */}
-          <p>Please enter your Birthday(optional)</p>
-          <input placeholder="Date" />
-          <select>
-            <option>---Select Month---</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-          <input placeholder="Year" />
-          <br />
-          <p>
-            I agree to
-            <a
-              href="/SUPIA"
-              target="_blank"
-            >{`"Collection and use of personal information"`}</a>
-          </p>
-          <button>
-            <span role="img" aria-label="Check">
-              ✅
-            </span>
-          </button>
-          <button>
-            <span role="img" aria-label="No(x)">
-              ❌
-            </span>
-          </button>
-          <br />
-          <Flip cascade>
-            <button className="button" onClick={signUp}>
-              Sign Up
-            </button>
-          </Flip>
-          <a href="http://www.dmjwweb.com/new-a-dmjw">
+            <p>Please enter your Birthday(optional)</p>
+            <input placeholder="Date" />
+            <select>
+              <option>---Select Month---</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+            <input placeholder="Year" />
             <br />
-            Sign Up to DMJWWEB Account(seperate accounts)
+            <p>
+              I agree to
+            <a
+                href="/SUPIA"
+                target="_blank"
+              >{`"Collection and use of personal information"`}</a>
+            </p>
+            <button>
+              <span role="img" aria-label="Check">
+                ✅
+            </span>
+            </button>
+            <button>
+              <span role="img" aria-label="No(x)">
+                ❌
+            </span>
+            </button>
+            <br />
+            <Flip cascade>
+              <button className="button" onClick={signUp}>
+                Sign Up
+            </button>
+            </Flip>
+            <a href="http://www.dmjwweb.com/new-a-dmjw">
+              <br />
+              Sign Up to DMJWWEB Account(seperate accounts)
           </a>
-          <p>{`Already have this website's account?`}</p>
-          <a style={{ cursor: "pointer" }} onClick={() => setSignInPage(true)}>
-            Click me to go to Sign In page!
+            <p>{`Already have this website's account?`}</p>
+            <a style={{ cursor: "pointer" }} onClick={() => setSignInPage(true)}>
+              Click me to go to Sign In page!
           </a>
-        </div>
-      )}
-      <br />
-      <a href="/">Back To Main</a>
-    </div>
+          </div>
+        )}
+        <br />
+        <a href="/">Back To Main</a>
+      </div>
+    </>
   );
 
   async function signIn() {
