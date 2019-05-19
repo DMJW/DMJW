@@ -199,11 +199,11 @@ export default function Account({ login }) {
   );
 
   function onGoogleLoginSuccess(response) {
-    console.log("success", response);
+    console.dir("success", response);
   }
 
   function onGoogleLoginFail(response) {
-    console.log("fail", response);
+    console.dir("fail", response);
   }
 
   async function signIn() {
