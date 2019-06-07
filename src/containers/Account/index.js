@@ -75,12 +75,7 @@ export default function Account({ login }) {
             </a>
           </div>
         </>
-<<<<<<< HEAD
-        </div>
-    )}
-=======
       )}
->>>>>>> bbde0b463a2cf85a60ce740ec405438bee50810b
 
       {!signInPage && (
         <div>
