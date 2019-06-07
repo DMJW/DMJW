@@ -53,24 +53,34 @@ export default function Account({ login }) {
           <button className="button" onClick={signIn}>
             Sign In
           </button>
-          <div className="SIPgOth" style={{ marginBottom: "15px", border: "3px dotted palegreen" }}>
+          <div
+            className="SIPgOth"
+            style={{ marginBottom: "15px", border: "3px dotted palegreen" }}
+          >
             <GoogleLogin
               clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
               buttonText="Sign in with Google"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
+              onSuccess={onGoogleLoginSuccess}
+              onFailure={onGoogleLoginFail}
             />
           </div>
           <div className="SIPgOth">
             <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
             <p>{`Don't have a account?`}</p>
-            <a style={{ cursor: "pointer" }} onClick={() => setSignInPage(false)}>
+            <a
+              style={{ cursor: "pointer" }}
+              onClick={() => setSignInPage(false)}
+            >
               Sign Up
-          </a>
+            </a>
           </div>
         </>
+<<<<<<< HEAD
         </div>
     )}
+=======
+      )}
+>>>>>>> bbde0b463a2cf85a60ce740ec405438bee50810b
 
       {!signInPage && (
         <div>
@@ -207,15 +217,15 @@ export default function Account({ login }) {
       <br />
       <a href="/">Back To Main</a>
     </div>
-    </>
   );
 
   function onGoogleLoginSuccess(response) {
-    console.log("success", response);
+    const { profileObj, googleId } = response;
+    console.log(profileObj, googleId);
   }
 
   function onGoogleLoginFail(response) {
-    console.log("fail", response);
+    console.dir("fail", response);
   }
 
   async function signIn() {
