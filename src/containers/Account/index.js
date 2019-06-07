@@ -199,7 +199,9 @@ export default function Account({ login }) {
   );
 
   function onGoogleLoginSuccess(response) {
-    console.dir("success", response);
+    const profileObj = response.profileObj;
+    const googleId = response.googleId;
+    console.dir(profileObj, googleId);
   }
 
   function onGoogleLoginFail(response) {
