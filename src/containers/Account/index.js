@@ -44,12 +44,6 @@ export default function Account({ login }) {
             onChange={event => setPassword(event.target.value)}
             placeholder="Password"
           />
-          <GoogleLogin
-            clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
-            buttonText="Sign in with Google"
-            onSuccess={onGoogleLoginSuccess}
-            onFailure={onGoogleLoginFail}
-          />
           <button className="button" onClick={signIn}>
             Sign In
           </button>
@@ -57,12 +51,15 @@ export default function Account({ login }) {
             className="SIPgOth"
             style={{ marginBottom: "15px", border: "3px dotted palegreen" }}
           >
+            <h3>Use one of your other accounts</h3>
             <GoogleLogin
               clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
               buttonText="Sign in with Google"
               onSuccess={onGoogleLoginSuccess}
               onFailure={onGoogleLoginFail}
             />
+            <button style={{ backgroundColor: "#5ecb6a" }}>Sign in with NAVER</button>
+            <button style={{ backgroundColor: "gray" }}>Sign in with Apple(iCloud account)</button>
           </div>
           <div className="SIPgOth">
             <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
