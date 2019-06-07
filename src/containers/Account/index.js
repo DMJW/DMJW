@@ -68,8 +68,9 @@ export default function Account({ login }) {
               Sign Up
           </a>
           </div>
+        </>
         </div>
-      )}
+    )}
 
       {!signInPage && (
         <div>
