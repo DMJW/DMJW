@@ -24,7 +24,8 @@
     "document": false,
     "navigator": false,
     "window": false,
-    "localStorage": true
+    "localStorage": true,
+    "fetch": true
   },
 
   "rules": {
