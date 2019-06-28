@@ -217,6 +217,7 @@ export default function Account({ login }) {
 
   async function onGoogleLoginSuccess(response) {
     const { profileObj, googleId } = response;
+    console.log("logging in with google");
     const { data } = await request.post(`${URL}/users/google`, {
       profileObj,
       googleId
