@@ -8,12 +8,13 @@ import Jello from "react-reveal/Jello";
 
 Main.propTypes = {
   history: PropTypes.object,
+  loading: PropTypes.bool,
   logout: PropTypes.func,
   userId: PropTypes.number,
   username: PropTypes.string
 };
 
-export default function Main({ history, userId, username, logout }) {
+export default function Main({ history, loading, userId, username, logout }) {
   return (
     <div>
       {/* <div className="MLoad">
@@ -22,15 +23,19 @@ export default function Main({ history, userId, username, logout }) {
           <div className="double-bounce2"></div>
         </div>
       </div> */}
-      <div>
-        <p>Loading...</p>
-      </div>
-      <div className="MLoad">
-        <div className="spinner">
-          <div className="double-bounce1"></div>
-          <div className="double-bounce2"></div>
-        </div>
-      </div>
+      {loading && (
+        <>
+          <div>
+            <p>Loading...</p>
+          </div>
+          <div className="MLoad">
+            <div className="spinner">
+              <div className="double-bounce1" />
+              <div className="double-bounce2" />
+            </div>
+          </div>
+        </>
+      )}
       <div className="App-header">
         {!userId && (
           <div>

@@ -36,9 +36,13 @@ App.propTypes = {
 export default function App({ history }) {
   const [username, setUsername] = useState("");
   const [userId, setUserId] = useState(null);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     async function getSession() {
       const token = localStorage.getItem("token");
+      if (!token) {
+        return setLoading(false);
+      }
       const { data } = await request.get(`${URL}/users/session`, {
         headers: {
           authorization: token
@@ -46,6 +50,7 @@ export default function App({ history }) {
       });
       setUsername(data.username);
       setUserId(data.userId);
+      setLoading(false);
     }
     getSession();
   }, []);
@@ -57,6 +62,7 @@ export default function App({ history }) {
           path="/"
           component={() => (
             <Main
+              loading={loading}
               history={history}
               logout={logout}
               username={username}
@@ -113,7 +119,6 @@ export default function App({ history }) {
       setUsername("");
       console.log("Log out succesful!✅");
     } else {
-
     }
   }
 }
