@@ -12,6 +12,8 @@ export default function TechDMJWsSAT() {
         <h4>Description</h4>
         <p>{`Hello! This is DMJW's! Welcome to the DMJW's Technologies SAT!`}</p>
         <p>{`In this page, you can read and go to many "Talk" and "Share"d links uploaded by DMJW's.`}<br />{`These "Talks" and "Shares" are about technology, computer, phones and more.`}<br /><font style={{ color: "purple", fontSize: 20 }}>{`If you are interested start reading the talks and shares!`}</font></p>
+        <h4>Connect & get messages</h4>
+        <button style={{ color: "yellow" }}>KAKAOTALK plusfriend</button>
       </div>
       <div
         className={`SMB ${css`
