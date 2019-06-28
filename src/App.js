@@ -38,10 +38,12 @@ export default function App({ history }) {
   const [userId, setUserId] = useState(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
+    getSession();
+
     async function getSession() {
       const token = localStorage.getItem("token");
       if (!token) {
-        return setLoading(false);
+        return setTimeout(() => setLoading(false), 2000);
       }
       const { data } = await request.get(`${URL}/users/session`, {
         headers: {
@@ -52,7 +54,6 @@ export default function App({ history }) {
       setUserId(data.userId);
       setLoading(false);
     }
-    getSession();
   }, []);
   return (
     <div className="App">
