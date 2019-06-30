@@ -52,6 +52,7 @@ export default function Account({ login }) {
             style={{ marginBottom: "15px", border: "3px dotted palegreen" }}
           >
             <h3>Use one of your other accounts</h3>
+            <p>No sign up needed!</p>
             <GoogleLogin
               clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
               buttonText="Sign in with Google"

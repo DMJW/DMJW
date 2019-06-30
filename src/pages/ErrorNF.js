@@ -16,6 +16,7 @@ export default function NotFound() {
       <p style={{ fontSize: '20pt' }}>
         Please check again that the address you entered is correct.
       </p>
+      <a href="/"><button>Goto English Home</button></a>
       <p style={{ fontSize: '20pt' }}>
         죄송합니다. 지금 찾으시려는 페이지를 찾을 수 없습니다.
       </p>
@@ -26,11 +27,13 @@ export default function NotFound() {
       <p style={{ fontSize: '20pt' }}>
         입력하신 페이지 주소가 정확한지 다시 확인해 주시기 바랍니다.
       </p>
+      <a href="/kr"><button>한국어 홈으로 가기</button></a>
       <p style={{ fontSize: '20pt' }}>
         すみません 要請したページが見つかりません。
         訪問しようとするページの住所が間違って入力されたり、ページの住所が変更・削除されて要請したページが見つかりません。
         入力した住所が正しいかどうかをもう一度確認してください。
       </p>
+      <a href="/jp"><button>Goto Japanese home</button></a>
     </div>
   );
 }
