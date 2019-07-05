@@ -17,32 +17,33 @@ Main.propTypes = {
 export default function Main({ history, loading, userId, username, logout }) {
   return (
     <div>
-      {/* <div className="MLoad">
-        <div className="spinner">
-          <div className="double-bounce1"></div>
-          <div className="double-bounce2"></div>
-        </div>
-      </div> */}
-      {loading && (
-        <>
-          <div>
-            <p>Loading...</p>
-          </div>
-          <div className="MLoad">
-            <div className="spinner">
-              <div className="double-bounce1" />
-              <div className="double-bounce2" />
-            </div>
-          </div>
-        </>
-      )}
       <div className="App-header">
-        {!userId && (
+        {loading && (
+          <>
+            <div>
+              <p>Loading...</p>
+            </div>
+            <div className="MLoad">
+              <div className="spinner">
+                <div className="double-bounce1" />
+                <div className="double-bounce2" />
+              </div>
+            </div>
+            <div>
+              <h1>Welcome</h1>
+              <h2>{`to the DMJW's FUNonline and Developer Tools website!`}</h2>
+              <h3>{`DMJW's Fun온라인, 개발자 도구 사이트에 오신것을 환영합니다!`}</h3>
+              <h3>{`DMJW's Fun オンライン, 開発者サイトへようこそ!`}</h3>
+            </div>
+          </>
+        )}
+        {!userId && !loading && (
           <div>
             <h1>Welcome</h1>
-            <h2>{`to the DMJW's FUNonline and Developer Tools website!`}</h2>
+            {/* <h2>{`to the DMJW's FUNonline and Developer Tools website!`}</h2>
             <h3>{`DMJW's Fun온라인, 개발자 도구 사이트에 오신것을 환영합니다!`}</h3>
-            <h3>{`DMJW's Fun オンライン, 開発者サイトへようこそ!`}</h3>
+            <h3>{`DMJW's Fun オンライン, 開発者サイトへようこそ!`}</h3> */}
+            {/*<Link to="/Fun/main"><button>Fun!</button></Link>*/}
             <Link to="/account">
               <button className="button">
                 <span>🗝Sign in/Sign up ✅ </span>
@@ -50,12 +51,12 @@ export default function Main({ history, loading, userId, username, logout }) {
             </Link>
           </div>
         )}
-        {userId && (
+        {userId && !loading && (
           <div>
-            <h1>WELCOME {username}</h1>
-            <h2>{`to the DMJW's FUNonline and Developer Tools website!`}</h2>
+            <h1>Hi {username}</h1>
+            {/* <h2>{`to the DMJW's FUNonline and Developer Tools website!`}</h2>
             <h3>{`DMJW's Fun온라인, 개발자 도구 사이트에 오신것을 환영합니다!`}</h3>
-            <h3>{`DMJW's Fun オンライン, 開発者サイトへようこそ!`}</h3>
+            <h3>{`DMJW's Fun オンライン, 開発者サイトへようこそ!`}</h3> */}
             <Link to="/account">
               <button className="button">
                 <span>👤Your Account</span>
@@ -65,18 +66,37 @@ export default function Main({ history, loading, userId, username, logout }) {
         )}
       </div>
       <Jello>
-        <div>
+        <div style={{ backgroundColor: "rgb(250, 250, 250)" }}>
           <Link to="/Fun/main">
             <img src={FunTop} style={{ width: "50%", height: 300 }} />
             <p>{`DMJW's FUN online`}</p>
           </Link>
         </div>
       </Jello>
-      <div>
+      <div style={{ backgroundColor: "white" }}></div>
+      <div style={{ backgroundColor: "rgb(250, 250, 250)" }}>
         <h2>{`🆕DMJW's Talk💬`}</h2>
         <p>Send Messages and Share!</p>
         <button onClick={() => history.push("/Sat/main")}>Go to Chat</button>
       </div>
+
+
+      <div style={{ backgroundColor: "white", height: 15 }} />
+
+      <div style={{ backgroundColor: "rgb(250, 250, 250)" }}>
+        <Roll left>
+          <h5>Visit Youtube</h5>
+          <a href="http://www.dmjwweb.com/videos/main">
+            <img src={YTI} />
+          </a>
+        </Roll>
+        <p>Click</p>
+      </div>
+      {userId && (
+        <button style={{ fontSize: "17pt" }} onClick={logout}>
+          Log Out 🔐
+        </button>
+      )}
       <Link to="/languages">
         <p style={{ color: "#ff4b66", fontSize: 17 }}>
           {`Select your country or region to view content for your country or to
@@ -90,19 +110,6 @@ export default function Main({ history, loading, userId, username, logout }) {
         </button>
         <p>Now : English - UK, US</p>
       </Link>
-      {userId && (
-        <button style={{ fontSize: "17pt" }} onClick={logout}>
-          Log Out 🔐
-        </button>
-      )}
-
-      <br />
-      <Roll left>
-        <h5>Visit Youtube</h5>
-        <a href="http://www.dmjwweb.com/videos/main">
-          <img src={YTI} />
-        </a>
-      </Roll>
     </div>
   );
 }
