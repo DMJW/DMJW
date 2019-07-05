@@ -1,5 +1,5 @@
 import React from 'react';
-import FunTop from '../img/FunT.png';
+import FunTop from './img/FunT19sumWh.jpg';
 import ArtMD from '../img/artMD.png';
 import { css } from 'emotion';
 
@@ -8,7 +8,7 @@ export default function FunMain() {
     <div>
       <div className="SatTop" id="SatTop">
         <h1>{`DMJW's FUN`}</h1>
-        <img src={FunTop} style={{ width: '50%', height: 300 }} />
+        <img src={FunTop} style={{ width: 507, height: 507 }} />
         <p>
           <span role="img" aria-label="rotate the phone">📱⤵️</span>When Using in mobile or tablet it is better to use it rotated than
           standing.<span role="img" aria-label="turn the phone">📱⤵️</span>
