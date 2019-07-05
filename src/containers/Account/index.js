@@ -59,8 +59,12 @@ export default function Account({ login }) {
               onSuccess={onGoogleLoginSuccess}
               onFailure={onGoogleLoginFail}
             />
-            <button style={{ backgroundColor: "#5ecb6a" }}>Sign in with NAVER</button>
-            <button style={{ backgroundColor: "gray" }}>Sign in with Apple(iCloud account)</button>
+            <button style={{ backgroundColor: "#5ecb6a" }}>
+              Sign in with NAVER
+            </button>
+            <button style={{ backgroundColor: "gray" }}>
+              Sign in with Apple(iCloud account)
+            </button>
           </div>
           <div className="SIPgOth">
             <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
@@ -212,9 +216,14 @@ export default function Account({ login }) {
     </div>
   );
 
-  function onGoogleLoginSuccess(response) {
+  async function onGoogleLoginSuccess(response) {
     const { profileObj, googleId } = response;
-    console.log(profileObj, googleId);
+    console.log("logging in with google");
+    const { data } = await request.post(`${URL}/users/google`, {
+      profileObj,
+      googleId
+    });
+    console.log(data);
   }
 
   function onGoogleLoginFail(response) {
