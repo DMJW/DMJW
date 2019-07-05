@@ -1,27 +1,32 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Grad_cover({ text, textColor }) {
+GradCover.propTypes = {
+  text: PropTypes.string,
+  textColor: PropTypes.string
+};
+export default function GradCover({ text, textColor }) {
   return (
     <div
       className="grad_cover"
       style={{
-        height: "550px",
-        minHeight: "300px",
-        display: "flex",
-        alignItems: "center",
-        marginBottom: "2px",
-        textAlign: "center"
+        height: '550px',
+        minHeight: '300px',
+        display: 'flex',
+        alignItems: 'center',
+        marginBottom: '2px',
+        textAlign: 'center'
       }}
     >
       <div className="container-fluid">
         <h1
           className="display-3"
           style={{
-            color: textColor || "#fff",
-            fontSize: "2.5em",
-            marginTop: "2px",
-            marginBottom: "2px",
-            fontWeight: "bold"
+            color: textColor || '#fff',
+            fontSize: '2.5em',
+            marginTop: '2px',
+            marginBottom: '2px',
+            fontWeight: 'bold'
           }}
         >
           {text}

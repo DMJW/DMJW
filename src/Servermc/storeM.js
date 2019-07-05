@@ -1,5 +1,5 @@
-import React from "react";
-import { css } from "emotion";
+import React from 'react';
+import { css } from 'emotion';
 
 export default function mcStoreM() {
   return (
@@ -14,31 +14,31 @@ export default function mcStoreM() {
           }
         `}`}
         style={{
-          width: "15%",
-          color: "#ffffff"
+          width: '15%',
+          color: '#ffffff'
         }}
       >
         <a href="/">Back To MAIN</a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <a href="/languages">
           <p style={{ fontSize: 17 }}>
-            Select your country or region to use use DMJW'sFun.
+            Select your country or region to use use {`DMJW'sFun.`}
             <br />
-            DMJW'sFun을 이용, 언어를 변경하려면 해당 국가 또는 지역을
+            {`DMJW'sFun을`} 이용, 언어를 변경하려면 해당 국가 또는 지역을
             선택하세요.
           </p>
         </a>
         <a href="/developers/main">Developer Tools</a>
         <br />
-        <a href="/Fun/main">DMJW's Fun</a>
+        <a href="/Fun/main">{`DMJW's Fun`}</a>
         <br />
         <a href="http://www.DMJWWEB.com/about">
-          About DMJW's ↗︎(Moving to another web)
+          About {`DMJW's`} ↗︎(Moving to another web)
         </a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <h3>Things from inside this page</h3>
         <a>Items</a>

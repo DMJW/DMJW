@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import YTI from "../../img/175x175bb.jpg";
-import FunTop from "../../img/FunT.jpg";
-import Roll from "react-reveal/Roll";
-import Jello from "react-reveal/Jello";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import YTI from '../../img/175x175bb.jpg';
+import FunTop from '../../img/FunT.jpg';
+import Roll from 'react-reveal/Roll';
+import Jello from 'react-reveal/Jello';
 
 Main.propTypes = {
   history: PropTypes.object,
@@ -66,18 +66,18 @@ export default function Main({ history, loading, userId, username, logout }) {
         )}
       </div>
       <Jello>
-        <div style={{ backgroundColor: "rgb(250, 250, 250)" }}>
+        <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
           <Link to="/Fun/main">
             <img src={FunTop} style={{ width: 507, height: 253.5 }} />
             <p>{`DMJW's FUN online`}</p>
           </Link>
         </div>
       </Jello>
-      <div style={{ backgroundColor: "white" }}></div>
-      <div style={{ backgroundColor: "rgb(250, 250, 250)" }}>
+      <div style={{ backgroundColor: 'white' }} />
+      <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
         <h2>{`🆕DMJW's Talk💬`}</h2>
         <p>Send Messages and Share!</p>
-        <button onClick={() => history.push("/Sat/main")}>Go to Chat</button>
+        <button onClick={() => history.push('/Sat/main')}>Go to Chat</button>
       </div>
 
       <div style={{ backgroundColor: "white", height: 15 }} />
@@ -92,12 +92,12 @@ export default function Main({ history, loading, userId, username, logout }) {
         <p>Click</p>
       </div>
       {userId && (
-        <button style={{ fontSize: "17pt" }} onClick={logout}>
+        <button style={{ fontSize: '17pt' }} onClick={logout}>
           Log Out 🔐
         </button>
       )}
       <Link to="/languages">
-        <p style={{ color: "#ff4b66", fontSize: 17 }}>
+        <p style={{ color: '#ff4b66', fontSize: 17 }}>
           {`Select your country or region to view content for your country or to
           use DMJW'sFun and change the language.`}
           <br />

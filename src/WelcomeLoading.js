@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function WelcomeLoad() {
   return (
@@ -8,8 +8,8 @@ export default function WelcomeLoad() {
       </div>
       <div className="MLoad">
         <div className="spinner">
-          <div className="double-bounce1"></div>
-          <div className="double-bounce2"></div>
+          <div className="double-bounce1" />
+          <div className="double-bounce2" />
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
-import React from "react";
-import { css } from "emotion";
+import React from 'react';
+import { css } from 'emotion';
 
 export default function SatM() {
   return (
     <div>
-      <div class="SatTop" id="SatTop">
+      <div className="SatTop" id="SatTop">
         <h1>S A T</h1>
         <h2>Share And Talk</h2>
         <p>🆕</p>
@@ -16,13 +16,13 @@ export default function SatM() {
           }
         `}`}
         style={{
-          width: "15%",
-          color: "#ffffff"
+          width: '15%',
+          color: '#ffffff'
         }}
       >
         <a href="/">Back To MAIN</a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <a href="/languages">
           <p style={{ fontSize: 17 }}>
@@ -33,13 +33,13 @@ export default function SatM() {
         </a>
         <a href="/developers/main">Developer Tools</a>
         <br />
-        <a href="/Fun/Main">DMJW's Fun</a>
+        <a href="/Fun/Main">{`DMJW's Fun`}</a>
         <br />
         <a href="http://www.DMJWWEB.com/about">
-          About DMJW's ↗︎(Moving to another web)
+          {`About DMJW's ↗︎(Moving to another web)`}
         </a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <h3>Things from inside this page</h3>
         <a href="#SatBoardM">SAT Board</a>
@@ -58,7 +58,7 @@ export default function SatM() {
         <p>Message ... | 12:00 Today</p>
         <p>Message ... | 11:57 Today</p>
         <a href="/Sat/WorldBoard">
-          <button class="button">
+          <button className="button">
             <span>Show SAT Board</span>
           </button>
           <br />
@@ -68,10 +68,10 @@ export default function SatM() {
       <div>
         <h2>💬TalkTalk✋</h2>
         <p>
-          TalkTalk is a function of DMJW's where you can talk(and send) messages
-          to a person or a group of people.
+          {`TalkTalk is a function of DMJW's where you can talk(and send) messages
+          to a person or a group of people.`}
         </p>
-        <h4>📱It's still making!🔨</h4>
+        <h4>{`📱It's still making!🔨`}</h4>
       </div>
     </div>
   );

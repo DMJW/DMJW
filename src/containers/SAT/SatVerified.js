@@ -1,5 +1,5 @@
-import React from "react";
-import { css } from "emotion";
+import React from 'react';
+import { css } from 'emotion';
 
 export default function SatVerified() {
   return (
@@ -11,13 +11,13 @@ export default function SatVerified() {
           }
         `}`}
         style={{
-          width: "15%",
-          color: "#ffffff"
+          width: '15%',
+          color: '#ffffff'
         }}
       >
         <a href="/">Back To MAIN</a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <a href="/languages">
           <p style={{ fontSize: 17 }}>
@@ -34,7 +34,7 @@ export default function SatVerified() {
           {`About DMJW's ↗︎(Moving to another web)`}
         </a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <h3>Things from (SA)Talk Main</h3>
         <a href="/Sat/main#SatBoardM">SAT Board</a>
@@ -45,9 +45,7 @@ export default function SatVerified() {
         <br />
         <a href="/Sat/main#SatTop">Go to ⤒TOP⤒</a>
       </div>
-      <div>
-        SATalk VERIFIED
-      </div>
+      <div>SATalk VERIFIED</div>
     </div>
   );
 }

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class UpDownGame extends Component {
   state = {
-    difficulty: "Nothing! Please choose mode"
+    difficulty: 'Nothing! Please choose mode'
   };
   render() {
     const difficulty = this.state.difficulty;
@@ -61,24 +61,24 @@ export default class UpDownGame extends Component {
     );
   }
   UDGEasy = () => {
-    //  comnum = Math.floor(Math.random * 30 + 1);
-    window.alert("Easy Mode Starting...");
-    this.setState({ difficulty: "Easy" });
+    // comnum = Math.floor(Math.random * 30 + 1);
+    window.alert('Easy Mode Starting...');
+    this.setState({ difficulty: 'Easy' });
   };
   UDGNorm = () => {
-    window.alert("Normal Mode Starting...");
-    this.setState({ difficulty: "Normal!" });
+    window.alert('Normal Mode Starting...');
+    this.setState({ difficulty: 'Normal!' });
   };
   UDGHard = () => {
-    window.alert("Hard Mode Starting...");
-    this.setState({ difficulty: "Hard!" });
+    window.alert('Hard Mode Starting...');
+    this.setState({ difficulty: 'Hard!' });
   };
   UDGExtr = () => {
-    window.alert("Extreme Mode starting...");
-    this.setState({ difficulty: "Extreme!" });
+    window.alert('Extreme Mode starting...');
+    this.setState({ difficulty: 'Extreme!' });
   };
   UDGOpp = () => {
-    window.alert("Opposite Mode Starting...");
-    this.setState({ difficulty: "Opposite!" });
+    window.alert('Opposite Mode Starting...');
+    this.setState({ difficulty: 'Opposite!' });
   };
 }

@@ -137,7 +137,7 @@
     "padded-blocks": [2, "never"],
     "quotes": [
       2,
-      "double",
+      "single",
       { "avoidEscape": true, "allowTemplateLiterals": true }
     ],
     "react/no-unused-prop-types": [2],

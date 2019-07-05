@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function SUPIA() {
   return (
@@ -38,10 +38,10 @@ export default function SUPIA() {
           수집 시 법정 대리인 동의여부 확인, 혜택 제공 및 안내
         </p>
         <p>
-          ② DMJW's어카운트를 통한 통일된 서비스 제공
-          <br />- DMJW's어카운트로 연결된 다양한 기기에서 동일한 사용환경 및
+          ② {`DMJW's어카운트를 통한 통일된 서비스 제공`}
+          <br />- {`DMJW's어카운트로`} 연결된 다양한 기기에서 동일한 사용환경 및
           기능 제공
-          <br />- DMJW's어카운트 기반 다양한 서비스 이용
+          <br />- {`DMJW's어카운트`} 기반 다양한 서비스 이용
         </p>
         <p>
           ③ 기존서비스 개선, 신규서비스 개발
@@ -67,11 +67,11 @@ export default function SUPIA() {
         <p>{`① Personal informations needed for Signing up`}</p>
         <ul>
           <li>
-            ID, password, name, gender, birthday,
-            country, picture(optianal)
+            ID, password, name, gender, birthday, country, picture(optianal)
           </li>
           <li>
-            Phone number, for children aged 14 years old, carer information (protector's name, date of birth)
+            Phone number, for children aged 14 years old, carer information
+            {`(protector's name, date of birth)`}
           </li>
         </ul>
         <p>{`② Information required to use each service, records of service use, and information related to purchase
@@ -83,20 +83,30 @@ export default function SUPIA() {
         </ul>
         <h3>2. Purpose of collecting and using personal information</h3>
         <p>
-          ① 회원관리 <br />- Check personal identification, age identification, and personal information collection for children under 14 years of age, check consent from legal representatives, provide benefits, and advise
+          ① 회원관리 <br />- Check personal identification, age identification,
+          and personal information collection for children under 14 years of
+          age, check consent from legal representatives, provide benefits, and
+          advise
         </p>
         <p>
-          ② Unified Service with DMJW's Account
-          <br />- DMJW's provides the same usage experience and functionality across multiple devices connected by an account.
-          <br />- DMJW's account-based access to a wide range of services
+          ② Unified Service with {`DMJW's Account`}
+          <br />- {`DMJW's`} provides the same usage experience and
+          functionality across multiple devices connected by an account.
+          <br />- {`DMJW's`} account-based access to a wide range of services
         </p>
         <p>
           ③ Improve existing services and develop new services
-          <br />- Survey on customer satisfaction, research on product and service development, development of new services
+          <br />- Survey on customer satisfaction, research on product and
+          service development, development of new services
         </p>
         <p>
-          ※ You may refuse to agree to the use of personal information collection and utilization, but the above information is essential for the service provision. If you reject the consent, you cannot sign up for membership or use of the service.
-          <br /> ※ Information requested during the service use process after membership is notified separately and agreed upon in the service use process.
+          ※ You may refuse to agree to the use of personal information
+          collection and utilization, but the above information is essential for
+          the service provision. If you reject the consent, you cannot sign up
+          for membership or use of the service.
+          <br /> ※ Information requested during the service use process after
+          membership is notified separately and agreed upon in the service use
+          process.
         </p>
       </div>
     </div>

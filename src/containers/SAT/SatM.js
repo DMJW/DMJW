@@ -1,30 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import request from "axios";
-import URL from "../../constants/URL";
-import { css } from "emotion";
+import React from 'react';
+import { css } from 'emotion';
 
 export default function SatM() {
-  const [messages, setMessages] = useState([]);
-  const mounted = useRef(true);
-  useEffect(() => {
-    mounted.current = true;
-    loadMessages();
-
-    async function loadMessages() {
-      try {
-        const { data } = await request.get(`${URL}/posts`);
-        if (mounted.current) {
-          setMessages(data);
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    return function cleanUp() {
-      mounted.current = false;
-    };
-  }, []);
-
   return (
     <div>
       <div className="SatTop" id="SatTop">
@@ -39,13 +16,13 @@ export default function SatM() {
           }
         `}`}
         style={{
-          width: "15%",
-          color: "#ffffff"
+          width: '15%',
+          color: '#ffffff'
         }}
       >
         <a href="/">Back To MAIN</a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <a href="/languages">
           <p style={{ fontSize: 17 }}>
@@ -62,7 +39,7 @@ export default function SatM() {
           {`About DMJW's ↗︎(Moving to another web)`}
         </a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <h3>Things from inside this page</h3>
         <a href="#SatBoardM">SAT Board</a>

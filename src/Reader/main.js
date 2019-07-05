@@ -1,15 +1,20 @@
-import React from "react";
-import { css } from "emotion";
+import React from 'react';
+import { css } from 'emotion';
 
 export default function ReaderM() {
   return (
     <div>
       <div className="SatTop" id="SatTop">
         <h1>{`DMJW's FUN`}</h1>
-        <img src={FunTop} style={{ width: '50%', height: 300 }} />
         <p>
-          <span role="img" aria-label="rotate the phone">📱⤵️</span>When Using in mobile or tablet it is better to use it rotated than
-          standing.<span role="img" aria-label="turn the phone">📱⤵️</span>
+          <span role="img" aria-label="rotate the phone">
+            📱⤵️
+          </span>
+          When Using in mobile or tablet it is better to use it rotated than
+          standing.
+          <span role="img" aria-label="turn the phone">
+            📱⤵️
+          </span>
           <br />
           Actually, it is much better to use it in (any) computer.
         </p>
@@ -73,9 +78,6 @@ export default function ReaderM() {
             <br />
             ⥥Click⥥
           </p>
-          <a href="/Fun/arts/ME">
-            <img src={ArtMD} width="30%" />
-          </a>
         </div>
         <div id="FunMG">
           <h2>Games & Playing</h2>
