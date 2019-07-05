@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
-import PropTypes from "prop-types";
-import request from "axios";
-import URL from "../../constants/URL";
-import { css } from "emotion";
+import React, { useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types';
+import request from 'axios';
+import URL from '../../constants/URL';
+import { css } from 'emotion';
 
 SatM.propTypes = {
   userId: PropTypes.number,
@@ -12,7 +12,7 @@ SatM.propTypes = {
 export default function SatM({ userId, username }) {
   const [messages, setMessages] = useState([]);
   const [userOnlyInputText, setUserOnlyInputText] = useState(
-    userId ? "" : "Cannot Sent Message"
+    userId ? '' : 'Cannot Sent Message'
   );
   const mounted = useRef(true);
   useEffect(() => {
@@ -47,13 +47,13 @@ export default function SatM({ userId, username }) {
           }
         `}`}
         style={{
-          width: "15%",
-          color: "#ffffff"
+          width: '15%',
+          color: '#ffffff'
         }}
       >
         <a href="/">Back To MAIN</a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <a href="/languages">
           <p style={{ fontSize: 17 }}>
@@ -72,7 +72,7 @@ export default function SatM({ userId, username }) {
           {`About DMJW's ↗︎(Moving to another web)`}
         </a>
         <div
-          style={{ backgroundColor: "#ffffff", height: 30, width: "100%" }}
+          style={{ backgroundColor: '#ffffff', height: 30, width: '100%' }}
         />
         <h3>Things from inside this page</h3>
         <a href="#SatB">SAT Board</a>
@@ -91,7 +91,8 @@ export default function SatM({ userId, username }) {
 
             {messages.map(message => (
               <div key={message.id}>
-                <span style={{ color: "blue" }}>{message.message}</span> | from <span style={{ color: "green" }}>{message.username}</span>
+                <span style={{ color: 'blue' }}>{message.message}</span> | from{' '}
+                <span style={{ color: 'green' }}>{message.username}</span>
               </div>
             ))}
             <form onSubmit={handleSubmit}>
@@ -123,7 +124,7 @@ export default function SatM({ userId, username }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    setUserOnlyInputText("");
+    setUserOnlyInputText('');
     try {
       const { data } = await request.post(`${URL}/posts`, {
         userId,

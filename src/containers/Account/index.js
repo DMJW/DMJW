@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import GradCover from "../../img/gradient";
-import request from "axios";
-import Flip from "react-reveal/Flip";
-import URL from "../../constants/URL";
-import GoogleLogin from "react-google-login";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import GradCover from '../../img/gradient';
+import request from 'axios';
+import Flip from 'react-reveal/Flip';
+import URL from '../../constants/URL';
+import GoogleLogin from 'react-google-login';
 
 Account.propTypes = {
   login: PropTypes.func.isRequired
 };
 export default function Account({ login }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [signInPage, setSignInPage] = useState(true);
 
   return (
@@ -24,9 +24,9 @@ export default function Account({ login }) {
           <input
             className="form-control"
             style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
             }}
             value={username}
             onChange={event => setUsername(event.target.value)}
@@ -36,9 +36,9 @@ export default function Account({ login }) {
             className="form-control"
             type="password"
             style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
             }}
             value={password}
             onChange={event => setPassword(event.target.value)}
@@ -49,7 +49,7 @@ export default function Account({ login }) {
           </button>
           <div
             className="SIPgOth"
-            style={{ marginBottom: "15px", border: "3px dotted palegreen" }}
+            style={{ marginBottom: '15px', border: '3px dotted palegreen' }}
           >
             <h3>Use one of your other accounts</h3>
             <p>No sign up needed!</p>
@@ -59,10 +59,10 @@ export default function Account({ login }) {
               onSuccess={onGoogleLoginSuccess}
               onFailure={onGoogleLoginFail}
             />
-            <button style={{ backgroundColor: "#5ecb6a" }}>
+            <button style={{ backgroundColor: '#5ecb6a' }}>
               Sign in with NAVER
             </button>
-            <button style={{ backgroundColor: "gray" }}>
+            <button style={{ backgroundColor: 'gray' }}>
               Sign in with Apple(iCloud account)
             </button>
           </div>
@@ -70,7 +70,7 @@ export default function Account({ login }) {
             <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
             <p>{`Don't have a account?`}</p>
             <a
-              style={{ cursor: "pointer" }}
+              style={{ cursor: 'pointer' }}
               onClick={() => setSignInPage(false)}
             >
               Sign Up
@@ -85,27 +85,27 @@ export default function Account({ login }) {
           <input
             className="form-control"
             style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
             }}
             placeholder="First Name"
           />
           <input
             className="form-control"
             style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
             }}
             placeholder="Last Name"
           />
           <input
             className="form-control"
             style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
             }}
             value={username}
             onChange={event => setUsername(event.target.value)}
@@ -115,9 +115,9 @@ export default function Account({ login }) {
             className="form-control"
             type="password"
             style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
             }}
             value={password}
             onChange={event => setPassword(event.target.value)}
@@ -127,9 +127,9 @@ export default function Account({ login }) {
             className="form-control"
             type="password"
             style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
             }}
             value={confirmPassword}
             onChange={event => setConfirmPassword(event.target.value)}
@@ -143,9 +143,9 @@ export default function Account({ login }) {
           <input
             className="form-control"
             style={{
-              width: "20%",
-              marginLeft: "40%",
-              textAlign: "center"
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
             }}
             placeholder="Email"
           />
@@ -206,7 +206,7 @@ export default function Account({ login }) {
             Sign Up to DMJWWEB Account(seperate accounts)
           </a>
           <p>{`Already have this website's account?`}</p>
-          <a style={{ cursor: "pointer" }} onClick={() => setSignInPage(true)}>
+          <a style={{ cursor: 'pointer' }} onClick={() => setSignInPage(true)}>
             Click me to go to Sign In page!
           </a>
         </div>
@@ -218,7 +218,7 @@ export default function Account({ login }) {
 
   async function onGoogleLoginSuccess(response) {
     const { profileObj, googleId } = response;
-    console.log("logging in with google");
+    console.log('logging in with google');
     const { data } = await request.post(`${URL}/users/google`, {
       profileObj,
       googleId
@@ -227,7 +227,7 @@ export default function Account({ login }) {
   }
 
   function onGoogleLoginFail(response) {
-    console.dir("fail", response);
+    console.dir('fail', response);
   }
 
   async function signIn() {
@@ -246,12 +246,12 @@ export default function Account({ login }) {
       console.error(error);
       if (
         window.confirm(
-          "An error has occured! Please Try again.\nShow error message?\n\\/NO YES\\/"
+          'An error has occured! Please Try again.\nShow error message?\n\\/NO YES\\/'
         )
       ) {
         let errorwin = window.open();
         errorwin.document.write(
-          "AN ERROR HAS OCCURED WHILE LOGGING IN!\n" + error
+          'AN ERROR HAS OCCURED WHILE LOGGING IN!\n' + error
         );
         errorwin.focus();
       }
@@ -263,6 +263,6 @@ export default function Account({ login }) {
       username,
       password
     });
-    localStorage.setItem("token", data.token);
+    localStorage.setItem('token', data.token);
   }
 }

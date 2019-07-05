@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class UpDownGame extends Component {
   state = {
-    difficulty: "Nothing! Please choose mode"
+    difficulty: 'Nothing! Please choose mode'
   };
   render() {
     const difficulty = this.state.difficulty;
     // you can re-write this as const { difficulty } = this.state;
     return (
       <div>
-        <title>DMJW's|Guess Game</title>
+        <title>{`DMJW's|Guess Game`}</title>
         <div>
           <h1>Up ☝︎☟ Down Guess Game</h1>
         </div>
@@ -21,14 +21,14 @@ export default class UpDownGame extends Component {
             randomly thinks. Easy is 1~30(9chances), Normal(10chances) is 1~50,
             Hard(11chances): 1~100, Extreme(15chances): 1~250.
             <br />
-            It will say UP if the number you said is smaller than the "number".
-            It will say DOWN if the number you said is bigger than the "number".
+            {`It will say UP if the number you said is smaller than the "number".`}
+            {`It will say DOWN if the number you said is bigger than the "number".`}
           </p>
           <p>
             For example, if the computer is thinking 3 and you said 1 it will
-            print "UP". After that if you said 5 it will print DOWN. <br />
+            print {`"UP"`}. After that if you said 5 it will print DOWN. <br />
             When you guessed it correct in chances(depending on mode) the game
-            will be over. Also, Even if you didn't guess the number and the
+            will be over. Also, Even if you {`didn't`} guess the number and the
             chances are not left the game will be over.
           </p>
           <h4>2. Opposite Mode</h4>
@@ -37,13 +37,13 @@ export default class UpDownGame extends Component {
             <br />
             First, you have to type in the number you thought. This will NOT be
             passed to the answer thinking computer! Then, the computer will
-            start guessing. If your 'number' is smaller than the number it
+            start guessing. If your {`'number'`} is smaller than the number it
             guessed press DOWN. If its(your number) bigger then press UP. These
-            buttons will send "UP" or "DOWN" to the computer.
+            buttons will send {`"UP" or "DOWN"`} to the computer.
           </p>
         </div>
         <div>
-          <h2>Let's Start!</h2>
+          <h2>{`Let's Start!`}</h2>
           <h3>Choose a Game Mode</h3>
           <p>
             Easy(9chances): 1~30, Normal(10chances): 1~50, Hard(11chances):
@@ -61,24 +61,24 @@ export default class UpDownGame extends Component {
     );
   }
   UDGEasy = () => {
-    //comnum = Math.floor(Math.random * 30 + 1);
-    window.alert("Easy Mode Starting...");
-    this.setState({ difficulty: "Easy" });
+    // comnum = Math.floor(Math.random * 30 + 1);
+    window.alert('Easy Mode Starting...');
+    this.setState({ difficulty: 'Easy' });
   };
   UDGNorm = () => {
-    window.alert("Normal Mode Starting...");
-    this.setState({ difficulty: "Normal!" });
+    window.alert('Normal Mode Starting...');
+    this.setState({ difficulty: 'Normal!' });
   };
   UDGHard = () => {
-    window.alert("Hard Mode Starting...");
-    this.setState({ difficulty: "Hard!" });
+    window.alert('Hard Mode Starting...');
+    this.setState({ difficulty: 'Hard!' });
   };
   UDGExtr = () => {
-    window.alert("Extreme Mode starting...");
-    this.setState({ difficulty: "Extreme!" });
+    window.alert('Extreme Mode starting...');
+    this.setState({ difficulty: 'Extreme!' });
   };
   UDGOpp = () => {
-    window.alert("Opposite Mode Starting...");
-    this.setState({ difficulty: "Opposite!" });
+    window.alert('Opposite Mode Starting...');
+    this.setState({ difficulty: 'Opposite!' });
   };
 }

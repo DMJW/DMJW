@@ -1,17 +1,17 @@
-"use strict";
+'use strict';
 
-const app = require("./app");
+const app = require('./app');
 
-require("greenlock-express")
+require('greenlock-express')
   .create({
-    version: "draft-12",
-    configDir: "~/.config/acme",
-    server: "https://acme-v02.api.letsencrypt.org/directory",
+    version: 'draft-12',
+    configDir: '~/.config/acme',
+    server: 'https://acme-v02.api.letsencrypt.org/directory',
     approveDomains: function approveDomains(opts, certs, cb) {
       if (certs) {
         opts.domains = certs.altnames;
       } else {
-        opts.email = "dmjw10806@gmail.com";
+        opts.email = 'dmjw10806@gmail.com';
         opts.agreeTos = true;
       }
 
