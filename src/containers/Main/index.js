@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import YTI from "../../img/175x175bb.jpg";
-import FunTop from "../../img/FunT.png";
+import FunTop from "../../img/FunT.jpg";
 import Roll from "react-reveal/Roll";
 import Jello from "react-reveal/Jello";
 
@@ -68,7 +68,7 @@ export default function Main({ history, loading, userId, username, logout }) {
       <Jello>
         <div style={{ backgroundColor: "rgb(250, 250, 250)" }}>
           <Link to="/Fun/main">
-            <img src={FunTop} style={{ width: "50%", height: 300 }} />
+            <img src={FunTop} style={{ width: 507, height: 253.5 }} />
             <p>{`DMJW's FUN online`}</p>
           </Link>
         </div>
