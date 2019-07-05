@@ -15,10 +15,12 @@ export default function Lang() {
           <span>English-UK,US</span>
         </button>
       </Link>
-      <button className="button">
-        <img src={KRRF} />
-        한국•Korea
+      <Link to="/kr">
+        <button className="button">
+          <img src={KRRF} />
+          한국•Korea
       </button>
+      </Link>
       <button className="button" disabled>
         <img src={JPRF} />
         日本•Japan

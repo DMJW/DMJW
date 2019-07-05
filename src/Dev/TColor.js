@@ -5,7 +5,7 @@ export default function DtColor() {
   return (
     <div>
       <div>
-        <h1>Color Code</h1>
+        <h1>Colour Tools</h1>
       </div>
       <div
         className={`SMB ${css`
@@ -44,8 +44,9 @@ export default function DtColor() {
         <br />
         <a href="#dtcoltop">Go to ⤒TOP⤒</a>
       </div>
-      <h3>Enter a color code or find a color code</h3>
+      <h3>Enter a colour code or find a colour code</h3>
       <input />
+      <div style={{ backgroundColor: "black", width: 300, height: 300, marginLeft: "40%", color: "pink" }}>This is your colour!</div>
     </div>
   );
 }

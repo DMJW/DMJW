@@ -80,7 +80,6 @@ export default function Main({ history, loading, userId, username, logout }) {
         <button onClick={() => history.push("/Sat/main")}>Go to Chat</button>
       </div>
 
-
       <div style={{ backgroundColor: "white", height: 15 }} />
 
       <div style={{ backgroundColor: "rgb(250, 250, 250)" }}>
