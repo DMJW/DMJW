@@ -31,8 +31,8 @@ export default function Main({ history, loading, userId, username, logout }) {
             </div>
             <div>
               <h1>Welcome</h1>
-              <h2>{`to the DMJW's FUNonline and Developer Tools website!`}</h2>
-              <h3>{`DMJW's Fun온라인, 개발자 도구 사이트에 오신것을 환영합니다!`}</h3>
+              <h2>{`to the DMJW's FUNonline and Tools website!`}</h2>
+              <h3>{`DMJW's Fun온라인, 도구 사이트에 오신것을 환영합니다!`}</h3>
               <h3>{`DMJW's Fun オンライン, 開発者サイトへようこそ!`}</h3>
             </div>
           </>
@@ -77,7 +77,7 @@ export default function Main({ history, loading, userId, username, logout }) {
       <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
         <h2>{`🆕DMJW's Talk💬`}</h2>
         <p>Send Messages and Share!</p>
-        <button onClick={() => history.push('/Sat/main')}>Go to Chat</button>
+        <a href="/SAT/main"><button className="button" style={{ width: 250, height: 20, fontSize: 15 }}><span>SAT</span></button></a>
       </div>
 
       <div style={{ backgroundColor: "white", height: 15 }} />

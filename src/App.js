@@ -13,8 +13,9 @@ import LearnM from './Learn/main';
 import FunM from './Fun/main';
 import ArtMe from './Fun/artsByME';
 import UpDwnGameM from './Fun/Game/UpDown';
-import DevMain from './Dev/main';
-import DtColor from './Dev/TColor';
+import DevMain from './Tools/Dev/main';
+import DtColor from './Tools/Dev/TColor';
+import OneD from './Tools/Language/Onedict';
 import ServerM from './Servermc/main';
 import SatM from './containers/SAT/SatM';
 import SatBoard from './containers/SAT/SatBoard';
@@ -105,6 +106,7 @@ export default function App({ history }) {
         <Route path="/Sat/DMJWs/Tech" component={() => <TechDMJWsSat />} />
         <Route path="/Learn/LearnM" component={() => <LearnM />} />
         <Route path="/mc/servers/dmjws/main" component={() => <ServerM />} />
+        <Route path="/tools/oned" component={() => <OneD />} />
 
         <Route component={() => <ErrorNF />} />
       </Switch>
