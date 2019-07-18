@@ -33,7 +33,7 @@ export default function Main({ history, loading, userId, username, logout }) {
               <h1>Welcome</h1>
               <h2>{`to the DMJW's FUNonline and Tools website!`}</h2>
               <h3>{`DMJW's Fun온라인, 도구 사이트에 오신것을 환영합니다!`}</h3>
-              <h3>{`DMJW's Fun オンライン, 開発者サイトへようこそ!`}</h3>
+              <h3>{`DMJW's Funオンラインとツールサイトへようこそ!`}</h3>
             </div>
           </>
         )}
