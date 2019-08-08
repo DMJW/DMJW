@@ -46,13 +46,22 @@ export default function unitConv() {
       <div>
         <h3>Select.</h3>
         <select>
-          <option>from here</option>
+          <option>Conversion of</option>
           <option>Area</option>
           <option>Weight</option>
           <option>Temperature</option>
           <option>Length</option>
           <option>Data</option>
-
+        </select>
+        <br></br>
+        <select>
+          <option>From this</option>
+          <option>This function is still making</option>
+        </select>
+        <button style={{ fontSize: 30, backgroundColor: 'blue' }}>{`↔︎`}</button>
+        <select>
+          <option>To this</option>
+          <option>This function is still making</option>
         </select>
       </div>
     </div>
