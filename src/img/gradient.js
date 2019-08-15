@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 
 GradCover.propTypes = {
   text: PropTypes.string,
-  textColor: PropTypes.string
+  textColor: PropTypes.string,
+  height: PropTypes.string
 };
-export default function GradCover({ text, textColor }) {
+export default function GradCover({ text, textColor, height }) {
   return (
     <div
       className="grad_cover"
       style={{
-        height: '550px',
+        height: height || '550px',
         minHeight: '300px',
         display: 'flex',
         alignItems: 'center',

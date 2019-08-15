@@ -5,6 +5,8 @@ import request from 'axios';
 import Flip from 'react-reveal/Flip';
 import URL from '../../constants/URL';
 import GoogleLogin from 'react-google-login';
+import AppleSIbtn from './AppleSignIn.png';
+import NaverSIbtn from './Naverloginbtn.jpg';
 
 Account.propTypes = {
   login: PropTypes.func.isRequired
@@ -17,7 +19,7 @@ export default function Account({ login }) {
 
   return (
     <div className="account">
-      <GradCover text="Your Account•あなたの勘定" />
+      <GradCover text="Your Account•あなたの勘定" height="300" />
       {signInPage && (
         <>
           <h2>Sign In</h2>
@@ -53,18 +55,23 @@ export default function Account({ login }) {
           >
             <h3>Use one of your other accounts</h3>
             <p>No sign up needed!</p>
+            <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font>
             <GoogleLogin
               clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
               buttonText="Sign in with Google"
               onSuccess={onGoogleLoginSuccess}
               onFailure={onGoogleLoginFail}
             />
-            <button style={{ backgroundColor: '#5ecb6a' }}>
+            {/* <button style={{ backgroundColor: '#5ecb6a' }}>
               Sign in with NAVER
-            </button>
-            <button style={{ backgroundColor: 'gray' }}>
-              Sign in with Apple(iCloud account)
-            </button>
+            </button> */}
+            {/* <button>
+              <img src={NaverSIbtn} width="190"></img>
+            </button> */}
+            <img src={NaverSIbtn} width="190"></img>
+            {/* <button> */}
+            <img src={AppleSIbtn} />
+            {/* </button> */}
           </div>
           <div className="SIPgOth">
             <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
@@ -259,6 +266,12 @@ export default function Account({ login }) {
   }
 
   async function signUp() {
+    if (password.length > 8) {
+      console.log(`it is longer than 8`);
+    } else {
+      console.log(`it is not longer than 8`);
+      return;
+    }
     const { data } = await request.post(`${URL}/users`, {
       username,
       password
