@@ -130,6 +130,7 @@ export default function Main({ history, loading, userId, username, logout }) {
       </Link>
       <p style={{ fontSize: 30 }}>
         <Zoom top>🆙</Zoom><Zoom top cascade>Updated</Zoom>
+        <font color="grey" style={{ fontSize: 10, color: "#636363" }}>to version 2.3</font>
       </p>
     </div>
   );
