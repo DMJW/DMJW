@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import GradCover from '../../img/gradient';
 import request from 'axios';
 import Flip from 'react-reveal/Flip';
+import Zoom from 'react-reveal/Zoom';
 import URL from '../../constants/URL';
 import GoogleLogin from 'react-google-login';
 import AppleSIbtn from './AppleSignIn.png';
@@ -22,7 +23,7 @@ export default function Account({ login }) {
       <GradCover text="Your Account•あなたの勘定" height="300" />
       {signInPage && (
         <>
-          <h2>Sign In</h2>
+          <Zoom cascade><h2>Sign In</h2></Zoom>
           <input
             className="form-control"
             style={{
@@ -49,46 +50,51 @@ export default function Account({ login }) {
           <button className="button" onClick={signIn}>
             Sign In
           </button>
-          <div
-            className="SIPgOth"
-            style={{ marginBottom: '15px', border: '3px dotted palegreen' }}
-          >
-            <h3>Use one of your other accounts</h3>
-            <p>No sign up needed!</p>
-            <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font>
-            <GoogleLogin
-              clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
-              buttonText="Sign in with Google"
-              onSuccess={onGoogleLoginSuccess}
-              onFailure={onGoogleLoginFail}
-            />
-            {/* <button style={{ backgroundColor: '#5ecb6a' }}>
+          <Flip top>
+            <div
+              className="SIPgOth"
+              style={{ marginBottom: '15px', border: '3px dotted palegreen' }}
+            >
+              <h3>Use one of your other accounts</h3>
+              <p>No sign up needed!</p>
+              <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font>
+              <GoogleLogin
+                clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
+                buttonText="Sign in with Google"
+                onSuccess={onGoogleLoginSuccess}
+                onFailure={onGoogleLoginFail}
+              />
+              {/* <button style={{ backgroundColor: '#5ecb6a' }}>
               Sign in with NAVER
             </button> */}
-            {/* <button>
+              {/* <button>
               <img src={NaverSIbtn} width="190"></img>
             </button> */}
-            <img src={NaverSIbtn} width="190"></img>
-            {/* <button> */}
-            <img src={AppleSIbtn} />
-            {/* </button> */}
-          </div>
-          <div className="SIPgOth">
-            <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
-            <p>{`Don't have a account?`}</p>
-            <a
-              style={{ cursor: 'pointer' }}
-              onClick={() => setSignInPage(false)}
-            >
-              Sign Up
+              <img src={NaverSIbtn} width="190"></img>
+              {/* <button> */}
+              <img src={AppleSIbtn} />
+              {/* </button> */}
+            </div>
+          </Flip>
+          <Flip top>
+            <div className="SIPgOth">
+              <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
+              <p>{`Don't have a account?`}</p>
+              <a
+                style={{ cursor: 'pointer' }}
+                onClick={() => setSignInPage(false)}
+              >
+                Sign Up
             </a>
-          </div>
+            </div></Flip>
         </>
       )}
 
       {!signInPage && (
         <div>
-          <h2>Sign Up</h2>
+          <Zoom cascade>
+            <h2>Sign Up</h2>
+          </Zoom>
           <input
             className="form-control"
             style={{
@@ -142,6 +148,7 @@ export default function Account({ login }) {
             onChange={event => setConfirmPassword(event.target.value)}
             placeholder="Confirm Password"
           />
+
           {/* <select>
             <option>Select</option>
             <option>Email</option>
@@ -203,7 +210,7 @@ export default function Account({ login }) {
             </span>
           </button>
           <br />
-          <Flip cascade>
+          <Flip top>
             <button className="button" onClick={signUp}>
               Sign Up
             </button>
@@ -258,7 +265,10 @@ export default function Account({ login }) {
       ) {
         let errorwin = window.open();
         errorwin.document.write(
-          'AN ERROR HAS OCCURED WHILE LOGGING IN!\n' + error
+          'AN ERROR HAS OCCURED WHILE LOGGING IN!\n\n' + error
+        );
+        window.prompt(
+          'Do you like this error?'
         );
         errorwin.focus();
       }
@@ -272,6 +282,7 @@ export default function Account({ login }) {
       console.log(`it is not longer than 8`);
       return;
     }
+
     const { data } = await request.post(`${URL}/users`, {
       username,
       password
