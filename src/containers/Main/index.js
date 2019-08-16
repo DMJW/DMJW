@@ -128,7 +128,7 @@ export default function Main({ history, loading, userId, username, logout }) {
         <button style={{ width: "13%", backgroundColor: 'white' }}>Language&Country</button>
         <p>Now : English - UK, US</p>
       </Link>
-      <p style={{ fontSize: 30 }}>
+      <p style={{ fontSize: 27 }}>
         <Zoom top>🆙</Zoom><Zoom top cascade>Updated</Zoom>
         <font color="grey" style={{ fontSize: 10, color: "#636363" }}>to version 2.3</font>
       </p>
