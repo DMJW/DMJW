@@ -17,7 +17,7 @@ export default function Lang() {
       </Link>
       {/* <Link to="/kr"> */}
       <button className="button">
-        <img src={KRRF} onClick="window.alert()" />
+        <img src={KRRF} onClick="" />
         한국•Korea
       </button>
       {/* </Link> */}

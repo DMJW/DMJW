@@ -90,6 +90,10 @@ export default function Main({ history, loading, userId, username, logout }) {
       </div>
       {!loading && (
         <div>
+          <div style={{ backgroundColor: '#b9fbba' }}>
+            <h3>Notice & Events</h3>
+            <a href="/">Website Version 2.3!</a>
+          </div>
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
             <Link to="/Fun/main">
               <Jello>

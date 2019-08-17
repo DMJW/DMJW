@@ -282,6 +282,12 @@ export default function Account({ login }) {
       console.log(`it is not longer than 8`);
       return;
     }
+    if (password === confirmPassword) {
+      console.log(`Password Matches`);
+    } else {
+      console.log(`Password does not match`);
+      return;
+    }
 
     const { data } = await request.post(`${URL}/users`, {
       username,
