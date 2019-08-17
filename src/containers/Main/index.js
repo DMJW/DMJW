@@ -92,7 +92,7 @@ export default function Main({ history, loading, userId, username, logout }) {
         <div>
           <div style={{ backgroundColor: '#b9fbba' }}>
             <h3>Notice & Events</h3>
-            <a href="/">Website Version 2.3!</a>
+            <a href="http://dmjwweb.com/dmjws/notice/1">Sign up function closed</a>
           </div>
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
             <Link to="/Fun/main">
@@ -147,8 +147,8 @@ export default function Main({ history, loading, userId, username, logout }) {
             <p>Now : English - UK, US</p>
           </Link>
           <p style={{ fontSize: 27 }}>
-            <Zoom top>🆙</Zoom><Zoom top cascade>Updated</Zoom>
-            <font color="grey" style={{ fontSize: 10, color: "#636363" }}>to version 2.3</font>
+            {/* <Zoom top>🆙</Zoom><Zoom top cascade>Updated</Zoom> */}
+            <font color="grey" style={{ fontSize: 10, color: '#636363' }}>version 2.3</font>
           </p>
         </div>
       )}

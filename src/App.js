@@ -45,7 +45,7 @@ export default function App({ history }) {
     async function getSession() {
       const token = localStorage.getItem('token');
       if (!token) {
-        return setTimeout(() => setLoading(false), 1500);
+        return setTimeout(() => setLoading(false), 2000);
       }
       try {
         const { data } = await request.get(`${URL}/users/session`, {
