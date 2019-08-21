@@ -8,11 +8,12 @@ import URL from '../../constants/URL';
 import GoogleLogin from 'react-google-login';
 import AppleSIbtn from './AppleSignIn.png';
 import NaverSIbtn from './Naverloginbtn.jpg';
+import { helpers } from 'handlebars';
 
 Account.propTypes = {
   login: PropTypes.func.isRequired
 };
-export default function Account({ login }) {
+export default function Account({ login, userId }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -56,24 +57,17 @@ export default function Account({ login }) {
               style={{ marginBottom: '15px', border: '3px dotted palegreen' }}
             >
               <h3>Use one of your other accounts</h3>
-              <p>No sign up needed!</p>
-              <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font>
+              <p>Easy Sign in with a few clicks! Use your  <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font> Account, <font color="green">Naver</font>(<font color="green">네이버</font>) 계정 or <font color="red">Apple</font> <font color="pink">ID</font>.</p>
               <GoogleLogin
                 clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
                 buttonText="Sign in with Google"
                 onSuccess={onGoogleLoginSuccess}
                 onFailure={onGoogleLoginFail}
               />
-              {/* <button style={{ backgroundColor: '#5ecb6a' }}>
-              Sign in with NAVER
-            </button> */}
-              {/* <button>
               <img src={NaverSIbtn} width="190"></img>
-            </button> */}
-              <img src={NaverSIbtn} width="190"></img>
-              {/* <button> */}
               <img src={AppleSIbtn} />
-              {/* </button> */}
+              <p>Please do not use new accounts!</p>
+              <a onClick={() => setSignInPage(false)} style={{ cursor: 'help', color: 'blue' }}>Until when and why?</a>
             </div>
           </Flip>
           <Flip top>
@@ -94,7 +88,21 @@ export default function Account({ login }) {
         <div>
           <h2>We are</h2>
           <Zoom><h1>Sorry</h1></Zoom>
-          <h3>The sign up function is being updated! Please wait until the update ends(~ 20 August 2019, V2.5 update)</h3>
+          <h3>The sign up function is being updated! Please wait until the update ends(~ 25 August 2019, V2.5 update)</h3>
+
+          <div className="SIPgOth" style={{ marginBottom: '15px', border: '3px dotted palegreen' }}>
+            <h3>Use one of your other accounts</h3>
+            <p>Easy Sign up with clicks! Use your  <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font> Account, <font color="green">Naver</font>(<font color="green">네이버</font>) 계정 or <font color="red">Apple</font> <font color="pink">ID</font>.</p>
+            {/* <GoogleLogin
+              clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
+              buttonText="Sign in with Google"
+              onSuccess={onGoogleLoginSuccess}
+              onFailure={onGoogleLoginFail}
+            />
+            <img src={NaverSIbtn} width="190"></img>
+            <img src={AppleSIbtn} /> */}
+            <p>Unavailable</p>
+          </div>
           <p>{`Already have this website's account?`}</p>
           <a style={{ cursor: 'pointer', color: 'blue' }} onClick={() => setSignInPage(true)}>
             Click me to go to Sign In page!

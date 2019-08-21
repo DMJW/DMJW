@@ -83,7 +83,7 @@ export default function App({ history }) {
         <Route path="/doraemon/dmjws" component={() => <Doraemon />} />
         <Route path="/links" component={() => <Links />} />
         <Route path="/videos/youtube" component={() => <Videos />} />
-        <Route path="/account" component={() => <Account login={login} />} />
+        <Route path="/account" component={() => <Account login={login} userId={userId} />} />
         <Route path="/SUPIA" component={() => <SUPIA />} />
         <Route path="/SUTS" compnent={() => <SUTS />} />
         <Route path="/jp/account" component={() => <JPaccount />} />

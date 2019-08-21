@@ -4,20 +4,26 @@ import NewMailGif from './img/NewMail.gif';
 import MailRead from './img/MailRead.GIF';
 import printer from './img/printerprinting.GIF';
 import wonderfulmb from './img/wonderfulmusicbox.GIF';
+import Flip from 'react-reveal/Flip';
+import Fade from 'react-reveal/Fade';
 
 export default function artsbyMe() {
   return (
     <div>
       <div className="artMeTop">
-        <img src={MyDrwnTop} />
+        <Flip left>
+          <img src={MyDrwnTop} />
+        </Flip>
       </div>
       <div>
-        <h3>Select A Drawing type or use the finder</h3>
-        <p style={{ fontSize: 20 }}>Find a drawing here.</p>
-        <input
-          style={{ backgroundColor: '#15ff00', textAlign: 'center' }}
-          onKeyUp="Search()"
-        />
+        <Fade left cascade>
+          <h3>Select A Drawing type or use the finder</h3>
+          <p style={{ fontSize: 20 }}>Find a drawing here.</p>
+          <input
+            style={{ backgroundColor: '#15ff00', textAlign: 'center' }}
+            onKeyUp="Search()"
+          />
+        </Fade>
         <button
           style={{ backgroundColor: 'blue', color: 'white' }}
           onClick="Search()"

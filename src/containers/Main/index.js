@@ -6,6 +6,7 @@ import FunTop from '../../img/FunT.jpg';
 import Roll from 'react-reveal/Roll';
 import Jello from 'react-reveal/Jello';
 import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade';
 import Spin from 'react-reveal/Spin';
 import Jump from 'react-reveal/Jump';
 
@@ -92,7 +93,9 @@ export default function Main({ history, loading, userId, username, logout }) {
         <div>
           <div style={{ backgroundColor: '#b9fbba' }}>
             <h3>Notice & Events</h3>
-            <a href="http://dmjwweb.com/dmjws/notice/1">Sign up function closed</a>
+            <Fade top cascade>
+              <a href="http://dmjwweb.com/dmjws/notice/1">Sign up function closed</a>
+            </Fade>
           </div>
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
             <Link to="/Fun/main">
