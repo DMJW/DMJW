@@ -103,28 +103,159 @@ export default function Account({ login, userId }) {
 
       {signInPage === 'SignUp' && (
         <div>
-          <h2>We are</h2>
+          {/* <h2>We are</h2>
           <Zoom><h1>Sorry</h1></Zoom>
           <h3>The sign up function is being updated! Please wait until the update ends(~ 22 August 2019, V2.5 update)</h3>
+          <div> */}
+          <Zoom cascade>
+            <h2>Sign Up</h2>
+          </Zoom>
+          <input
+            className="form-control"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            placeholder="First Name"
+          />
+          <input
+            className="form-control"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            placeholder="Last Name"
+          />
+          <input
+            className="form-control"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            value={username}
+            onChange={event => setUsername(event.target.value)}
+            placeholder="Username"
+          />
+          <input
+            className="form-control"
+            type="password"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            value={password}
+            onChange={event => setPassword(event.target.value)}
+            placeholder="Password"
+          />
+          <input
+            className="form-control"
+            type="password"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            value={confirmPassword}
+            onChange={event => setConfirmPassword(event.target.value)}
+            placeholder="Confirm Password"
+          />
+
+          <select>
+            <option>Select</option>
+            <option>Email</option>
+            <option>Phone(Unavailable right now)</option>
+          </select>
+          <input
+            className="form-control"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            placeholder="Email"
+          />
+          <input
+            className="form-control"
+            style={{
+              width: '20%',
+              marginLeft: '40%',
+              textAlign: 'center'
+            }}
+            placeholder="Phone Number"
+            value="Phone Number Unavailable now"
+          />
+          <p>Please enter your Birthday(optional)</p>
+          <input placeholder="Date" />
+          <select>
+            <option>---Select Month---</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+          </select>
+          <input placeholder="Year" />
+          <br />
+          <p>
+            I agree to
+            <a
+              href="/SUPIA"
+              target="_blank"
+            >{`"Collection and use of personal information"`}</a>
+          </p>
+          <button>
+            <span role="img" aria-label="Check">
+              ✅
+            </span>
+          </button>
+          <button>
+            <span role="img" aria-label="No(x)">
+              ❌
+            </span>
+          </button>
+          <br />
+          <Flip top>
+            <button className="button" onClick={signUp}>
+              Sign Up
+            </button>
+          </Flip>
           <Flip top>
             <div className="SIPgOth" style={{ marginBottom: '15px', border: '3px dotted palegreen' }}>
               <h3>Use one of your other accounts</h3>
               <p>Easy Sign up with clicks! Use your  <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font> Account, <font color="green">Naver</font>(<font color="green">네이버</font>) 계정 or <font color="red">Apple</font> <font color="pink">ID</font>.</p>
-              {/* <GoogleLogin
-              clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
-              buttonText="Sign in with Google"
-              onSuccess={onGoogleLoginSuccess}
-              onFailure={onGoogleLoginFail}
-            />
-            <img src={NaverSIbtn} width="190"></img>
-            <img src={AppleSIbtn} /> */}
-              <p>Unavailable</p>
+              <GoogleLogin
+                clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
+                buttonText="Sign in with Google"
+                onSuccess={onGoogleLoginSuccess}
+                onFailure={onGoogleLoginFail}
+              />
+              <img src={NaverSIbtn} width="190"></img>
+              <img src={AppleSIbtn} />
+              {/* <p>Unavailable</p> */}
             </div>
           </Flip>
-          <p>{`Already have this website's account?`}</p>
-          <a style={{ cursor: 'pointer', color: 'blue' }} onClick={() => setSignInPage('SignIn')}>
-            Click me to go to Sign In page!
+          <Flip top>
+            <div className="SIPgOth">
+              <a href="http://www.dmjwweb.com/new-a-dmjw">
+                Sign Up to DMJWWEB Account(seperate accounts)
           </a>
+              <p>{`Already have this website's account?`}</p>
+              <a style={{ cursor: 'pointer', color: 'blue' }} onClick={() => setSignInPage('SignIn')}>
+                Click me to go to Sign In page!
+          </a>
+            </div>
+          </Flip>
         </div>
       )}
       <br />
