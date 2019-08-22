@@ -8,10 +8,10 @@ import URL from '../../constants/URL';
 import GoogleLogin from 'react-google-login';
 import AppleSIbtn from './AppleSignIn.png';
 import NaverSIbtn from './Naverloginbtn.jpg';
-import { helpers } from 'handlebars';
 
 Account.propTypes = {
-  login: PropTypes.func.isRequired
+  login: PropTypes.func.isRequired,
+  userId: PropTypes.number
 };
 export default function Account({ login, userId }) {
   const [username, setUsername] = useState('');
