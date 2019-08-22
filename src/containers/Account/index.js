@@ -17,12 +17,31 @@ export default function Account({ login, userId }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [signInPage, setSignInPage] = useState(true);
+  const [signInPage, setSignInPage] = useState('First');
 
   return (
     <div className="account">
       <GradCover text="Your Account•あなたの勘定" height="300" />
-      {signInPage && (
+      {signInPage === 'First' && (
+        <div>
+          <Zoom cascade><font style={{ fontSize: '2em' }}>Which do you want to do?</font></Zoom>
+          <Flip top>
+            <div style={{ width: '50%', backgroundColor: '#fff7dc' }}>
+              <h2>Sign In</h2>
+              <p>{`Click me if you already have an account and want to Sign In!`}</p>
+              <button onClick={() => setSignInPage('SignIn')} className="button"><span>Go</span></button>
+            </div>
+          </Flip>
+          <Flip top>
+            <div style={{ width: '50%', marginLeft: '50%', backgroundColor: '#fff7dc' }}>
+              <h2>Sign Up</h2>
+              <p>{`Click me if you don't have an account and want to create one!`}</p>
+              <button onClick={() => setSignInPage('SignUp')} className="button"><span>Go</span></button>
+            </div>
+          </Flip>
+        </div>
+      )}
+      {signInPage === 'SignIn' && (
         <>
           <Zoom cascade><h2>Sign In</h2></Zoom>
           <input
@@ -66,8 +85,6 @@ export default function Account({ login, userId }) {
               />
               <img src={NaverSIbtn} width="190"></img>
               <img src={AppleSIbtn} />
-              <p>Please do not use new accounts!</p>
-              <a onClick={() => setSignInPage(false)} style={{ cursor: 'help', color: 'blue' }}>Until when and why?</a>
             </div>
           </Flip>
           <Flip top>
@@ -76,7 +93,7 @@ export default function Account({ login, userId }) {
               <p>{`Don't have a account?`}</p>
               <a
                 style={{ cursor: 'pointer' }}
-                onClick={() => setSignInPage(false)}
+                onClick={() => setSignInPage('SignUp')}
               >
                 Sign Up
             </a>
@@ -84,11 +101,11 @@ export default function Account({ login, userId }) {
         </>
       )}
 
-      {!signInPage && (
+      {signInPage === 'SignUp' && (
         <div>
           <h2>We are</h2>
           <Zoom><h1>Sorry</h1></Zoom>
-          <h3>The sign up function is being updated! Please wait until the update ends(~ 25 August 2019, V2.5 update)</h3>
+          <h3>The sign up function is being updated! Please wait until the update ends(~ 22 August 2019, V2.5 update)</h3>
 
           <div className="SIPgOth" style={{ marginBottom: '15px', border: '3px dotted palegreen' }}>
             <h3>Use one of your other accounts</h3>
@@ -104,7 +121,7 @@ export default function Account({ login, userId }) {
             <p>Unavailable</p>
           </div>
           <p>{`Already have this website's account?`}</p>
-          <a style={{ cursor: 'pointer', color: 'blue' }} onClick={() => setSignInPage(true)}>
+          <a style={{ cursor: 'pointer', color: 'blue' }} onClick={() => setSignInPage('SignIn')}>
             Click me to go to Sign In page!
           </a>
         </div>
