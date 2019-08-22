@@ -23,7 +23,7 @@ export default function Main({ history, loading, userId, username, logout }) {
     <div>
       <div className="App-header">
         {loading && userId && (
-          <>
+          <><Zoom>
             <div>
               <p>Loading...</p>
             </div>
@@ -33,6 +33,7 @@ export default function Main({ history, loading, userId, username, logout }) {
                 <div className="double-bounce2" />
               </div>
             </div>
+          </Zoom>
             <div>
               <h1>Hi, {username}! Welcome Back!</h1>
               <h2>{`to the DMJW's FUNonline and Tools website!`}</h2>
@@ -44,10 +45,11 @@ export default function Main({ history, loading, userId, username, logout }) {
         {loading && !userId && (
           <>
             <div>
-              <p>Loading...</p>
+              <Zoom cascade>Loading...</Zoom>
             </div>
             <div className="MLoad">
               <div className="spinner">
+
                 <div className="double-bounce1" />
                 <div className="double-bounce2" />
               </div>
@@ -111,7 +113,7 @@ export default function Main({ history, loading, userId, username, logout }) {
               <h2>{`🆕DMJW's Talk💬`}</h2>
             </Jump>
             <p>Send Messages and Share!</p>
-            <a href="/SAT/main"><button style={{ width: 250, height: 20, fontSize: 15, backgroundColor: "white" }}><span>SAT</span></button></a>
+            <a href="/SAT/main"><button style={{ width: 250, height: 20, fontSize: 15, backgroundColor: 'white' }}><span>SAT</span></button></a>
           </div>
           <div style={{ backgroundColor: 'white', height: 15 }} />
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
@@ -119,12 +121,12 @@ export default function Main({ history, loading, userId, username, logout }) {
               <h2>{`🧰Toolbox`}</h2>
             </Spin>
             <p>Tools!</p>
-            <a href="/dmjws/tools"><button style={{ width: 250, height: 20, fontSize: 15, backgroundColor: "white" }}><span>Tools</span></button></a>
+            <a href="/dmjws/tools"><button style={{ width: 250, height: 20, fontSize: 15, backgroundColor: 'white' }}><span>Tools</span></button></a>
           </div>
 
-          <div style={{ backgroundColor: "white", height: 15 }} />
+          <div style={{ backgroundColor: 'white', height: 15 }} />
 
-          <div style={{ backgroundColor: "rgb(250, 250, 250)" }}>
+          <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
             <Roll left>
               <h5>Visit Youtube</h5>
               <a href="http://www.dmjwweb.com/links/ytchannel">
@@ -146,7 +148,7 @@ export default function Main({ history, loading, userId, username, logout }) {
               {`현재 계신 국가에 맞는 콘텐츠를 확인하거나 DMJW'sFun을 이용, 언어를
           바꾸려면 해당 국가 또는 지역을 선택하세요.`}
             </p>
-            <button style={{ width: "13%", backgroundColor: 'white' }}>Language&Country</button>
+            <button style={{ width: '13%', backgroundColor: 'white' }}>Language&Country</button>
             <p>Now : English - UK, US</p>
           </Link>
           <p style={{ fontSize: 27 }}>

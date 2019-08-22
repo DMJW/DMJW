@@ -106,11 +106,11 @@ export default function Account({ login, userId }) {
           <h2>We are</h2>
           <Zoom><h1>Sorry</h1></Zoom>
           <h3>The sign up function is being updated! Please wait until the update ends(~ 22 August 2019, V2.5 update)</h3>
-
-          <div className="SIPgOth" style={{ marginBottom: '15px', border: '3px dotted palegreen' }}>
-            <h3>Use one of your other accounts</h3>
-            <p>Easy Sign up with clicks! Use your  <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font> Account, <font color="green">Naver</font>(<font color="green">네이버</font>) 계정 or <font color="red">Apple</font> <font color="pink">ID</font>.</p>
-            {/* <GoogleLogin
+          <Flip top>
+            <div className="SIPgOth" style={{ marginBottom: '15px', border: '3px dotted palegreen' }}>
+              <h3>Use one of your other accounts</h3>
+              <p>Easy Sign up with clicks! Use your  <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font> Account, <font color="green">Naver</font>(<font color="green">네이버</font>) 계정 or <font color="red">Apple</font> <font color="pink">ID</font>.</p>
+              {/* <GoogleLogin
               clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
               buttonText="Sign in with Google"
               onSuccess={onGoogleLoginSuccess}
@@ -118,8 +118,9 @@ export default function Account({ login, userId }) {
             />
             <img src={NaverSIbtn} width="190"></img>
             <img src={AppleSIbtn} /> */}
-            <p>Unavailable</p>
-          </div>
+              <p>Unavailable</p>
+            </div>
+          </Flip>
           <p>{`Already have this website's account?`}</p>
           <a style={{ cursor: 'pointer', color: 'blue' }} onClick={() => setSignInPage('SignIn')}>
             Click me to go to Sign In page!
