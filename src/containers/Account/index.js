@@ -4,6 +4,7 @@ import GradCover from '../../img/gradient';
 import request from 'axios';
 import Flip from 'react-reveal/Flip';
 import Zoom from 'react-reveal/Zoom';
+import Headshake from 'react-reveal/HeadShake';
 import URL from '../../constants/URL';
 import GoogleLogin from 'react-google-login';
 import AppleSIbtn from './AppleSignIn.png';
@@ -18,6 +19,7 @@ export default function Account({ login, userId }) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [signInPage, setSignInPage] = useState('First');
+  const [errorMessage, setErrorMessage] = useState('Please write down your password on the above input box');
 
   return (
     <div className="account">
@@ -148,9 +150,10 @@ export default function Account({ login, userId }) {
               textAlign: 'center'
             }}
             value={password}
-            onChange={event => setPassword(event.target.value)}
+            onChange={handleSetPassword}
             placeholder="Password"
           />
+          <Headshake cascade><p style={{ color: 'red' }}>{errorMessage}</p></Headshake>
           <input
             className="form-control"
             type="password"
@@ -164,10 +167,11 @@ export default function Account({ login, userId }) {
             placeholder="Confirm Password"
           />
 
-          <select>
+          <select style={{ background: '#dd3e54',  /* fallback for old browsers */background: '-webkit-linear-gradient(to bottom, #6be585, #dd3e54)',  /* Chrome 10-25, Safari 5.1-6 */background: 'linear-gradient(to bottom, #6be585, #dd3e54)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */, height: '30px' }}>
             <option>Select</option>
             <option>Email</option>
-            <option>Phone(Unavailable right now)</option>
+            <option disabled>Phone(Unavailable right now)</option>
+            <option disabled>Phone + Email</option>
           </select>
           <input
             className="form-control"
@@ -188,6 +192,8 @@ export default function Account({ login, userId }) {
             placeholder="Phone Number"
             value="Phone Number Unavailable now"
           />
+          {/* <input type="checkbox">I am under 14</input>
+          <input type="checkbox" defaultChecked>I am older than 14</input> */}
           <p>Please enter your Birthday(optional)</p>
           <input placeholder="Date" />
           <select>
@@ -263,6 +269,21 @@ export default function Account({ login, userId }) {
     </div>
   );
 
+  function handleSetPassword(event) {
+    if (event.target.value < 8) {
+      setErrorMessage(/*'Password is too short!\tPassword has to be longer than 8'*/event.target.value);
+      console.log(event.target.value + ' short');
+    }
+    if (event.target.value > 8) {
+      setErrorMessage('✅');
+      console.log(event.target.value + ' check');
+    } //else {
+    //   setErrorMessage('...?');
+    //   console.log(event.target.value + ' ?');
+    // }
+    return setPassword(event.target.value);
+  }
+
   async function onGoogleLoginSuccess(response) {
     const { profileObj, googleId } = response;
     console.log('logging in with google');
@@ -296,12 +317,12 @@ export default function Account({ login, userId }) {
           'An error has occured! Please Try again.\nShow error message?\n\\/NO YES\\/'
         )
       ) {
+        window.prompt(
+          'Do you like this error?'
+        );
         let errorwin = window.open();
         errorwin.document.write(
           'AN ERROR HAS OCCURED WHILE LOGGING IN!\n\n' + error
-        );
-        window.prompt(
-          'Do you like this error?'
         );
         errorwin.focus();
       }

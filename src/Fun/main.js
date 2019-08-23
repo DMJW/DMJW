@@ -6,7 +6,7 @@ import { css } from 'emotion';
 export default function FunMain() {
   return (
     <div>
-      <div className="SatTop" id="SatTop">
+      <div className="funTop" id="funTop">
         <h1>{`DMJW's FUN`}</h1>
         <img src={FunTop} style={{ width: 507, height: 507 }} />
         <p>

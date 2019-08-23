@@ -83,7 +83,7 @@ export default function SUPIA() {
         </ul>
         <h3>2. Purpose of collecting and using personal information</h3>
         <p>
-          ① 회원관리 <br />- Check personal identification, age identification,
+          ① Account Management <br />- Check personal identification, age identification,
           and personal information collection for children under 14 years of
           age, check consent from legal representatives, provide benefits, and
           advise

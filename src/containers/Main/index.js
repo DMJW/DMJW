@@ -96,7 +96,7 @@ export default function Main({ history, loading, userId, username, logout }) {
           <div style={{ backgroundColor: '#b9fbba' }}>
             <h3>Notice & Events</h3>
             <Fade top cascade>
-              <a href="http://dmjwweb.com/dmjws/notice/1">Sign up function closed</a>
+              <a href="#updates">Updated to V2.5!</a>
             </Fade>
           </div>
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
@@ -151,10 +151,12 @@ export default function Main({ history, loading, userId, username, logout }) {
             <button style={{ width: '13%', backgroundColor: 'white' }}>Language&Country</button>
             <p>Now : English - UK, US</p>
           </Link>
-          <p style={{ fontSize: 27 }}>
-            {/* <Zoom top>🆙</Zoom><Zoom top cascade>Updated</Zoom> */}
-            <font color="grey" style={{ fontSize: 10, color: '#636363' }}>version 2.3</font>
-          </p>
+          <div id="updates">
+            <p style={{ fontSize: 27 }}>
+              <Zoom top>🆙</Zoom><Zoom top cascade>Updated</Zoom>
+              <font color="grey" style={{ fontSize: 13, color: '#636363' }}>to version </font><font style={{ fontSize: 13, color: 'red' }}>2.5</font>
+            </p>
+          </div>
         </div>
       )}
     </div>
