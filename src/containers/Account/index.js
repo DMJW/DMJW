@@ -13,9 +13,10 @@ import NaverSIbtn from './Naverloginbtn.jpg';
 Account.propTypes = {
   login: PropTypes.func.isRequired,
   userId: PropTypes.number,
+  acusername: PropTypes.string,
   loading: PropTypes.bool
 };
-export default function Account({ login, userId, loading }) {
+export default function Account({ login, userId, acusername, loading }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -100,11 +101,11 @@ export default function Account({ login, userId, loading }) {
               <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
               <p>{`Don't have a account?`}</p>
               <a
-                style={{ cursor: 'pointer' }}
+                style={{ cursor: 'pointer', color: 'blue' }}
                 onClick={() => setSignInPage('SignUp')}
               >
-                Sign Up
-            </a>
+                Sign Up<br /><font color="grey">(You can also sign up with other accounts!)</font>
+              </a>
             </div></Flip>
         </>
       )}
@@ -273,7 +274,7 @@ export default function Account({ login, userId, loading }) {
       {userId && (
         <div>
           <GradCover text="Your Account" height="100" />
-          <h1>Hi, {username}</h1>
+          <h1>Hi, {acusername}</h1>
           <p>Account info view and Settings service is being prepared...</p>
         </div>
       )}

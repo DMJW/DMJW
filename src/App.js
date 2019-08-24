@@ -31,6 +31,7 @@ import request from 'axios';
 import URL from './constants/URL';
 import SUPIA from './Pages/SUPI';
 import SUTS from './Pages/SignUpSel';
+import GoMain from './Go/Gomain';
 
 App.propTypes = {
   history: PropTypes.object.isRequired
@@ -83,7 +84,7 @@ export default function App({ history }) {
         <Route path="/doraemon/dmjws" component={() => <Doraemon />} />
         <Route path="/links" component={() => <Links />} />
         <Route path="/videos/youtube" component={() => <Videos />} />
-        <Route path="/account" component={() => <Account login={login} userId={userId} loading={loading} />} />
+        <Route path="/account" component={() => <Account login={login} userId={userId} username={username} loading={loading} />} />
         <Route path="/SUPIA" component={() => <SUPIA />} />
         <Route path="/SUTS" compnent={() => <SUTS />} />
         <Route path="/jp/account" component={() => <JPaccount />} />
@@ -109,7 +110,7 @@ export default function App({ history }) {
         <Route path="/mc/servers/dmjws/main" component={() => <ServerM />} />
         <Route path="/tools/oned" component={() => <OneD />} />
         <Route path="/tools/unitconv" component={() => <UnitConv />} />
-
+        <Route path="/go/main" component={() => <GoMain />} />
         <Route component={() => <ErrorNF />} />
       </Switch>
     </div>
