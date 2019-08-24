@@ -231,7 +231,7 @@ export default function Account({ login, userId }) {
             </span>
           </button>
           <br />
-          <Flip top>
+          <Flip cascade>
             <button className="button" onClick={signUp}>
               Sign Up
             </button>
