@@ -12,7 +12,7 @@ export default function GradCover({ text, textColor, height }) {
       className="grad_cover"
       style={{
         height: height || '550px',
-        minHeight: '300px',
+        minHeight: '100px',
         display: 'flex',
         alignItems: 'center',
         marginBottom: '2px',

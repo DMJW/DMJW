@@ -12,9 +12,10 @@ import NaverSIbtn from './Naverloginbtn.jpg';
 
 Account.propTypes = {
   login: PropTypes.func.isRequired,
-  userId: PropTypes.number
+  userId: PropTypes.number,
+  loading: PropTypes.bool
 };
-export default function Account({ login, userId }) {
+export default function Account({ login, userId, loading }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -23,8 +24,13 @@ export default function Account({ login, userId }) {
 
   return (
     <div className="account">
-      <GradCover text="Your Account•あなたの勘定" height="300" />
-      {signInPage === 'First' && (
+      {(loading || !userId) && (
+        <div>
+          <GradCover text="Your Account•あなたの勘定" height="300px" />
+        </div>
+      )}
+
+      {signInPage === 'First' && !userId && !loading && (
         <div>
           <Zoom cascade><font style={{ fontSize: '2em' }}>Which do you want to do?</font></Zoom>
           <Flip top>
@@ -43,7 +49,7 @@ export default function Account({ login, userId }) {
           </Flip>
         </div>
       )}
-      {signInPage === 'SignIn' && (
+      {signInPage === 'SignIn' && !userId && (
         <>
           <Zoom cascade><h2>Sign In</h2></Zoom>
           <input
@@ -103,7 +109,7 @@ export default function Account({ login, userId }) {
         </>
       )}
 
-      {signInPage === 'SignUp' && (
+      {signInPage === 'SignUp' && !userId && (
         <div>
           {/* <h2>We are</h2>
           <Zoom><h1>Sorry</h1></Zoom>
@@ -264,6 +270,24 @@ export default function Account({ login, userId }) {
           </Flip>
         </div>
       )}
+      {userId && (
+        <div>
+          <GradCover text="Your Account" height="100" />
+          <h1>Hi, {username}</h1>
+          <p>Account info view and Settings service is being prepared...</p>
+        </div>
+      )}
+      {loading && (
+        <div>
+          <h1>Loading</h1>
+          <h2>Your Account info and Login info...</h2>
+          <div className="AcLoad">
+            <div className="ALdot1"></div>
+            <div className="ALdot2"></div>
+          </div>
+          <p>{`Please Wait! It will only take a few seconds(if it doesn't... ther is an error or something wrong)`}</p>
+        </div>
+      )}
       <br />
       <a href="/">Back To Main</a>
     </div>
@@ -271,13 +295,13 @@ export default function Account({ login, userId }) {
 
   function handleSetPassword(event) {
     if (event.target.value < 8) {
-      setErrorMessage(/*'Password is too short!\tPassword has to be longer than 8'*/event.target.value);
+      setErrorMessage('Password is too short!\tPassword has to be longer than 8');
       console.log(event.target.value + ' short');
     }
     if (event.target.value > 8) {
       setErrorMessage('✅');
       console.log(event.target.value + ' check');
-    } //else {
+    } // else {
     //   setErrorMessage('...?');
     //   console.log(event.target.value + ' ?');
     // }
