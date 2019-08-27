@@ -464,3 +464,7 @@ Grad_cover copy {
     transform: scale3D(0, 0, 1);
   }
 }
+
+.JapanGoM {
+  background-image: './Go/TokyoNight.jpeg';
+}

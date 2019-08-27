@@ -32,6 +32,7 @@ import URL from './constants/URL';
 import SUPIA from './Pages/SUPI';
 import SUTS from './Pages/SignUpSel';
 import GoMain from './Go/Gomain';
+import GoJapan from './Go/JP/GoJapan';
 
 App.propTypes = {
   history: PropTypes.object.isRequired
@@ -111,6 +112,7 @@ export default function App({ history }) {
         <Route path="/tools/oned" component={() => <OneD />} />
         <Route path="/tools/unitconv" component={() => <UnitConv />} />
         <Route path="/go/main" component={() => <GoMain />} />
+        <Route path="/go/japan" component={() => <GoJapan />} />
         <Route component={() => <ErrorNF />} />
       </Switch>
     </div>
