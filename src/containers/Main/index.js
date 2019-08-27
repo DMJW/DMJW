@@ -101,7 +101,7 @@ export default function Main({ history, loading, userId, username, logout }) {
           </div>
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
             <Link to="/Fun/main">
-              <Jello>
+              <Jello delay={500}>
                 <img src={FunTop} style={{ width: 507, height: 253.5 }} />
                 <p>{`DMJW's FUN online`}</p>
               </Jello>
@@ -109,7 +109,7 @@ export default function Main({ history, loading, userId, username, logout }) {
           </div>
           <div style={{ backgroundColor: 'white' }} />
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
-            <Jump>
+            <Jump delay={1000}>
               <h2>{`🆕DMJW's Talk💬`}</h2>
             </Jump>
             <p>Send Messages and Share!</p>
@@ -117,7 +117,7 @@ export default function Main({ history, loading, userId, username, logout }) {
           </div>
           <div style={{ backgroundColor: 'white', height: 15 }} />
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
-            <Spin>
+            <Spin delay={1500}>
               <h2>{`🧰Toolbox`}</h2>
             </Spin>
             <p>Tools!</p>
@@ -127,7 +127,7 @@ export default function Main({ history, loading, userId, username, logout }) {
           <div style={{ backgroundColor: 'white', height: 15 }} />
 
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
-            <Roll left>
+            <Roll left delay={2000}>
               <h5>Visit Youtube</h5>
               <a href="http://www.dmjwweb.com/links/ytchannel">
                 <img src={YTI} />
