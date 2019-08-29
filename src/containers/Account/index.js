@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import GradCover from '../../img/gradient';
@@ -169,12 +170,12 @@ export default function Account({ login, userId, acusername, loading }) {
               marginLeft: '40%',
               textAlign: 'center'
             }}
-            value={confirmPassword}
+            value={confirmPassword} b
             onChange={event => setConfirmPassword(event.target.value)}
             placeholder="Confirm Password"
           />
 
-          <select style={{ background: '#dd3e54',  /* fallback for old browsers */background: '-webkit-linear-gradient(to bottom, #6be585, #dd3e54)',  /* Chrome 10-25, Safari 5.1-6 */background: 'linear-gradient(to bottom, #6be585, #dd3e54)' /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */, height: '30px' }}>
+          <select style={{ background: '#dd3e54', background: '-webkit-linear-gradient(to bottom, #6be585, #dd3e54)', background: 'linear-gradient(to bottom, #6be585, #dd3e54)', height: '30px' }}>
             <option>Select</option>
             <option>Email</option>
             <option disabled>Phone(Unavailable right now)</option>
@@ -295,17 +296,17 @@ export default function Account({ login, userId, acusername, loading }) {
   );
 
   function handleSetPassword(event) {
-    if (event.target.value < 8) {
+    if (event.target.value.length < 8 && event.target.value.length > 0) {
       setErrorMessage('Password is too short!\tPassword has to be longer than 8');
       console.log(event.target.value + ' short');
     }
-    if (event.target.value > 8) {
+    if (event.target.value.length > 8) {
       setErrorMessage('✅');
       console.log(event.target.value + ' check');
-    } // else {
-    //   setErrorMessage('...?');
-    //   console.log(event.target.value + ' ?');
-    // }
+    } else {
+      setErrorMessage('...?');
+      console.log(event.target.value + ' ?');
+    }
     return setPassword(event.target.value);
   }
 
