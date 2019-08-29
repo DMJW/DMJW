@@ -67,7 +67,7 @@ export default function SUPIA() {
         <p>{`① Personal informations needed for Signing up`}</p>
         <ul>
           <li>
-            ID, password, name, gender, birthday, country, picture(optianal)
+            ID, password, name, gender, birthday(optional), country(optional), picture(optianal)
           </li>
           <li>
             Phone number, for children aged 14 years old, carer information
@@ -100,11 +100,11 @@ export default function SUPIA() {
           service development, development of new services
         </p>
         <p>
-          ※ You may refuse to agree to the use of personal information
+          *🚫 You may refuse to agree to the use of personal information
           collection and utilization, but the above information is essential for
           the service provision. If you reject the consent, you cannot sign up
           for membership or use of the service.
-          <br /> ※ Information requested during the service use process after
+          <br /> *❔ Information requested during the service use process after
           membership is notified separately and agreed upon in the service use
           process.
         </p>

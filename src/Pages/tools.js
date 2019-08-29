@@ -9,7 +9,7 @@ export default function Tools() {
         <Jump cascade>
           <h2 style={{ paddingTop: '10%' }}>Sorry</h2>
         </Jump>
-        <h1>Tools sevice is <HeadShake>not available</HeadShake> now!</h1>
+        <h1>Tools sevice is <HeadShake delay={1500} count={3}>not available</HeadShake> now!</h1>
         <p>You can still</p>
         <h2>Take a look</h2>
         <p>{`at what we're making`}</p>

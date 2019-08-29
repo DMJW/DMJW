@@ -117,7 +117,7 @@ export default function Main({ history, loading, userId, username, logout }) {
           </div>
           <div style={{ backgroundColor: 'white', height: 15 }} />
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
-            <Spin delay={1500}>
+            <Spin delay={2000}>
               <h2>{`🧰Toolbox`}</h2>
             </Spin>
             <p>Tools!</p>
@@ -127,7 +127,7 @@ export default function Main({ history, loading, userId, username, logout }) {
           <div style={{ backgroundColor: 'white', height: 15 }} />
 
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
-            <Roll left delay={2000}>
+            <Roll left>
               <h5>Visit Youtube</h5>
               <a href="http://www.dmjwweb.com/links/ytchannel">
                 <img src={YTI} />
