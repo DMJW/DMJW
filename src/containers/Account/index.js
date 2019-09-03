@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-dupe-keys */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -10,6 +11,7 @@ import URL from '../../constants/URL';
 import GoogleLogin from 'react-google-login';
 import AppleSIbtn from './AppleSignIn.png';
 import NaverSIbtn from './Naverloginbtn.jpg';
+import SignUpCheck from './SignUpCheck';
 
 Account.propTypes = {
   login: PropTypes.func.isRequired,
@@ -161,7 +163,7 @@ export default function Account({ login, userId, acusername, loading }) {
             onChange={handleSetPassword}
             placeholder="Password"
           />
-          <Headshake cascade><p style={{ color: 'red' }}>{errorMessage}</p></Headshake>
+          <SignUpCheck errorMessage={errorMessage} />
           <input
             className="form-control"
             type="password"
@@ -303,7 +305,7 @@ export default function Account({ login, userId, acusername, loading }) {
     if (event.target.value.length > 8) {
       setErrorMessage('✅');
       console.log(event.target.value + ' check');
-    } //else {
+    } // else {
     //   setErrorMessage('...?');
     //   console.log(event.target.value + ' ?');
     // }
