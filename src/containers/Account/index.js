@@ -296,17 +296,17 @@ export default function Account({ login, userId, acusername, loading }) {
   );
 
   function handleSetPassword(event) {
-    if (event.target.value.length < 8 && event.target.value.length > 0) {
-      setErrorMessage('Password is too short!\tPassword has to be longer than 8');
+    if (event.target.value.length < 8) {
+      setErrorMessage('Password is too short! Password has to be longer than 8');
       console.log(event.target.value + ' short');
     }
     if (event.target.value.length > 8) {
       setErrorMessage('✅');
       console.log(event.target.value + ' check');
-    } else {
-      setErrorMessage('...?');
-      console.log(event.target.value + ' ?');
-    }
+    } //else {
+    //   setErrorMessage('...?');
+    //   console.log(event.target.value + ' ?');
+    // }
     return setPassword(event.target.value);
   }
 
