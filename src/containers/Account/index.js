@@ -24,7 +24,10 @@ export default function Account({ login, userId, acusername, loading }) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [signInPage, setSignInPage] = useState('First');
-  const [errorMessage, setErrorMessage] = useState('Please write down your password on the above input box');
+  const [pwLengthMes, setPwLengthMes] = useState('Please write down your password');
+  const [pwAlphabetc, setPwAlphabetc] = useState('Hmm....');
+  const [pwIncludeNumc, setPwNumc] = useState('Please include number(s)');
+  const [pwConfirmMes, setPwConfirmMes] = useState('cannot be compared.');
 
   return (
     <div className="account">
@@ -163,7 +166,7 @@ export default function Account({ login, userId, acusername, loading }) {
             onChange={handleSetPassword}
             placeholder="Password"
           />
-          <SignUpCheck errorMessage={errorMessage} />
+          <SignUpCheck pwLengthMes={pwLengthMes} pwConfirmMes={pwConfirmMes} pwAlphabetc={pwAlphabetc} pwIncludeNumc={pwIncludeNumc} />
           <input
             className="form-control"
             type="password"
@@ -172,8 +175,8 @@ export default function Account({ login, userId, acusername, loading }) {
               marginLeft: '40%',
               textAlign: 'center'
             }}
-            value={confirmPassword} b
-            onChange={event => setConfirmPassword(event.target.value)}
+            value={confirmPassword}
+            onChange={confirmNewPassword}
             placeholder="Confirm Password"
           />
 
@@ -299,17 +302,31 @@ export default function Account({ login, userId, acusername, loading }) {
 
   function handleSetPassword(event) {
     if (event.target.value.length < 8) {
-      setErrorMessage('Password is too short! Password has to be longer than 8');
+      setPwLengthMes('Password is too short! Password has to be longer than 8');
       console.log(event.target.value + ' short');
     }
-    if (event.target.value.length > 8) {
-      setErrorMessage('✅');
+    else if (event.target.value.length > 8) {
+      setPwLengthMes('✅');
       console.log(event.target.value + ' check');
-    } // else {
+    }
+
+    for (let i = 0; i < event.target.value.length; i++) {
+      if (event.target.value[i] <= 'Z' && event.target.value[i] >= 'A' && event.target.value[i] <= 'z' && event.target.value[i] >= 'a') {
+        setPwAlphabetc('Your password has alphabets');
+      } else if (9 >= event.target.value[i] && event.target.value[i] >= 0) {
+        setPwNumc('You have number(s)');
+      }
+    }
+
+    // else {
     //   setErrorMessage('...?');
     //   console.log(event.target.value + ' ?');
     // }
     return setPassword(event.target.value);
+  }
+
+  function confirmNewPassword(event) {
+    setConfirmPassword(event.target.value);
   }
 
   async function onGoogleLoginSuccess(response) {
