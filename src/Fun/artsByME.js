@@ -19,11 +19,12 @@ export default function artsbyMe() {
         <Fade left cascade>
           <h3>Select A Drawing type or use the finder</h3>
           <p style={{ fontSize: 20 }}>Find a drawing here.</p>
-          <input
-            style={{ backgroundColor: '#15ff00', textAlign: 'center' }}
-            onKeyUp="Search()"
-          />
         </Fade>
+        <input
+          style={{ backgroundColor: '#15ff00', textAlign: 'center' }}
+          onKeyUp="Search()"
+        />
+
         <button
           style={{ backgroundColor: 'blue', color: 'white' }}
           onClick="Search()"

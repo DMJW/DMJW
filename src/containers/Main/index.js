@@ -96,12 +96,13 @@ export default function Main({ history, loading, userId, username, logout }) {
           <div style={{ backgroundColor: '#b9fbba' }}>
             <h3>Notice & Events</h3>
             <Fade top cascade>
-              <a href="#updates">Updated to V2.5!</a>
+              <a href="#updates">Updated to V2.55!</a>
+              <a href="http://www.dmjwweb.com/dmjws/notice/2" target="blank">   [EVENT]</a>
             </Fade>
           </div>
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
             <Link to="/Fun/main">
-              <Jello delay={500}>
+              <Jello delay={700}>
                 <img src={FunTop} style={{ width: 507, height: 253.5 }} />
                 <p>{`DMJW's FUN online`}</p>
               </Jello>
@@ -117,7 +118,7 @@ export default function Main({ history, loading, userId, username, logout }) {
           </div>
           <div style={{ backgroundColor: 'white', height: 15 }} />
           <div style={{ backgroundColor: 'rgb(250, 250, 250)' }}>
-            <Spin delay={2000}>
+            <Spin delay={500}>
               <h2>{`🧰Toolbox`}</h2>
             </Spin>
             <p>Tools!</p>
@@ -154,7 +155,7 @@ export default function Main({ history, loading, userId, username, logout }) {
           <div id="updates">
             <p style={{ fontSize: 27 }}>
               <Zoom top>🆙</Zoom><Zoom top cascade>Updated</Zoom>
-              <font color="grey" style={{ fontSize: 13, color: '#636363' }}>to version </font><font style={{ fontSize: 13, color: 'red' }}>2.5</font>
+              <font color="grey" style={{ fontSize: 13, color: '#636363' }}>to version </font><font style={{ fontSize: 13, color: 'red' }}>2.55</font>
             </p>
           </div>
         </div>

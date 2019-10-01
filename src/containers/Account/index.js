@@ -24,10 +24,10 @@ export default function Account({ login, userId, acusername, loading }) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [signInPage, setSignInPage] = useState('First');
-  const [pwLengthMes, setPwLengthMes] = useState('Please write down your password');
+  const [pwLengthMes, setPwLengthMes] = useState(
+    'Please write down your password'
+  );
   const [pwAlphabetc, setPwAlphabetc] = useState('Hmm....');
-  const [pwIncludeNumc, setPwNumc] = useState('Please include number(s)');
-  const [pwConfirmMes, setPwConfirmMes] = useState('cannot be compared.');
 
   return (
     <div className="account">
@@ -39,26 +39,46 @@ export default function Account({ login, userId, acusername, loading }) {
 
       {signInPage === 'First' && !userId && !loading && (
         <div>
-          <Zoom cascade><font style={{ fontSize: '2em' }}>Which do you want to do?</font></Zoom>
+          <Zoom cascade>
+            <font style={{ fontSize: '2em' }}>Which do you want to do?</font>
+          </Zoom>
           <Flip top>
             <div style={{ width: '50%', backgroundColor: '#fff7dc' }}>
               <h2>Sign In</h2>
               <p>{`Click me if you already have an account and want to Sign In!`}</p>
-              <button onClick={() => setSignInPage('SignIn')} className="button"><span>Go</span></button>
+              <button
+                onClick={() => setSignInPage('SignIn')}
+                className="button"
+              >
+                <span>Go</span>
+              </button>
             </div>
           </Flip>
           <Flip top>
-            <div style={{ width: '50%', marginLeft: '50%', backgroundColor: '#fff7dc' }}>
+            <div
+              style={{
+                width: '50%',
+                marginLeft: '50%',
+                backgroundColor: '#fff7dc'
+              }}
+            >
               <h2>Sign Up</h2>
               <p>{`Click me if you don't have an account and want to create one!`}</p>
-              <button onClick={() => setSignInPage('SignUp')} className="button"><span>Go</span></button>
+              <button
+                onClick={() => setSignInPage('SignUp')}
+                className="button"
+              >
+                <span>Go</span>
+              </button>
             </div>
           </Flip>
         </div>
       )}
       {signInPage === 'SignIn' && !userId && (
         <>
-          <Zoom cascade><h2>Sign In</h2></Zoom>
+          <Zoom cascade>
+            <h2>Sign In</h2>
+          </Zoom>
           <input
             className="form-control"
             style={{
@@ -91,7 +111,18 @@ export default function Account({ login, userId, acusername, loading }) {
               style={{ marginBottom: '15px', border: '3px dotted palegreen' }}
             >
               <h3>Use one of your other accounts</h3>
-              <p>Easy Sign in with a few clicks! Use your  <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font> Account, <font color="green">Naver</font>(<font color="green">네이버</font>) 계정 or <font color="red">Apple</font> <font color="pink">ID</font>.</p>
+              <p>
+                Easy Sign in with a few clicks! Use your{' '}
+                <font color="blue">G</font>
+                <font color="red">o</font>
+                <font color="yellow">o</font>
+                <font color="blue">g</font>
+                <font color="green">l</font>
+                <font color="red">e</font> Account,{' '}
+                <font color="green">Naver</font>(
+                <font color="green">네이버</font>) 계정 or{' '}
+                <font color="red">Apple</font> <font color="pink">ID</font>.
+              </p>
               <GoogleLogin
                 clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
                 buttonText="Sign in with Google"
@@ -104,15 +135,22 @@ export default function Account({ login, userId, acusername, loading }) {
           </Flip>
           <Flip top>
             <div className="SIPgOth">
-              <a href="http://www.dmjwweb.com/account">Have A DMJWWEB Account?</a>
+              <a href="http://www.dmjwweb.com/account">
+                Have A DMJWWEB Account?
+              </a>
               <p>{`Don't have a account?`}</p>
               <a
                 style={{ cursor: 'pointer', color: 'blue' }}
                 onClick={() => setSignInPage('SignUp')}
               >
-                Sign Up<br /><font color="grey">(You can also sign up with other accounts!)</font>
+                Sign Up
+                <br />
+                <font color="grey">
+                  (You can also sign up with other accounts!)
+                </font>
               </a>
-            </div></Flip>
+            </div>
+          </Flip>
         </>
       )}
 
@@ -163,10 +201,10 @@ export default function Account({ login, userId, acusername, loading }) {
               textAlign: 'center'
             }}
             value={password}
-            onChange={handleSetPassword}
+            onChange={event => setPassword(event.target.value)}
             placeholder="Password"
           />
-          <SignUpCheck pwLengthMes={pwLengthMes} pwConfirmMes={pwConfirmMes} pwAlphabetc={pwAlphabetc} pwIncludeNumc={pwIncludeNumc} />
+          <SignUpCheck password={password} confirmPassword={confirmPassword} />
           <input
             className="form-control"
             type="password"
@@ -180,7 +218,15 @@ export default function Account({ login, userId, acusername, loading }) {
             placeholder="Confirm Password"
           />
 
-          <select style={{ background: '#dd3e54', background: '-webkit-linear-gradient(to bottom, #6be585, #dd3e54)', background: 'linear-gradient(to bottom, #6be585, #dd3e54)', height: '30px' }}>
+          <select
+            style={{
+              background: '#dd3e54',
+              background:
+                '-webkit-linear-gradient(to bottom, #6be585, #dd3e54)',
+              background: 'linear-gradient(to bottom, #6be585, #dd3e54)',
+              height: '30px'
+            }}
+          >
             <option>Select</option>
             <option>Email</option>
             <option disabled>Phone(Unavailable right now)</option>
@@ -250,9 +296,22 @@ export default function Account({ login, userId, acusername, loading }) {
             </button>
           </Flip>
           <Flip top>
-            <div className="SIPgOth" style={{ marginBottom: '15px', border: '3px dotted palegreen' }}>
+            <div
+              className="SIPgOth"
+              style={{ marginBottom: '15px', border: '3px dotted palegreen' }}
+            >
               <h3>Use one of your other accounts</h3>
-              <p>Easy Sign up with clicks! Use your  <font color="blue">G</font><font color="red">o</font><font color="yellow">o</font><font color="blue">g</font><font color="green">l</font><font color="red">e</font> Account, <font color="green">Naver</font>(<font color="green">네이버</font>) 계정 or <font color="red">Apple</font> <font color="pink">ID</font>.</p>
+              <p>
+                Easy Sign up with clicks! Use your <font color="blue">G</font>
+                <font color="red">o</font>
+                <font color="yellow">o</font>
+                <font color="blue">g</font>
+                <font color="green">l</font>
+                <font color="red">e</font> Account,{' '}
+                <font color="green">Naver</font>(
+                <font color="green">네이버</font>) 계정 or{' '}
+                <font color="red">Apple</font> <font color="pink">ID</font>.
+              </p>
               <GoogleLogin
                 clientId="879558629714-9e3o4cn33tf5h0i29po9oifmjbkbadrd.apps.googleusercontent.com"
                 buttonText="Sign in with Google"
@@ -268,11 +327,14 @@ export default function Account({ login, userId, acusername, loading }) {
             <div className="SIPgOth">
               <a href="http://www.dmjwweb.com/new-a-dmjw">
                 Sign Up to DMJWWEB Account(seperate accounts)
-          </a>
+              </a>
               <p>{`Already have this website's account?`}</p>
-              <a style={{ cursor: 'pointer', color: 'blue' }} onClick={() => setSignInPage('SignIn')}>
+              <a
+                style={{ cursor: 'pointer', color: 'blue' }}
+                onClick={() => setSignInPage('SignIn')}
+              >
                 Click me to go to Sign In page!
-          </a>
+              </a>
             </div>
           </Flip>
         </div>
@@ -299,31 +361,6 @@ export default function Account({ login, userId, acusername, loading }) {
       <a href="/">Back To Main</a>
     </div>
   );
-
-  function handleSetPassword(event) {
-    if (event.target.value.length < 8) {
-      setPwLengthMes('Password is too short! Password has to be longer than 8');
-      console.log(event.target.value + ' short');
-    }
-    else if (event.target.value.length > 8) {
-      setPwLengthMes('✅');
-      console.log(event.target.value + ' check');
-    }
-
-    for (let i = 0; i < event.target.value.length; i++) {
-      if (event.target.value[i] <= 'Z' && event.target.value[i] >= 'A' && event.target.value[i] <= 'z' && event.target.value[i] >= 'a') {
-        setPwAlphabetc('Your password has alphabets');
-      } else if (9 >= event.target.value[i] && event.target.value[i] >= 0) {
-        setPwNumc('You have number(s)');
-      }
-    }
-
-    // else {
-    //   setErrorMessage('...?');
-    //   console.log(event.target.value + ' ?');
-    // }
-    return setPassword(event.target.value);
-  }
 
   function confirmNewPassword(event) {
     setConfirmPassword(event.target.value);
@@ -362,9 +399,7 @@ export default function Account({ login, userId, acusername, loading }) {
           'An error has occured! Please Try again.\nShow error message?\n\\/NO YES\\/'
         )
       ) {
-        window.prompt(
-          'Do you like this error?'
-        );
+        window.prompt('Do you like this error?');
         let errorwin = window.open();
         errorwin.document.write(
           'AN ERROR HAS OCCURED WHILE LOGGING IN!\n\n' + error

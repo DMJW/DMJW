@@ -6,7 +6,7 @@ export default function OneD() {
     <div>
       <div>
         <h1>OneD</h1>
-        <p>dictionary</p>
+        <p>dictionary & more</p>
       </div>
       <div
         className={`SMB ${css`
@@ -46,11 +46,25 @@ export default function OneD() {
         <a href="#">Mini Translator</a>
       </div>
       <div>
-        <p>LEXICO EN-EN dictionary</p>
-        <iframe src="https://www.lexico.com/en" style={{ height: 500, width: 500 }}></iframe>
-        <iframe src="https://www.lexico.com/search?utf8=✓&filter=thesaurus&dictionary=en&query=" style={{ height: 500, width: 500 }}></iframe>
-        <br />
-        <iframe src="https://dict.naver.com" style={{ height: 1000, width: 1000 }}></iframe>
+        <p>I want to use...</p>
+        <a href="#dict"><i style={{ color: 'red' }}>Dictionary</i> and <i>Thesaurus</i>!</a>
+        <a href="#top" style={{ color: 'black' }}>  or  </a>
+        <a href="#trans"><i style={{ color: 'red' }}>Translator</i>!</a>
+        <br></br>
+        <div id="dict">
+          <iframe src="https://www.lexico.com/en" style={{ height: 500, width: 500 }}></iframe>
+          <iframe src="https://www.lexico.com/search?utf8=✓&filter=thesaurus&dictionary=en&query=" style={{ height: 500, width: 500 }}></iframe>
+          <br />
+          <iframe src="https://dict.naver.com" style={{ height: 500, width: 1000 }}></iframe>
+          <br></br>
+          <iframe src="https://www.dictionary.com" scrolling="no" style={{ height: 700, width: 500 }}></iframe>
+          <iframe src="https://www.thesaurus.com" scrolling="no" style={{ height: 700, width: 500 }}></iframe>
+        </div>
+        <div id="trans">
+          <iframe src="https://papago.naver.com" style={{ height: 500, width: 1000 }}></iframe>
+          <iframe src="https://translate.google.com" style={{ height: 500, width: 1000 }}></iframe>
+          <iframe src="https://translate.kakao.com" style={{ height: 500, width: 1000 }}></iframe>
+        </div>
       </div>
     </div>
   );
